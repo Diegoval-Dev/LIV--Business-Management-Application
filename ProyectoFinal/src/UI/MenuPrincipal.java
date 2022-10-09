@@ -65,11 +65,11 @@ public class MenuPrincipal extends javax.swing.JFrame {
                 .addGroup(jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnInventarioMenu)
                     .addComponent(btnEmpleadosMenu))
-                .addGap(34, 34, 34)
+                .addGap(46, 46, 46)
                 .addGroup(jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnAccountMenu)
-                    .addComponent(btnFacturasMenu))
-                .addContainerGap(60, Short.MAX_VALUE))
+                    .addComponent(btnFacturasMenu)
+                    .addComponent(btnAccountMenu))
+                .addContainerGap(48, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout jPanel9Layout = new javax.swing.GroupLayout(jPanel9);
