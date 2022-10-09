@@ -36,12 +36,32 @@ public class MenuPrincipal extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         btnInventarioMenu.setText("Inventario");
+        btnInventarioMenu.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnInventarioMenuActionPerformed(evt);
+            }
+        });
 
         btnFacturasMenu.setText("Facturas");
+        btnFacturasMenu.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnFacturasMenuActionPerformed(evt);
+            }
+        });
 
         btnEmpleadosMenu.setText("Empleados");
+        btnEmpleadosMenu.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnEmpleadosMenuActionPerformed(evt);
+            }
+        });
 
         btnAccountMenu.setText("Account");
+        btnAccountMenu.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnAccountMenuActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel10Layout = new javax.swing.GroupLayout(jPanel10);
         jPanel10.setLayout(jPanel10Layout);
@@ -106,55 +126,42 @@ public class MenuPrincipal extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(MenuPrincipal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(MenuPrincipal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(MenuPrincipal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(MenuPrincipal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
+    private void btnInventarioMenuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnInventarioMenuActionPerformed
+        // TODO add your handling code here:
+        InventarioMenu inventario = new InventarioMenu();
+        inventario.setVisible(true);
+        this.setVisible(false);
+    }//GEN-LAST:event_btnInventarioMenuActionPerformed
 
-        /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new MenuPrincipal().setVisible(true);
-            }
-        });
-    }
+    private void btnEmpleadosMenuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEmpleadosMenuActionPerformed
+        // TODO add your handling code here:
+        EmpleadosMenu empleados = new EmpleadosMenu();
+        empleados.setVisible(true);
+        this.setVisible(false);
+    }//GEN-LAST:event_btnEmpleadosMenuActionPerformed
+
+    private void btnFacturasMenuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnFacturasMenuActionPerformed
+        // TODO add your handling code here:
+        FacturasMenu facturas = new FacturasMenu();
+        facturas.setVisible(true);
+        this.setVisible(false);
+    }//GEN-LAST:event_btnFacturasMenuActionPerformed
+
+    private void btnAccountMenuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAccountMenuActionPerformed
+        // TODO add your handling code here:
+        AccountMenu account = new AccountMenu();
+        account.setVisible(true);
+        this.setVisible(false);
+    }//GEN-LAST:event_btnAccountMenuActionPerformed
+
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnAccountMenu;
     private javax.swing.JButton btnEmpleadosMenu;
     private javax.swing.JButton btnFacturasMenu;
     private javax.swing.JButton btnInventarioMenu;
-    private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel10;
-    private javax.swing.JPanel jPanel2;
-    private javax.swing.JPanel jPanel3;
-    private javax.swing.JPanel jPanel4;
-    private javax.swing.JPanel jPanel5;
-    private javax.swing.JPanel jPanel6;
-    private javax.swing.JPanel jPanel7;
-    private javax.swing.JPanel jPanel8;
     private javax.swing.JPanel jPanel9;
     // End of variables declaration//GEN-END:variables
 }

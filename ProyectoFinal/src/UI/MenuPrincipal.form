@@ -104,21 +104,33 @@
               <Properties>
                 <Property name="text" type="java.lang.String" value="Inventario"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnInventarioMenuActionPerformed"/>
+              </Events>
             </Component>
             <Component class="javax.swing.JButton" name="btnFacturasMenu">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Facturas"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnFacturasMenuActionPerformed"/>
+              </Events>
             </Component>
             <Component class="javax.swing.JButton" name="btnEmpleadosMenu">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Empleados"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnEmpleadosMenuActionPerformed"/>
+              </Events>
             </Component>
             <Component class="javax.swing.JButton" name="btnAccountMenu">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Account"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnAccountMenuActionPerformed"/>
+              </Events>
             </Component>
           </SubComponents>
         </Container>

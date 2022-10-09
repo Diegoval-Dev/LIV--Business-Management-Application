@@ -4,6 +4,8 @@
  */
 package Controller;
 
+import UI.Login;
+
 /**
  *
  * @author diego
@@ -15,6 +17,11 @@ public class ControllerLogin {
      */
     public static void main(String[] args) {
         // TODO code application logic here
+        java.awt.EventQueue.invokeLater(new Runnable() {
+            public void run() {
+                new Login().setVisible(true);
+            }
+        });
     }
     
 }

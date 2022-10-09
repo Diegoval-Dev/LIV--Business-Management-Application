@@ -124,11 +124,17 @@
           <Properties>
             <Property name="text" type="java.lang.String" value="Login"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnLoginActionPerformed"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JButton" name="btnRegistrarse">
           <Properties>
             <Property name="text" type="java.lang.String" value="Registarse"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnRegistrarseActionPerformed"/>
+          </Events>
         </Component>
       </SubComponents>
     </Container>
