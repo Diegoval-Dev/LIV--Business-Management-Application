@@ -27,8 +27,8 @@ public class Login extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
-        nombreLogin = new javax.swing.JLabel();
-        contraLogin = new javax.swing.JLabel();
+        nombre = new javax.swing.JLabel();
+        contra = new javax.swing.JLabel();
         txtContraLogin = new javax.swing.JTextField();
         txtNombreLogin = new javax.swing.JTextField();
         btnLogin = new javax.swing.JButton();
@@ -38,13 +38,13 @@ public class Login extends javax.swing.JFrame {
 
         jPanel1.setBackground(new java.awt.Color(51, 51, 51));
 
-        nombreLogin.setFont(new java.awt.Font("Segoe UI", 1, 16)); // NOI18N
-        nombreLogin.setForeground(new java.awt.Color(255, 255, 255));
-        nombreLogin.setText("Nombre");
+        nombre.setFont(new java.awt.Font("Segoe UI", 1, 16)); // NOI18N
+        nombre.setForeground(new java.awt.Color(255, 255, 255));
+        nombre.setText("Nombre");
 
-        contraLogin.setFont(new java.awt.Font("Segoe UI", 1, 16)); // NOI18N
-        contraLogin.setForeground(new java.awt.Color(255, 255, 255));
-        contraLogin.setText("Contraseña");
+        contra.setFont(new java.awt.Font("Segoe UI", 1, 16)); // NOI18N
+        contra.setForeground(new java.awt.Color(255, 255, 255));
+        contra.setText("Contraseña");
 
         btnLogin.setText("Login");
 
@@ -57,8 +57,8 @@ public class Login extends javax.swing.JFrame {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(42, 42, 42)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(contraLogin)
-                    .addComponent(nombreLogin))
+                    .addComponent(contra)
+                    .addComponent(nombre))
                 .addGap(38, 38, 38)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(txtNombreLogin, javax.swing.GroupLayout.PREFERRED_SIZE, 148, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -79,11 +79,11 @@ public class Login extends javax.swing.JFrame {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(100, 100, 100)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(nombreLogin)
+                    .addComponent(nombre)
                     .addComponent(txtNombreLogin, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(43, 43, 43)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(contraLogin)
+                    .addComponent(contra)
                     .addComponent(txtContraLogin, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(44, 44, 44)
                 .addComponent(btnLogin)
@@ -144,9 +144,9 @@ public class Login extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnLogin;
     private javax.swing.JButton btnRegistrarse;
-    private javax.swing.JLabel contraLogin;
+    private javax.swing.JLabel contra;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JLabel nombreLogin;
+    private javax.swing.JLabel nombre;
     private javax.swing.JTextField txtContraLogin;
     private javax.swing.JTextField txtNombreLogin;
     // End of variables declaration//GEN-END:variables
