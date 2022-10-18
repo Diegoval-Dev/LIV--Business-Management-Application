@@ -72,7 +72,7 @@ public class EmpleadosMenu extends javax.swing.JFrame {
 
     private void btnEmpleadosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEmpleadosActionPerformed
         // TODO add your handling code here:
-        MenuPrincipal menu = new MenuPrincipal();
+        LoginLive menu = new LoginLive();
         menu.setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_btnEmpleadosActionPerformed

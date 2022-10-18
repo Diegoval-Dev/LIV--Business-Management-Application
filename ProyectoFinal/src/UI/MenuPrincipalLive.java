@@ -8,12 +8,12 @@ package UI;
  *
  * @author Usuario
  */
-public class Login extends javax.swing.JFrame {
+public class MenuPrincipalLive extends javax.swing.JFrame {
 
     /**
      * Creates new form Login
      */
-    public Login() {
+    public MenuPrincipalLive() {
         initComponents();
     }
 
@@ -125,7 +125,7 @@ public class Login extends javax.swing.JFrame {
 
     private void btnLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLoginActionPerformed
         // TODO add your handling code here:
-        MenuPrincipal menu = new MenuPrincipal();
+        LoginLive menu = new LoginLive();
         menu.setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_btnLoginActionPerformed

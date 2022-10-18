@@ -72,7 +72,7 @@ public class AccountMenu extends javax.swing.JFrame {
 
     private void btnAccountActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAccountActionPerformed
         // TODO add your handling code here:
-        MenuPrincipal menu = new MenuPrincipal();
+        LoginLive menu = new LoginLive();
         menu.setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_btnAccountActionPerformed

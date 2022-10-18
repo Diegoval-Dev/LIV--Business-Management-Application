@@ -72,7 +72,7 @@ public class FacturasMenu extends javax.swing.JFrame {
 
     private void btnExitFacturasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnExitFacturasActionPerformed
         // TODO add your handling code here:
-        MenuPrincipal menu = new MenuPrincipal();
+        LoginLive menu = new LoginLive();
         menu.setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_btnExitFacturasActionPerformed
