@@ -27,86 +27,267 @@ public class MenuPrincipalLive extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
-        nombre = new javax.swing.JLabel();
-        contra = new javax.swing.JLabel();
-        txtContraLogin = new javax.swing.JTextField();
-        txtNombreLogin = new javax.swing.JTextField();
-        btnLogin = new javax.swing.JButton();
-        btnRegistrarse = new javax.swing.JButton();
+        panelBarra = new javax.swing.JPanel();
+        textoMicrosoft = new javax.swing.JLabel();
+        btnExitMenu = new javax.swing.JButton();
+        panelAccount = new javax.swing.JPanel();
+        moreInfoAccou = new javax.swing.JButton();
+        imageAccount = new javax.swing.JLabel();
+        textMoreInfoAcco = new javax.swing.JLabel();
+        btnAccount = new javax.swing.JButton();
+        panelFacturas = new javax.swing.JPanel();
+        moreInfoFactu = new javax.swing.JButton();
+        textMoreInfoFactu = new javax.swing.JLabel();
+        imageFacturas = new javax.swing.JLabel();
+        btnFacturas = new javax.swing.JButton();
+        panelEmpleados = new javax.swing.JPanel();
+        imageEmpleados = new javax.swing.JLabel();
+        moreInfoEmple = new javax.swing.JButton();
+        textMoreInfoEmple = new javax.swing.JLabel();
+        btnEmpleados = new javax.swing.JButton();
+        panelInventario = new javax.swing.JPanel();
+        imageInventario = new javax.swing.JLabel();
+        moreInfoInven = new javax.swing.JButton();
+        textMoreInfoInven = new javax.swing.JLabel();
+        btnInventario = new javax.swing.JButton();
+        textMoreInfoInven1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jPanel1.setBackground(new java.awt.Color(51, 51, 51));
 
-        nombre.setFont(new java.awt.Font("Segoe UI", 1, 16)); // NOI18N
-        nombre.setForeground(new java.awt.Color(255, 255, 255));
-        nombre.setText("Nombre");
-
-        contra.setFont(new java.awt.Font("Segoe UI", 1, 16)); // NOI18N
-        contra.setForeground(new java.awt.Color(255, 255, 255));
-        contra.setText("Contraseña");
-
-        btnLogin.setText("Login");
-        btnLogin.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnLoginActionPerformed(evt);
+        panelBarra.setBackground(new java.awt.Color(255, 255, 255));
+        panelBarra.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
+            public void mouseDragged(java.awt.event.MouseEvent evt) {
+                panelBarraMouseDragged(evt);
             }
         });
-
-        btnRegistrarse.setText("Registarse");
-        btnRegistrarse.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnRegistrarseActionPerformed(evt);
+        panelBarra.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                panelBarraMousePressed(evt);
             }
         });
+        panelBarra.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        textoMicrosoft.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        textoMicrosoft.setForeground(new java.awt.Color(0, 0, 0));
+        textoMicrosoft.setText("Microsoft");
+        panelBarra.add(textoMicrosoft, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 0, 170, 30));
+
+        btnExitMenu.setBackground(new java.awt.Color(255, 255, 255));
+        btnExitMenu.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        btnExitMenu.setForeground(new java.awt.Color(0, 0, 0));
+        btnExitMenu.setText("X");
+        btnExitMenu.setBorder(null);
+        btnExitMenu.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnExitMenuMouseClicked(evt);
+            }
+        });
+        btnExitMenu.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnExitMenuActionPerformed(evt);
+            }
+        });
+        panelBarra.add(btnExitMenu, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 0, 40, 30));
+
+        panelAccount.setBackground(new java.awt.Color(237, 88, 66));
+        panelAccount.setPreferredSize(new java.awt.Dimension(140, 270));
+        panelAccount.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        moreInfoAccou.setBackground(new java.awt.Color(255, 51, 51));
+        moreInfoAccou.setForeground(new java.awt.Color(0, 0, 0));
+        moreInfoAccou.setText("+ Ver más");
+        moreInfoAccou.setBorder(new javax.swing.border.MatteBorder(null));
+        moreInfoAccou.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                moreInfoAccouActionPerformed(evt);
+            }
+        });
+        panelAccount.add(moreInfoAccou, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 400, 70, 20));
+        panelAccount.add(imageAccount, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 110, -1, -1));
+
+        textMoreInfoAcco.setFont(new java.awt.Font("Roboto Light", 0, 10)); // NOI18N
+        textMoreInfoAcco.setForeground(new java.awt.Color(0, 0, 0));
+        panelAccount.add(textMoreInfoAcco, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 350, 140, 40));
+
+        btnAccount.setBackground(new java.awt.Color(255, 51, 51));
+        btnAccount.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        btnAccount.setForeground(new java.awt.Color(0, 0, 0));
+        btnAccount.setText("Account");
+        btnAccount.setBorder(null);
+        btnAccount.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnAccount.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                btnAccountMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                btnAccountMouseExited(evt);
+            }
+        });
+        panelAccount.add(btnAccount, new org.netbeans.lib.awtextra.AbsoluteConstraints(-10, -10, 170, 470));
+
+        panelFacturas.setBackground(new java.awt.Color(117, 198, 17));
+        panelFacturas.setPreferredSize(new java.awt.Dimension(140, 270));
+        panelFacturas.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        moreInfoFactu.setBackground(new java.awt.Color(117, 198, 17));
+        moreInfoFactu.setForeground(new java.awt.Color(0, 0, 0));
+        moreInfoFactu.setText("+ Ver más");
+        moreInfoFactu.setBorder(new javax.swing.border.MatteBorder(null));
+        moreInfoFactu.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                moreInfoFactuActionPerformed(evt);
+            }
+        });
+        panelFacturas.add(moreInfoFactu, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 400, 70, 20));
+
+        textMoreInfoFactu.setFont(new java.awt.Font("Roboto Light", 0, 10)); // NOI18N
+        textMoreInfoFactu.setForeground(new java.awt.Color(0, 0, 0));
+        panelFacturas.add(textMoreInfoFactu, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 350, 140, 40));
+        panelFacturas.add(imageFacturas, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 110, 90, 90));
+
+        btnFacturas.setBackground(new java.awt.Color(117, 198, 17));
+        btnFacturas.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        btnFacturas.setForeground(new java.awt.Color(0, 0, 0));
+        btnFacturas.setText("Facturas");
+        btnFacturas.setBorder(null);
+        btnFacturas.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnFacturas.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                btnFacturasMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                btnFacturasMouseExited(evt);
+            }
+        });
+        panelFacturas.add(btnFacturas, new org.netbeans.lib.awtextra.AbsoluteConstraints(-10, -10, 190, 470));
+
+        panelEmpleados.setBackground(new java.awt.Color(45, 202, 255));
+        panelEmpleados.setPreferredSize(new java.awt.Dimension(140, 270));
+        panelEmpleados.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        panelEmpleados.add(imageEmpleados, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 100, 90, 90));
+
+        moreInfoEmple.setBackground(new java.awt.Color(30, 160, 236));
+        moreInfoEmple.setForeground(new java.awt.Color(0, 0, 0));
+        moreInfoEmple.setText("+ Ver más");
+        moreInfoEmple.setBorder(new javax.swing.border.MatteBorder(null));
+        moreInfoEmple.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                moreInfoEmpleActionPerformed(evt);
+            }
+        });
+        panelEmpleados.add(moreInfoEmple, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 400, 70, 20));
+
+        textMoreInfoEmple.setFont(new java.awt.Font("Roboto Light", 0, 10)); // NOI18N
+        textMoreInfoEmple.setForeground(new java.awt.Color(0, 0, 0));
+        panelEmpleados.add(textMoreInfoEmple, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 350, 140, 40));
+
+        btnEmpleados.setBackground(new java.awt.Color(30, 160, 236));
+        btnEmpleados.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        btnEmpleados.setForeground(new java.awt.Color(0, 0, 0));
+        btnEmpleados.setText("Empleados");
+        btnEmpleados.setBorder(null);
+        btnEmpleados.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnEmpleados.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                btnEmpleadosMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                btnEmpleadosMouseExited(evt);
+            }
+        });
+        btnEmpleados.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnEmpleadosActionPerformed(evt);
+            }
+        });
+        panelEmpleados.add(btnEmpleados, new org.netbeans.lib.awtextra.AbsoluteConstraints(-20, -10, 210, 460));
+
+        panelInventario.setBackground(new java.awt.Color(239, 156, 2));
+        panelInventario.setPreferredSize(new java.awt.Dimension(140, 270));
+        panelInventario.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        panelInventario.add(imageInventario, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 100, 90, 90));
+
+        moreInfoInven.setBackground(new java.awt.Color(239, 156, 2));
+        moreInfoInven.setForeground(new java.awt.Color(0, 0, 0));
+        moreInfoInven.setText("+ Ver más");
+        moreInfoInven.setBorder(new javax.swing.border.MatteBorder(null));
+        moreInfoInven.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                moreInfoInvenActionPerformed(evt);
+            }
+        });
+        panelInventario.add(moreInfoInven, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 400, 70, 20));
+
+        textMoreInfoInven.setFont(new java.awt.Font("Roboto Light", 0, 10)); // NOI18N
+        textMoreInfoInven.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        textMoreInfoInven.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        panelInventario.add(textMoreInfoInven, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 350, 140, 40));
+
+        btnInventario.setBackground(new java.awt.Color(239, 156, 2));
+        btnInventario.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        btnInventario.setForeground(new java.awt.Color(0, 0, 0));
+        btnInventario.setText("Inventario");
+        btnInventario.setBorder(null);
+        btnInventario.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnInventario.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                btnInventarioMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                btnInventarioMouseExited(evt);
+            }
+        });
+        btnInventario.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnInventarioActionPerformed(evt);
+            }
+        });
+        panelInventario.add(btnInventario, new org.netbeans.lib.awtextra.AbsoluteConstraints(-10, -10, 190, 460));
+
+        textMoreInfoInven1.setFont(new java.awt.Font("Roboto Light", 0, 10)); // NOI18N
+        textMoreInfoInven1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        textMoreInfoInven1.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        panelInventario.add(textMoreInfoInven1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 350, 140, 40));
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(42, 42, 42)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(contra)
-                    .addComponent(nombre))
-                .addGap(38, 38, 38)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(txtNombreLogin, javax.swing.GroupLayout.PREFERRED_SIZE, 148, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(txtContraLogin, javax.swing.GroupLayout.PREFERRED_SIZE, 148, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(57, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                        .addComponent(btnLogin)
-                        .addGap(145, 145, 145))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                        .addComponent(btnRegistrarse)
-                        .addGap(134, 134, 134))))
+                .addGap(0, 0, 0)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(panelBarra, javax.swing.GroupLayout.PREFERRED_SIZE, 680, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(panelInventario, javax.swing.GroupLayout.PREFERRED_SIZE, 167, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(3, 3, 3)
+                        .addComponent(panelEmpleados, javax.swing.GroupLayout.PREFERRED_SIZE, 167, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(3, 3, 3)
+                        .addComponent(panelFacturas, javax.swing.GroupLayout.PREFERRED_SIZE, 167, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(panelAccount, javax.swing.GroupLayout.PREFERRED_SIZE, 156, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(14, 14, 14)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(100, 100, 100)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(nombre)
-                    .addComponent(txtNombreLogin, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(43, 43, 43)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(contra)
-                    .addComponent(txtContraLogin, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(44, 44, 44)
-                .addComponent(btnLogin)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(btnRegistrarse)
-                .addContainerGap(57, Short.MAX_VALUE))
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(panelBarra, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(panelInventario, javax.swing.GroupLayout.PREFERRED_SIZE, 430, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(panelEmpleados, javax.swing.GroupLayout.PREFERRED_SIZE, 430, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(panelFacturas, javax.swing.GroupLayout.PREFERRED_SIZE, 430, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(panelAccount, javax.swing.GroupLayout.PREFERRED_SIZE, 430, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(0, 0, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 670, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -116,29 +297,128 @@ public class MenuPrincipalLive extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void btnRegistrarseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegistrarseActionPerformed
+    private void btnExitMenuMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnExitMenuMouseClicked
         // TODO add your handling code here:
-        RegistroLiv registro = new RegistroLiv();
-        registro.setVisible(true);
-        this.setVisible(false);
-    }//GEN-LAST:event_btnRegistrarseActionPerformed
+        System.exit(0);
+    }//GEN-LAST:event_btnExitMenuMouseClicked
 
-    private void btnLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLoginActionPerformed
+    private void btnExitMenuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnExitMenuActionPerformed
         // TODO add your handling code here:
-        LoginLive menu = new LoginLive();
-        menu.setVisible(true);
-        this.setVisible(false);
-    }//GEN-LAST:event_btnLoginActionPerformed
+    }//GEN-LAST:event_btnExitMenuActionPerformed
+
+    private void panelBarraMouseDragged(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_panelBarraMouseDragged
+        // TODO add your handling code here:
+        int x =  evt.getXOnScreen();
+        int y = evt.getYOnScreen();
+
+        this.setLocation(x - xMouse, y - yMouse);
+    }//GEN-LAST:event_panelBarraMouseDragged
+
+    private void panelBarraMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_panelBarraMousePressed
+        // TODO add your handling code here:
+        xMouse = evt.getX();
+        yMouse = evt.getY();
+    }//GEN-LAST:event_panelBarraMousePressed
+
+    private void moreInfoAccouActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_moreInfoAccouActionPerformed
+        // TODO add your handling code here:
+        textMoreInfoAcco.setText("<html>Guardar la información de las cuentas ingresadas de los usuarios.</html>");
+    }//GEN-LAST:event_moreInfoAccouActionPerformed
+
+    private void btnAccountMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnAccountMouseEntered
+        // TODO add your handling code here:
+        btnFacturas.setBackground(new Color(117,198,17));
+    }//GEN-LAST:event_btnAccountMouseEntered
+
+    private void btnAccountMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnAccountMouseExited
+        // TODO add your handling code here:
+        btnAccount.setBackground(new Color(255,51,51));
+    }//GEN-LAST:event_btnAccountMouseExited
+
+    private void moreInfoFactuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_moreInfoFactuActionPerformed
+        // TODO add your handling code here:
+        textMoreInfoFactu.setText("<html>Guardar la información de los productos y transacciones en las facturas.</html>");
+    }//GEN-LAST:event_moreInfoFactuActionPerformed
+
+    private void btnFacturasMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnFacturasMouseEntered
+        // TODO add your handling code here:
+        btnFacturas.setBackground(new Color(153,255,51));
+    }//GEN-LAST:event_btnFacturasMouseEntered
+
+    private void btnFacturasMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnFacturasMouseExited
+        // TODO add your handling code here:
+        btnAccount.setBackground(new Color(237,88,66));
+
+    }//GEN-LAST:event_btnFacturasMouseExited
+
+    private void moreInfoEmpleActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_moreInfoEmpleActionPerformed
+        // TODO add your handling code here:
+        textMoreInfoEmple.setText("<html>Guardar la información de los empleadoslos de la empresa.</html>");
+    }//GEN-LAST:event_moreInfoEmpleActionPerformed
+
+    private void btnEmpleadosMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnEmpleadosMouseEntered
+        // TODO add your handling code here:
+        btnEmpleados.setBackground(new Color(51,204,255));
+    }//GEN-LAST:event_btnEmpleadosMouseEntered
+
+    private void btnEmpleadosMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnEmpleadosMouseExited
+        // TODO add your handling code here:
+        btnEmpleados.setBackground(new Color(30,160,236));
+
+    }//GEN-LAST:event_btnEmpleadosMouseExited
+
+    private void btnEmpleadosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEmpleadosActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnEmpleadosActionPerformed
+
+    private void moreInfoInvenActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_moreInfoInvenActionPerformed
+        // TODO add your handling code here:
+        textMoreInfoInven.setText("<html>Guardar la información de los productos de la empresa.</html>");
+    }//GEN-LAST:event_moreInfoInvenActionPerformed
+
+    private void btnInventarioMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnInventarioMouseEntered
+        // TODO add your handling code here:
+        btnInventario.setBackground(new Color(255,204,102));
+
+    }//GEN-LAST:event_btnInventarioMouseEntered
+
+    private void btnInventarioMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnInventarioMouseExited
+        // TODO add your handling code here:
+        btnInventario.setBackground(new Color(239,156,2));
+
+    }//GEN-LAST:event_btnInventarioMouseExited
+
+    private void btnInventarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnInventarioActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnInventarioActionPerformed
 
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btnLogin;
-    private javax.swing.JButton btnRegistrarse;
-    private javax.swing.JLabel contra;
+    private javax.swing.JButton btnAccount;
+    private javax.swing.JButton btnEmpleados;
+    private javax.swing.JButton btnExitMenu;
+    private javax.swing.JButton btnFacturas;
+    private javax.swing.JButton btnInventario;
+    private javax.swing.JLabel imageAccount;
+    private javax.swing.JLabel imageEmpleados;
+    private javax.swing.JLabel imageFacturas;
+    private javax.swing.JLabel imageInventario;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JLabel nombre;
-    private javax.swing.JTextField txtContraLogin;
-    private javax.swing.JTextField txtNombreLogin;
+    private javax.swing.JButton moreInfoAccou;
+    private javax.swing.JButton moreInfoEmple;
+    private javax.swing.JButton moreInfoFactu;
+    private javax.swing.JButton moreInfoInven;
+    private javax.swing.JPanel panelAccount;
+    private javax.swing.JPanel panelBarra;
+    private javax.swing.JPanel panelEmpleados;
+    private javax.swing.JPanel panelFacturas;
+    private javax.swing.JPanel panelInventario;
+    private javax.swing.JLabel textMoreInfoAcco;
+    private javax.swing.JLabel textMoreInfoEmple;
+    private javax.swing.JLabel textMoreInfoFactu;
+    private javax.swing.JLabel textMoreInfoInven;
+    private javax.swing.JLabel textMoreInfoInven1;
+    private javax.swing.JLabel textoMicrosoft;
     // End of variables declaration//GEN-END:variables
 }

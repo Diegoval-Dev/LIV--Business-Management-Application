@@ -142,6 +142,11 @@ public class LoginLive extends javax.swing.JFrame {
         btnOfSiguiente.setText("Siguiente");
         btnOfSiguiente.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         btnOfSiguiente.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnOfSiguiente.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnOfSiguienteActionPerformed(evt);
+            }
+        });
         jPanel3.add(btnOfSiguiente, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 390, 110, 30));
 
         txtPaswordLogin.setBackground(new java.awt.Color(255, 255, 255));
@@ -237,6 +242,13 @@ public class LoginLive extends javax.swing.JFrame {
     r.setVisible(true);
     this.setVisible(false);
     }//GEN-LAST:event_btnOfRegistroActionPerformed
+
+    private void btnOfSiguienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnOfSiguienteActionPerformed
+        // TODO add your handling code here:
+        MenuPrincipalLive menu = new MenuPrincipalLive();
+        menu.setVisible(true);
+        this.setVisible(false);
+    }//GEN-LAST:event_btnOfSiguienteActionPerformed
 
 
 
