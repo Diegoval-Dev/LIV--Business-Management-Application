@@ -4,7 +4,7 @@
  */
 package Controller;
 
-import UI.MenuPrincipalLive;
+import UI.LoginLive;
 
 /**
  *
@@ -19,7 +19,7 @@ public class ControllerLogin {
         // TODO code application logic here
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new MenuPrincipalLive().setVisible(true);
+                new LoginLive().setVisible(true);
             }
         });
     }

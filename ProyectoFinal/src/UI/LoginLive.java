@@ -4,11 +4,16 @@
  */
 package UI;
 
+import java.awt.Color;
+
+
 /**
  *
- * @author Usuario
+ * @author ruth
  */
 public class LoginLive extends javax.swing.JFrame {
+    
+    int xMouse, yMouse;
 
     /**
      * Creates new form MenuPrincipal
@@ -16,6 +21,8 @@ public class LoginLive extends javax.swing.JFrame {
     public LoginLive() {
         initComponents();
     }
+    
+    
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -43,6 +50,10 @@ public class LoginLive extends javax.swing.JFrame {
         txtNombreLogin = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setIconImage(getIconImage());
+        setLocationByPlatform(true);
+        setUndecorated(true);
+        setResizable(false);
 
         jPanel3.setBackground(new java.awt.Color(255, 255, 255));
         jPanel3.setPreferredSize(new java.awt.Dimension(675, 466));
@@ -54,6 +65,16 @@ public class LoginLive extends javax.swing.JFrame {
         jPanel3.add(nameOfApp, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 0, 170, 30));
 
         panleBarraLogin.setBackground(new java.awt.Color(0, 0, 0));
+        panleBarraLogin.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
+            public void mouseDragged(java.awt.event.MouseEvent evt) {
+                panleBarraLoginMouseDragged(evt);
+            }
+        });
+        panleBarraLogin.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                panleBarraLoginMousePressed(evt);
+            }
+        });
         panleBarraLogin.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         l.setBackground(new java.awt.Color(0, 0, 0));
@@ -77,7 +98,9 @@ public class LoginLive extends javax.swing.JFrame {
         jPanel3.add(panleBarraLogin, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, 30));
 
         panelImage.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-        panelImage.add(image, new org.netbeans.lib.awtextra.AbsoluteConstraints(-100, 0, 320, 440));
+
+        image.setIcon(new javax.swing.ImageIcon(getClass().getResource("/UI/Resources/imageLogin.jpg"))); // NOI18N
+        panelImage.add(image, new org.netbeans.lib.awtextra.AbsoluteConstraints(-140, 0, 370, 440));
 
         jPanel3.add(panelImage, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 30, 220, 440));
 
@@ -105,6 +128,12 @@ public class LoginLive extends javax.swing.JFrame {
         btnOfRegistro.setForeground(new java.awt.Color(0, 0, 0));
         btnOfRegistro.setText("Registrarse");
         btnOfRegistro.setBorder(null);
+        btnOfRegistro.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnOfRegistro.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnOfRegistroActionPerformed(evt);
+            }
+        });
         jPanel3.add(btnOfRegistro, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 420, 110, 30));
 
         btnOfSiguiente.setBackground(new java.awt.Color(30, 160, 236));
@@ -112,6 +141,7 @@ public class LoginLive extends javax.swing.JFrame {
         btnOfSiguiente.setForeground(new java.awt.Color(0, 0, 0));
         btnOfSiguiente.setText("Siguiente");
         btnOfSiguiente.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        btnOfSiguiente.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jPanel3.add(btnOfSiguiente, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 390, 110, 30));
 
         txtPaswordLogin.setBackground(new java.awt.Color(255, 255, 255));
@@ -119,6 +149,11 @@ public class LoginLive extends javax.swing.JFrame {
         txtPaswordLogin.setForeground(new java.awt.Color(225, 225, 225));
         txtPaswordLogin.setText("**********");
         txtPaswordLogin.setBorder(null);
+        txtPaswordLogin.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                txtPaswordLoginMousePressed(evt);
+            }
+        });
         jPanel3.add(txtPaswordLogin, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 300, 350, 30));
 
         txtNombreLogin.setBackground(new java.awt.Color(255, 255, 255));
@@ -126,7 +161,12 @@ public class LoginLive extends javax.swing.JFrame {
         txtNombreLogin.setForeground(new java.awt.Color(225, 225, 225));
         txtNombreLogin.setText("Ingrese su nombre de usuario");
         txtNombreLogin.setBorder(null);
-        jPanel3.add(txtNombreLogin, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 182, 350, 50));
+        txtNombreLogin.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                txtNombreLoginMousePressed(evt);
+            }
+        });
+        jPanel3.add(txtNombreLogin, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 192, 350, 30));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -150,6 +190,53 @@ public class LoginLive extends javax.swing.JFrame {
     private void lActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_lActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_lActionPerformed
+
+    private void panleBarraLoginMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_panleBarraLoginMousePressed
+        // TODO add your handling code here:
+        xMouse = evt.getX();
+        yMouse = evt.getY();
+    }//GEN-LAST:event_panleBarraLoginMousePressed
+
+    private void panleBarraLoginMouseDragged(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_panleBarraLoginMouseDragged
+        // TODO add your handling code here:
+        int x =  evt.getXOnScreen();
+        int y = evt.getYOnScreen();
+        
+        this.setLocation(x - xMouse, y - yMouse);
+    }//GEN-LAST:event_panleBarraLoginMouseDragged
+
+    private void txtNombreLoginMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtNombreLoginMousePressed
+        // TODO add your handling code here:
+         if (txtNombreLogin.getText().equals("Ingrese su nombre de usuario")){
+        txtNombreLogin.setText("");
+        txtNombreLogin.setForeground(Color.black);
+        }
+        
+        if(String.valueOf(txtPaswordLogin.getPassword()).isEmpty()){
+        txtPaswordLogin.setText("**********");
+        txtPaswordLogin.setForeground(new Color(204,204,204));
+        }
+    }//GEN-LAST:event_txtNombreLoginMousePressed
+
+    private void txtPaswordLoginMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtPaswordLoginMousePressed
+        // TODO add your handling code here:
+        if(txtNombreLogin.getText().isEmpty()){
+        txtNombreLogin.setText("Ingrese su nombre de usuario");
+        txtNombreLogin.setForeground(new Color(204,204,204));
+        }
+        
+        if(String.valueOf(txtPaswordLogin.getPassword()).equals("**********")){
+        txtPaswordLogin.setText("");
+        txtPaswordLogin.setForeground(Color.black);
+        }
+    }//GEN-LAST:event_txtPaswordLoginMousePressed
+
+    private void btnOfRegistroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnOfRegistroActionPerformed
+        // TODO add your handling code here:
+    RegistroLiv r = new RegistroLiv();
+    r.setVisible(true);
+    this.setVisible(false);
+    }//GEN-LAST:event_btnOfRegistroActionPerformed
 
 
 

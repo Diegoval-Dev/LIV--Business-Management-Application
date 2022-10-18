@@ -8,12 +8,12 @@ package UI;
  *
  * @author Usuario
  */
-public class Registro extends javax.swing.JFrame {
+public class RegistroLiv extends javax.swing.JFrame {
 
     /**
      * Creates new form Registro
      */
-    public Registro() {
+    public RegistroLiv() {
         initComponents();
     }
 
