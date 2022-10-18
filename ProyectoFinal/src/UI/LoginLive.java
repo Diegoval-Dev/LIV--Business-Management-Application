@@ -245,7 +245,7 @@ public class LoginLive extends javax.swing.JFrame {
 
     private void btnOfSiguienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnOfSiguienteActionPerformed
         // TODO add your handling code here:
-        MenuPrincipalLive menu = new MenuPrincipalLive();
+        MenuPrincipalLiv menu = new MenuPrincipalLiv();
         menu.setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_btnOfSiguienteActionPerformed
