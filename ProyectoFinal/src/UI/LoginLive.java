@@ -29,7 +29,7 @@ public class LoginLive extends javax.swing.JFrame {
         jPanel3 = new javax.swing.JPanel();
         nameOfApp = new javax.swing.JLabel();
         panleBarraLogin = new javax.swing.JPanel();
-        jButton1 = new javax.swing.JButton();
+        l = new javax.swing.JButton();
         panelImage = new javax.swing.JPanel();
         image = new javax.swing.JLabel();
         contraLogin = new javax.swing.JLabel();
@@ -56,23 +56,23 @@ public class LoginLive extends javax.swing.JFrame {
         panleBarraLogin.setBackground(new java.awt.Color(0, 0, 0));
         panleBarraLogin.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jButton1.setBackground(new java.awt.Color(0, 0, 0));
-        jButton1.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        jButton1.setForeground(new java.awt.Color(255, 0, 51));
-        jButton1.setText("X");
-        jButton1.setBorder(null);
-        jButton1.setContentAreaFilled(false);
-        jButton1.addMouseListener(new java.awt.event.MouseAdapter() {
+        l.setBackground(new java.awt.Color(0, 0, 0));
+        l.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        l.setForeground(new java.awt.Color(255, 0, 51));
+        l.setText("X");
+        l.setBorder(null);
+        l.setContentAreaFilled(false);
+        l.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jButton1MouseClicked(evt);
+                lMouseClicked(evt);
             }
         });
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        l.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                lActionPerformed(evt);
             }
         });
-        panleBarraLogin.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 0, 50, 30));
+        panleBarraLogin.add(l, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 0, 50, 30));
 
         jPanel3.add(panleBarraLogin, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, 30));
 
@@ -142,14 +142,14 @@ public class LoginLive extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton1MouseClicked
+    private void lMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lMouseClicked
         // TODO add your handling code here:
         System.exit(0);
-    }//GEN-LAST:event_jButton1MouseClicked
+    }//GEN-LAST:event_lMouseClicked
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void lActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_lActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_lActionPerformed
 
 
 
@@ -158,8 +158,8 @@ public class LoginLive extends javax.swing.JFrame {
     private javax.swing.JButton btnOfSiguiente;
     private javax.swing.JLabel contraLogin;
     private javax.swing.JLabel image;
-    private javax.swing.JButton jButton1;
     private javax.swing.JPanel jPanel3;
+    private javax.swing.JButton l;
     private javax.swing.JLabel nameOfApp;
     private javax.swing.JLabel nameOfLogin;
     private javax.swing.JLabel nombreLogin;
