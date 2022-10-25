@@ -30,10 +30,10 @@ public class MenuPrincipalLiv extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         jButton1 = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
-        jButton2 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
-        jButton4 = new javax.swing.JButton();
-        jButton5 = new javax.swing.JButton();
+        btnFacturas = new javax.swing.JButton();
+        btnAccount = new javax.swing.JButton();
+        btnInventario = new javax.swing.JButton();
+        btnEmpleados = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(0, 0, 0));
@@ -94,45 +94,65 @@ public class MenuPrincipalLiv extends javax.swing.JFrame {
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
-        jButton2.setBackground(new java.awt.Color(117, 198, 17));
-        jButton2.setFont(new java.awt.Font("Roboto", 1, 18)); // NOI18N
-        jButton2.setForeground(new java.awt.Color(0, 0, 0));
-        jButton2.setText("Facturas");
-        jButton2.setBorder(null);
-        jButton2.setBorderPainted(false);
-        jButton2.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jButton2.setPreferredSize(new java.awt.Dimension(67, 22));
-        getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 30, 170, 490));
+        btnFacturas.setBackground(new java.awt.Color(117, 198, 17));
+        btnFacturas.setFont(new java.awt.Font("Roboto", 1, 18)); // NOI18N
+        btnFacturas.setForeground(new java.awt.Color(0, 0, 0));
+        btnFacturas.setText("Facturas");
+        btnFacturas.setBorder(null);
+        btnFacturas.setBorderPainted(false);
+        btnFacturas.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnFacturas.setPreferredSize(new java.awt.Dimension(67, 22));
+        btnFacturas.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnFacturasActionPerformed(evt);
+            }
+        });
+        getContentPane().add(btnFacturas, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 30, 170, 490));
 
-        jButton3.setBackground(new java.awt.Color(255, 51, 51));
-        jButton3.setFont(new java.awt.Font("Roboto", 1, 18)); // NOI18N
-        jButton3.setForeground(new java.awt.Color(0, 0, 0));
-        jButton3.setText("Account");
-        jButton3.setBorder(null);
-        jButton3.setBorderPainted(false);
-        jButton3.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jButton3.setPreferredSize(new java.awt.Dimension(67, 22));
-        getContentPane().add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 30, 170, 490));
+        btnAccount.setBackground(new java.awt.Color(255, 51, 51));
+        btnAccount.setFont(new java.awt.Font("Roboto", 1, 18)); // NOI18N
+        btnAccount.setForeground(new java.awt.Color(0, 0, 0));
+        btnAccount.setText("Account");
+        btnAccount.setBorder(null);
+        btnAccount.setBorderPainted(false);
+        btnAccount.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnAccount.setPreferredSize(new java.awt.Dimension(67, 22));
+        btnAccount.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnAccountActionPerformed(evt);
+            }
+        });
+        getContentPane().add(btnAccount, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 30, 170, 490));
 
-        jButton4.setBackground(new java.awt.Color(239, 156, 2));
-        jButton4.setFont(new java.awt.Font("Roboto", 1, 18)); // NOI18N
-        jButton4.setForeground(new java.awt.Color(0, 0, 0));
-        jButton4.setText("Inventario");
-        jButton4.setBorder(null);
-        jButton4.setBorderPainted(false);
-        jButton4.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jButton4.setPreferredSize(new java.awt.Dimension(67, 22));
-        getContentPane().add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 30, 170, 490));
+        btnInventario.setBackground(new java.awt.Color(239, 156, 2));
+        btnInventario.setFont(new java.awt.Font("Roboto", 1, 18)); // NOI18N
+        btnInventario.setForeground(new java.awt.Color(0, 0, 0));
+        btnInventario.setText("Inventario");
+        btnInventario.setBorder(null);
+        btnInventario.setBorderPainted(false);
+        btnInventario.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnInventario.setPreferredSize(new java.awt.Dimension(67, 22));
+        btnInventario.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnInventarioActionPerformed(evt);
+            }
+        });
+        getContentPane().add(btnInventario, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 30, 170, 490));
 
-        jButton5.setBackground(new java.awt.Color(30, 160, 236));
-        jButton5.setFont(new java.awt.Font("Roboto", 1, 18)); // NOI18N
-        jButton5.setForeground(new java.awt.Color(0, 0, 0));
-        jButton5.setText("Empleados");
-        jButton5.setBorder(null);
-        jButton5.setBorderPainted(false);
-        jButton5.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jButton5.setPreferredSize(new java.awt.Dimension(67, 22));
-        getContentPane().add(jButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 30, 170, 490));
+        btnEmpleados.setBackground(new java.awt.Color(30, 160, 236));
+        btnEmpleados.setFont(new java.awt.Font("Roboto", 1, 18)); // NOI18N
+        btnEmpleados.setForeground(new java.awt.Color(0, 0, 0));
+        btnEmpleados.setText("Empleados");
+        btnEmpleados.setBorder(null);
+        btnEmpleados.setBorderPainted(false);
+        btnEmpleados.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnEmpleados.setPreferredSize(new java.awt.Dimension(67, 22));
+        btnEmpleados.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnEmpleadosActionPerformed(evt);
+            }
+        });
+        getContentPane().add(btnEmpleados, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 30, 170, 490));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -156,14 +176,43 @@ public class MenuPrincipalLiv extends javax.swing.JFrame {
         System.exit(0);
     }//GEN-LAST:event_jButton1MouseClicked
 
+    private void btnInventarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnInventarioActionPerformed
+    // TODO add your handling code here:
+    InventarioMenu inventario = new InventarioMenu();
+    inventario.setVisible(true);
+    this.setVisible(false);
+    }//GEN-LAST:event_btnInventarioActionPerformed
+
+    private void btnEmpleadosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEmpleadosActionPerformed
+    // TODO add your handling code here:
+    EmpleadosMenu empleados = new EmpleadosMenu();
+    empleados.setVisible(true);
+    this.setVisible(false);
+        
+    }//GEN-LAST:event_btnEmpleadosActionPerformed
+
+    private void btnFacturasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnFacturasActionPerformed
+    // TODO add your handling code here:
+    FacturasMenu facturas = new FacturasMenu();
+    facturas.setVisible(true);
+    this.setVisible(false);
+    }//GEN-LAST:event_btnFacturasActionPerformed
+
+    private void btnAccountActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAccountActionPerformed
+    // TODO add your handling code here:
+    AccountMenu account = new AccountMenu();
+    account.setVisible(true);
+    this.setVisible(false);
+    }//GEN-LAST:event_btnAccountActionPerformed
+
     
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnAccount;
+    private javax.swing.JButton btnEmpleados;
+    private javax.swing.JButton btnFacturas;
+    private javax.swing.JButton btnInventario;
     private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton4;
-    private javax.swing.JButton jButton5;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
     // End of variables declaration//GEN-END:variables
