@@ -82,7 +82,10 @@ public class LoginLiv extends javax.swing.JFrame {
         l.setForeground(new java.awt.Color(255, 0, 51));
         l.setText("X");
         l.setBorder(null);
+        l.setBorderPainted(false);
         l.setContentAreaFilled(false);
+        l.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        l.setFocusPainted(false);
         l.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 lMouseClicked(evt);

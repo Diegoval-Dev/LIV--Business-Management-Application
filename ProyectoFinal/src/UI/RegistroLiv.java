@@ -9,6 +9,8 @@ package UI;
  * @author Usuario
  */
 public class RegistroLiv extends javax.swing.JFrame {
+    
+    int xMouse, yMouse;
 
     /**
      * Creates new form Registro
@@ -26,145 +28,102 @@ public class RegistroLiv extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jPanel1 = new javax.swing.JPanel();
-        nombre = new javax.swing.JLabel();
-        contra = new javax.swing.JLabel();
-        edad = new javax.swing.JLabel();
-        numero = new javax.swing.JLabel();
-        puesto = new javax.swing.JLabel();
-        PIN = new javax.swing.JLabel();
-        btnRegistrar = new javax.swing.JButton();
-        txtNombreRegistro = new javax.swing.JTextField();
-        txtContraRegistro = new javax.swing.JTextField();
-        txtNumeroRegistro = new javax.swing.JTextField();
-        txtEdadRegistro = new javax.swing.JTextField();
-        txtPinRegistro = new javax.swing.JTextField();
-        txtPuestoRegistro = new javax.swing.JTextField();
-        btnRegresar = new javax.swing.JButton();
+        jPanel2 = new javax.swing.JPanel();
+        nameOfPage = new javax.swing.JLabel();
+        btnCloseRegis = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setBackground(new java.awt.Color(255, 255, 255));
+        setLocationByPlatform(true);
+        setUndecorated(true);
+        setResizable(false);
 
-        nombre.setText("Nombre");
-
-        contra.setText("Contraseña");
-
-        edad.setText("Edad");
-
-        numero.setText("Número");
-
-        puesto.setText("Puesto");
-
-        PIN.setText("PIN de seguridad");
-
-        btnRegistrar.setText("Registrar");
-
-        btnRegresar.setText("Regresar");
-        btnRegresar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnRegresarActionPerformed(evt);
+        jPanel2.setBackground(new java.awt.Color(0, 0, 0));
+        jPanel2.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
+            public void mouseDragged(java.awt.event.MouseEvent evt) {
+                jPanel2MouseDragged(evt);
+            }
+        });
+        jPanel2.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                jPanel2MousePressed(evt);
             }
         });
 
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(43, 43, 43)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(nombre)
-                    .addComponent(PIN)
-                    .addComponent(puesto)
-                    .addComponent(numero)
-                    .addComponent(edad)
-                    .addComponent(contra))
-                .addGap(46, 46, 46)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(txtContraRegistro, javax.swing.GroupLayout.PREFERRED_SIZE, 161, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(txtEdadRegistro, javax.swing.GroupLayout.PREFERRED_SIZE, 161, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(txtNumeroRegistro, javax.swing.GroupLayout.PREFERRED_SIZE, 161, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(txtPuestoRegistro, javax.swing.GroupLayout.PREFERRED_SIZE, 161, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(txtPinRegistro, javax.swing.GroupLayout.PREFERRED_SIZE, 161, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(txtNombreRegistro, javax.swing.GroupLayout.PREFERRED_SIZE, 161, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(23, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(btnRegresar)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(btnRegistrar)
-                .addGap(23, 23, 23))
+        nameOfPage.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        nameOfPage.setForeground(new java.awt.Color(255, 255, 255));
+        nameOfPage.setText("Liv");
+
+        btnCloseRegis.setBackground(new java.awt.Color(0, 0, 0));
+        btnCloseRegis.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        btnCloseRegis.setForeground(new java.awt.Color(255, 0, 51));
+        btnCloseRegis.setText("X");
+        btnCloseRegis.setBorderPainted(false);
+        btnCloseRegis.setContentAreaFilled(false);
+        btnCloseRegis.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnCloseRegis.setFocusPainted(false);
+        btnCloseRegis.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnCloseRegisMouseClicked(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
+        jPanel2.setLayout(jPanel2Layout);
+        jPanel2Layout.setHorizontalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addGap(17, 17, 17)
+                .addComponent(nameOfPage, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 365, Short.MAX_VALUE)
+                .addComponent(btnCloseRegis, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(33, 33, 33)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(nombre)
-                    .addComponent(txtNombreRegistro, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 32, Short.MAX_VALUE)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(contra)
-                    .addComponent(txtContraRegistro, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(28, 28, 28)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(edad)
-                    .addComponent(txtEdadRegistro, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(30, 30, 30)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(numero)
-                    .addComponent(txtNumeroRegistro, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(31, 31, 31)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(puesto)
-                    .addComponent(txtPuestoRegistro, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(31, 31, 31)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(PIN)
-                    .addComponent(txtPinRegistro, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(32, 32, 32)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnRegistrar)
-                    .addComponent(btnRegresar))
-                .addGap(17, 17, 17))
+        jPanel2Layout.setVerticalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(nameOfPage, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(btnCloseRegis, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 412, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void btnRegresarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegresarActionPerformed
-        // TODO add your handling code here:
-        MenuPrincipalLiv login = new MenuPrincipalLiv();
-        login.setVisible(true);
-        this.setVisible(false);
-    }//GEN-LAST:event_btnRegresarActionPerformed
+    private void jPanel2MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel2MousePressed
+    // TODO add your handling code here:
+    xMouse = evt.getX();
+    yMouse = evt.getY();
+    }//GEN-LAST:event_jPanel2MousePressed
+
+    private void jPanel2MouseDragged(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel2MouseDragged
+    // TODO add your handling code here:
+    int x =  evt.getXOnScreen();
+    int y = evt.getYOnScreen();
+        
+    this.setLocation(x - xMouse, y - yMouse);
+        
+    }//GEN-LAST:event_jPanel2MouseDragged
+
+    private void btnCloseRegisMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnCloseRegisMouseClicked
+    // TODO add your handling code here:
+    System.exit(0);
+    }//GEN-LAST:event_btnCloseRegisMouseClicked
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel PIN;
-    private javax.swing.JButton btnRegistrar;
-    private javax.swing.JButton btnRegresar;
-    private javax.swing.JLabel contra;
-    private javax.swing.JLabel edad;
-    private javax.swing.JPanel jPanel1;
-    private javax.swing.JLabel nombre;
-    private javax.swing.JLabel numero;
-    private javax.swing.JLabel puesto;
-    private javax.swing.JTextField txtContraRegistro;
-    private javax.swing.JTextField txtEdadRegistro;
-    private javax.swing.JTextField txtNombreRegistro;
-    private javax.swing.JTextField txtNumeroRegistro;
-    private javax.swing.JTextField txtPinRegistro;
-    private javax.swing.JTextField txtPuestoRegistro;
+    private javax.swing.JButton btnCloseRegis;
+    private javax.swing.JPanel jPanel2;
+    private javax.swing.JLabel nameOfPage;
     // End of variables declaration//GEN-END:variables
 }
