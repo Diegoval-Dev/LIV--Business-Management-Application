@@ -28,31 +28,44 @@ public class RegistroLiv extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jPanel2 = new javax.swing.JPanel();
+        panelOfBarra = new javax.swing.JPanel();
         nameOfPage = new javax.swing.JLabel();
         btnCloseRegis = new javax.swing.JButton();
+        jLabel7 = new javax.swing.JLabel();
+        jPanel1 = new javax.swing.JPanel();
+        nombre = new javax.swing.JLabel();
+        Password = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
+        jButton1 = new javax.swing.JButton();
+        jButton2 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(255, 255, 255));
         setLocationByPlatform(true);
         setUndecorated(true);
         setResizable(false);
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jPanel2.setBackground(new java.awt.Color(0, 0, 0));
-        jPanel2.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
+        panelOfBarra.setBackground(new java.awt.Color(0, 0, 0));
+        panelOfBarra.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
             public void mouseDragged(java.awt.event.MouseEvent evt) {
-                jPanel2MouseDragged(evt);
+                panelOfBarraMouseDragged(evt);
             }
         });
-        jPanel2.addMouseListener(new java.awt.event.MouseAdapter() {
+        panelOfBarra.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mousePressed(java.awt.event.MouseEvent evt) {
-                jPanel2MousePressed(evt);
+                panelOfBarraMousePressed(evt);
             }
         });
+        panelOfBarra.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        nameOfPage.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        nameOfPage.setFont(new java.awt.Font("Rockwell", 1, 18)); // NOI18N
         nameOfPage.setForeground(new java.awt.Color(255, 255, 255));
         nameOfPage.setText("Liv");
+        panelOfBarra.add(nameOfPage, new org.netbeans.lib.awtextra.AbsoluteConstraints(17, 0, 96, 31));
 
         btnCloseRegis.setBackground(new java.awt.Color(0, 0, 0));
         btnCloseRegis.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
@@ -67,53 +80,78 @@ public class RegistroLiv extends javax.swing.JFrame {
                 btnCloseRegisMouseClicked(evt);
             }
         });
+        panelOfBarra.add(btnCloseRegis, new org.netbeans.lib.awtextra.AbsoluteConstraints(468, 0, 50, -1));
 
-        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
-        jPanel2.setLayout(jPanel2Layout);
-        jPanel2Layout.setHorizontalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGap(17, 17, 17)
-                .addComponent(nameOfPage, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 365, Short.MAX_VALUE)
-                .addComponent(btnCloseRegis, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
-        );
-        jPanel2Layout.setVerticalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(nameOfPage, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(btnCloseRegis, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-        );
+        getContentPane().add(panelOfBarra, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 412, Short.MAX_VALUE))
-        );
+        jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/UI/Resources/imageLogin.jpg"))); // NOI18N
+        getContentPane().add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(-310, 30, 480, 420));
+
+        jPanel1.setBackground(new java.awt.Color(236, 235, 235));
+        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        nombre.setFont(new java.awt.Font("Roboto", 0, 12)); // NOI18N
+        nombre.setForeground(new java.awt.Color(0, 0, 0));
+        nombre.setText("Nombre");
+        jPanel1.add(nombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 30, -1, -1));
+
+        Password.setBackground(new java.awt.Color(0, 0, 0));
+        Password.setFont(new java.awt.Font("Roboto", 0, 12)); // NOI18N
+        Password.setForeground(new java.awt.Color(0, 0, 0));
+        Password.setText("Password");
+        jPanel1.add(Password, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 60, -1, -1));
+
+        jLabel1.setFont(new java.awt.Font("Roboto", 0, 12)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel1.setText("Edad");
+        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 100, -1, -1));
+
+        jLabel2.setFont(new java.awt.Font("Roboto", 0, 12)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel2.setText("Phone Number");
+        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 170, -1, -1));
+
+        jLabel3.setFont(new java.awt.Font("Roboto", 0, 12)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel3.setText("Puesto Laboral");
+        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 250, -1, -1));
+
+        jLabel4.setFont(new java.awt.Font("Roboto", 0, 12)); // NOI18N
+        jLabel4.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel4.setText("PIN de Seguridad");
+        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 310, -1, -1));
+
+        jButton1.setBackground(new java.awt.Color(0, 204, 0));
+        jButton1.setForeground(new java.awt.Color(0, 0, 0));
+        jButton1.setText("Registro ⇥");
+        jButton1.setBorderPainted(false);
+        jPanel1.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 375, -1, -1));
+
+        jButton2.setBackground(new java.awt.Color(255, 0, 0));
+        jButton2.setForeground(new java.awt.Color(0, 0, 0));
+        jButton2.setText("⇤ Regresar");
+        jButton2.setBorderPainted(false);
+        jPanel1.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 375, 90, -1));
+
+        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 30, 340, 410));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jPanel2MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel2MousePressed
+    private void panelOfBarraMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_panelOfBarraMousePressed
     // TODO add your handling code here:
     xMouse = evt.getX();
     yMouse = evt.getY();
-    }//GEN-LAST:event_jPanel2MousePressed
+    }//GEN-LAST:event_panelOfBarraMousePressed
 
-    private void jPanel2MouseDragged(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel2MouseDragged
+    private void panelOfBarraMouseDragged(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_panelOfBarraMouseDragged
     // TODO add your handling code here:
     int x =  evt.getXOnScreen();
     int y = evt.getYOnScreen();
         
     this.setLocation(x - xMouse, y - yMouse);
         
-    }//GEN-LAST:event_jPanel2MouseDragged
+    }//GEN-LAST:event_panelOfBarraMouseDragged
 
     private void btnCloseRegisMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnCloseRegisMouseClicked
     // TODO add your handling code here:
@@ -122,8 +160,18 @@ public class RegistroLiv extends javax.swing.JFrame {
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel Password;
     private javax.swing.JButton btnCloseRegis;
-    private javax.swing.JPanel jPanel2;
+    private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton2;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel7;
+    private javax.swing.JPanel jPanel1;
     private javax.swing.JLabel nameOfPage;
+    private javax.swing.JLabel nombre;
+    private javax.swing.JPanel panelOfBarra;
     // End of variables declaration//GEN-END:variables
 }

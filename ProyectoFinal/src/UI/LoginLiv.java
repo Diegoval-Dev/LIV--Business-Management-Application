@@ -59,7 +59,7 @@ public class LoginLiv extends javax.swing.JFrame {
         jPanel3.setPreferredSize(new java.awt.Dimension(675, 466));
         jPanel3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        nameOfApp.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        nameOfApp.setFont(new java.awt.Font("Rockwell", 1, 18)); // NOI18N
         nameOfApp.setForeground(new java.awt.Color(255, 255, 255));
         nameOfApp.setText("Liv");
         jPanel3.add(nameOfApp, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 0, 170, 30));
