@@ -72,7 +72,7 @@ public class InventarioMenu extends javax.swing.JFrame {
 
     private void btnExitInventarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnExitInventarioActionPerformed
         // TODO add your handling code here:
-        LoginLive menu = new LoginLive();
+        LoginLiv menu = new LoginLiv();
         menu.setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_btnExitInventarioActionPerformed

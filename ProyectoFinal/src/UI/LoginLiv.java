@@ -11,14 +11,14 @@ import java.awt.Color;
  *
  * @author ruth
  */
-public class LoginLive extends javax.swing.JFrame {
+public class LoginLiv extends javax.swing.JFrame {
     
     int xMouse, yMouse;
 
     /**
      * Creates new form MenuPrincipal
      */
-    public LoginLive() {
+    public LoginLiv() {
         initComponents();
     }
     

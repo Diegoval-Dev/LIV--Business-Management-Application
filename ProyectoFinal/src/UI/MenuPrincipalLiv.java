@@ -10,6 +10,7 @@ package UI;
  */
 public class MenuPrincipalLiv extends javax.swing.JFrame {
     int xMouse, yMouse;
+    
 
     /**
      * Creates new form MenuPrincipalLive
@@ -176,13 +177,6 @@ public class MenuPrincipalLiv extends javax.swing.JFrame {
         System.exit(0);
     }//GEN-LAST:event_jButton1MouseClicked
 
-    private void btnInventarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnInventarioActionPerformed
-    // TODO add your handling code here:
-    InventarioMenu inventario = new InventarioMenu();
-    inventario.setVisible(true);
-    this.setVisible(false);
-    }//GEN-LAST:event_btnInventarioActionPerformed
-
     private void btnEmpleadosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEmpleadosActionPerformed
     // TODO add your handling code here:
     EmpleadosMenu empleados = new EmpleadosMenu();
@@ -191,13 +185,6 @@ public class MenuPrincipalLiv extends javax.swing.JFrame {
         
     }//GEN-LAST:event_btnEmpleadosActionPerformed
 
-    private void btnFacturasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnFacturasActionPerformed
-    // TODO add your handling code here:
-    FacturasMenu facturas = new FacturasMenu();
-    facturas.setVisible(true);
-    this.setVisible(false);
-    }//GEN-LAST:event_btnFacturasActionPerformed
-
     private void btnAccountActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAccountActionPerformed
     // TODO add your handling code here:
     AccountMenu account = new AccountMenu();
@@ -205,6 +192,21 @@ public class MenuPrincipalLiv extends javax.swing.JFrame {
     this.setVisible(false);
     }//GEN-LAST:event_btnAccountActionPerformed
 
+    private void btnFacturasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnFacturasActionPerformed
+        // TODO add your handling code here:
+        FacturasMenu facturas = new FacturasMenu();
+        facturas.setVisible(true);
+        this.setVisible(false);
+    }//GEN-LAST:event_btnFacturasActionPerformed
+
+    private void btnInventarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnInventarioActionPerformed
+        // TODO add your handling code here:
+        InventarioMenu inventario = new InventarioMenu();
+        inventario.setVisible(true);
+        this.setVisible(false);
+    }//GEN-LAST:event_btnInventarioActionPerformed
+
+    
     
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
