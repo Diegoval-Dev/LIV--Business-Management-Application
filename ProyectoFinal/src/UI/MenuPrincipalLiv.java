@@ -28,8 +28,6 @@ public class MenuPrincipalLiv extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jPanel2 = new javax.swing.JPanel();
-        jLabel2 = new javax.swing.JLabel();
         panelBarra = new javax.swing.JPanel();
         btnClose = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
@@ -44,23 +42,6 @@ public class MenuPrincipalLiv extends javax.swing.JFrame {
         setUndecorated(true);
         setResizable(false);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        jPanel2.setBackground(new java.awt.Color(239, 156, 2));
-
-        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/UI/Resources/inventario.png"))); // NOI18N
-
-        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
-        jPanel2.setLayout(jPanel2Layout);
-        jPanel2Layout.setHorizontalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, 100, Short.MAX_VALUE)
-        );
-        jPanel2Layout.setVerticalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, 100, Short.MAX_VALUE)
-        );
-
-        getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 150, -1, -1));
 
         panelBarra.setBackground(new java.awt.Color(255, 255, 255));
         panelBarra.setPreferredSize(new java.awt.Dimension(680, 30));
@@ -232,8 +213,6 @@ public class MenuPrincipalLiv extends javax.swing.JFrame {
     private javax.swing.JButton btnFacturas;
     private javax.swing.JButton btnInventario;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel panelBarra;
     // End of variables declaration//GEN-END:variables
 }
