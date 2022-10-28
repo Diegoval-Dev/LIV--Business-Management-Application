@@ -9,6 +9,7 @@ package UI;
  * @author Usuario
  */
 public class FacturasMenu extends javax.swing.JFrame {
+    int xMouse, yMouse;
 
     /**
      * Creates new form FacturasMenu
@@ -32,9 +33,21 @@ public class FacturasMenu extends javax.swing.JFrame {
         jPanel2 = new javax.swing.JPanel();
         info = new javax.swing.JLabel();
         jSeparator1 = new javax.swing.JSeparator();
-        jTextField1 = new javax.swing.JTextField();
-        info1 = new javax.swing.JLabel();
+        txtID = new javax.swing.JTextField();
+        ID = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
+        productos = new javax.swing.JLabel();
+        txtProducto = new javax.swing.JTextField();
+        txtProducto1 = new javax.swing.JTextField();
+        jSeparator2 = new javax.swing.JSeparator();
+        productos1 = new javax.swing.JLabel();
+        txtID1 = new javax.swing.JTextField();
+        jSeparator3 = new javax.swing.JSeparator();
+        productos2 = new javax.swing.JLabel();
+        txtID2 = new javax.swing.JTextField();
+        productos3 = new javax.swing.JLabel();
+        txtID3 = new javax.swing.JTextField();
+        jLabel2 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setLocationByPlatform(true);
@@ -43,6 +56,16 @@ public class FacturasMenu extends javax.swing.JFrame {
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         panelBarraFac.setBackground(new java.awt.Color(0, 0, 0));
+        panelBarraFac.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
+            public void mouseDragged(java.awt.event.MouseEvent evt) {
+                panelBarraFacMouseDragged(evt);
+            }
+        });
+        panelBarraFac.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                panelBarraFacMousePressed(evt);
+            }
+        });
         panelBarraFac.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         btnExitFacturas.setBackground(new java.awt.Color(0, 0, 0));
@@ -76,24 +99,97 @@ public class FacturasMenu extends javax.swing.JFrame {
         jSeparator1.setForeground(new java.awt.Color(60, 63, 65));
         jPanel2.add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(13, 50, 520, 10));
 
-        jTextField1.setBackground(new java.awt.Color(236, 236, 236));
-        jTextField1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        jTextField1.setCaretColor(new java.awt.Color(0, 0, 0));
-        jTextField1.setDisabledTextColor(new java.awt.Color(0, 0, 0));
-        jTextField1.setSelectedTextColor(new java.awt.Color(204, 204, 204));
-        jTextField1.setSelectionColor(new java.awt.Color(0, 0, 0));
-        jPanel2.add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 100, 200, 30));
+        txtID.setBackground(new java.awt.Color(236, 236, 236));
+        txtID.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        txtID.setCaretColor(new java.awt.Color(0, 0, 0));
+        txtID.setDisabledTextColor(new java.awt.Color(0, 0, 0));
+        txtID.setSelectedTextColor(new java.awt.Color(204, 204, 204));
+        txtID.setSelectionColor(new java.awt.Color(0, 0, 0));
+        jPanel2.add(txtID, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 100, 210, 30));
 
-        info1.setBackground(new java.awt.Color(255, 255, 255));
-        info1.setFont(new java.awt.Font("Baskerville Old Face", 0, 12)); // NOI18N
-        info1.setForeground(new java.awt.Color(0, 0, 0));
-        info1.setText("Número de identificación de la factura");
-        jPanel2.add(info1, new org.netbeans.lib.awtextra.AbsoluteConstraints(34, 70, 190, 30));
+        ID.setBackground(new java.awt.Color(255, 255, 255));
+        ID.setFont(new java.awt.Font("Baskerville Old Face", 0, 13)); // NOI18N
+        ID.setForeground(new java.awt.Color(0, 0, 0));
+        ID.setText("Número de identificación de la factura");
+        jPanel2.add(ID, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 70, 210, 30));
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/UI/Resources/imageLogin.jpg"))); // NOI18N
-        jPanel2.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 496, 550, 90));
+        jPanel2.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 540, 550, 90));
 
-        getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 30, 550, 580));
+        productos.setBackground(new java.awt.Color(255, 255, 255));
+        productos.setFont(new java.awt.Font("Baskerville Old Face", 0, 14)); // NOI18N
+        productos.setForeground(new java.awt.Color(0, 0, 0));
+        productos.setText("Producto ");
+        jPanel2.add(productos, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 180, 210, 30));
+
+        txtProducto.setBackground(new java.awt.Color(236, 236, 236));
+        txtProducto.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        txtProducto.setCaretColor(new java.awt.Color(0, 0, 0));
+        txtProducto.setDisabledTextColor(new java.awt.Color(0, 0, 0));
+        txtProducto.setSelectedTextColor(new java.awt.Color(204, 204, 204));
+        txtProducto.setSelectionColor(new java.awt.Color(0, 0, 0));
+        jPanel2.add(txtProducto, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 220, 320, 30));
+
+        txtProducto1.setBackground(new java.awt.Color(236, 236, 236));
+        txtProducto1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        txtProducto1.setCaretColor(new java.awt.Color(0, 0, 0));
+        txtProducto1.setDisabledTextColor(new java.awt.Color(0, 0, 0));
+        txtProducto1.setSelectedTextColor(new java.awt.Color(204, 204, 204));
+        txtProducto1.setSelectionColor(new java.awt.Color(0, 0, 0));
+        jPanel2.add(txtProducto1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 260, 320, 30));
+
+        jSeparator2.setForeground(new java.awt.Color(60, 63, 65));
+        jPanel2.add(jSeparator2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 160, 520, 60));
+
+        productos1.setBackground(new java.awt.Color(255, 255, 255));
+        productos1.setFont(new java.awt.Font("Baskerville Old Face", 0, 12)); // NOI18N
+        productos1.setForeground(new java.awt.Color(0, 0, 0));
+        productos1.setText("NIT");
+        jPanel2.add(productos1, new org.netbeans.lib.awtextra.AbsoluteConstraints(304, 70, 110, 30));
+
+        txtID1.setBackground(new java.awt.Color(236, 236, 236));
+        txtID1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        txtID1.setCaretColor(new java.awt.Color(0, 0, 0));
+        txtID1.setDisabledTextColor(new java.awt.Color(0, 0, 0));
+        txtID1.setSelectedTextColor(new java.awt.Color(204, 204, 204));
+        txtID1.setSelectionColor(new java.awt.Color(0, 0, 0));
+        jPanel2.add(txtID1, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 100, 200, 30));
+
+        jSeparator3.setForeground(new java.awt.Color(60, 63, 65));
+        jPanel2.add(jSeparator3, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 330, 300, 10));
+
+        productos2.setBackground(new java.awt.Color(255, 255, 255));
+        productos2.setFont(new java.awt.Font("Baskerville Old Face", 0, 14)); // NOI18N
+        productos2.setForeground(new java.awt.Color(0, 0, 0));
+        productos2.setText("Fecha de factura");
+        jPanel2.add(productos2, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 340, 90, 30));
+
+        txtID2.setBackground(new java.awt.Color(236, 236, 236));
+        txtID2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        txtID2.setCaretColor(new java.awt.Color(0, 0, 0));
+        txtID2.setDisabledTextColor(new java.awt.Color(0, 0, 0));
+        txtID2.setSelectedTextColor(new java.awt.Color(204, 204, 204));
+        txtID2.setSelectionColor(new java.awt.Color(0, 0, 0));
+        jPanel2.add(txtID2, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 370, 200, 30));
+
+        productos3.setBackground(new java.awt.Color(255, 255, 255));
+        productos3.setFont(new java.awt.Font("Baskerville Old Face", 0, 15)); // NOI18N
+        productos3.setForeground(new java.awt.Color(0, 0, 0));
+        productos3.setText("Total");
+        jPanel2.add(productos3, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 410, 100, 30));
+
+        txtID3.setBackground(new java.awt.Color(236, 236, 236));
+        txtID3.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        txtID3.setCaretColor(new java.awt.Color(0, 0, 0));
+        txtID3.setDisabledTextColor(new java.awt.Color(0, 0, 0));
+        txtID3.setSelectedTextColor(new java.awt.Color(204, 204, 204));
+        txtID3.setSelectionColor(new java.awt.Color(0, 0, 0));
+        jPanel2.add(txtID3, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 440, 200, 30));
+
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/UI/Resources/LivLogo2.png"))); // NOI18N
+        jPanel2.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(-10, 410, 110, 120));
+
+        getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 30, 550, 600));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -105,17 +201,43 @@ public class FacturasMenu extends javax.swing.JFrame {
         this.setVisible(false);
     }//GEN-LAST:event_btnExitFacturasActionPerformed
 
+    private void panelBarraFacMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_panelBarraFacMousePressed
+        // TODO add your handling code here:
+        xMouse = evt.getX();
+        yMouse = evt.getY();
+    }//GEN-LAST:event_panelBarraFacMousePressed
+
+    private void panelBarraFacMouseDragged(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_panelBarraFacMouseDragged
+        // TODO add your handling code here:
+        int x =  evt.getXOnScreen();
+        int y = evt.getYOnScreen();
+        
+        this.setLocation(x - xMouse, y - yMouse);
+    }//GEN-LAST:event_panelBarraFacMouseDragged
+
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel ID;
     private javax.swing.JLabel NameOfApp;
     private javax.swing.JButton btnExitFacturas;
     private javax.swing.JLabel info;
-    private javax.swing.JLabel info1;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JSeparator jSeparator1;
-    private javax.swing.JTextField jTextField1;
+    private javax.swing.JSeparator jSeparator2;
+    private javax.swing.JSeparator jSeparator3;
     private javax.swing.JPanel panelBarraFac;
+    private javax.swing.JLabel productos;
+    private javax.swing.JLabel productos1;
+    private javax.swing.JLabel productos2;
+    private javax.swing.JLabel productos3;
+    private javax.swing.JTextField txtID;
+    private javax.swing.JTextField txtID1;
+    private javax.swing.JTextField txtID2;
+    private javax.swing.JTextField txtID3;
+    private javax.swing.JTextField txtProducto;
+    private javax.swing.JTextField txtProducto1;
     // End of variables declaration//GEN-END:variables
 }
