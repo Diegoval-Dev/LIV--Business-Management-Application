@@ -26,46 +26,184 @@ public class InventarioMenu extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jPanel1 = new javax.swing.JPanel();
+        panelBarra = new javax.swing.JPanel();
         btnExitInventario = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
+        jPanel2 = new javax.swing.JPanel();
+        jLabel2 = new javax.swing.JLabel();
+        jSeparator1 = new javax.swing.JSeparator();
+        jLabel3 = new javax.swing.JLabel();
+        txtNombre = new javax.swing.JTextField();
+        jLabel4 = new javax.swing.JLabel();
+        txtNombre1 = new javax.swing.JTextField();
+        jLabel5 = new javax.swing.JLabel();
+        txtNombre2 = new javax.swing.JTextField();
+        jLabel6 = new javax.swing.JLabel();
+        txtNombre3 = new javax.swing.JTextField();
+        jLabel7 = new javax.swing.JLabel();
+        txtNombre4 = new javax.swing.JTextField();
+        jLabel8 = new javax.swing.JLabel();
+        txtNombre5 = new javax.swing.JTextField();
+        jLabel10 = new javax.swing.JLabel();
+        txtNombre7 = new javax.swing.JTextField();
+        btnGuardar = new javax.swing.JButton();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        jTable1 = new javax.swing.JTable();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setLocationByPlatform(true);
+        setUndecorated(true);
+        setResizable(false);
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        btnExitInventario.setBackground(new java.awt.Color(255, 0, 0));
-        btnExitInventario.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        btnExitInventario.setForeground(new java.awt.Color(0, 0, 0));
+        panelBarra.setBackground(new java.awt.Color(0, 0, 0));
+        panelBarra.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        btnExitInventario.setBackground(new java.awt.Color(0, 0, 0));
+        btnExitInventario.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        btnExitInventario.setForeground(new java.awt.Color(255, 0, 0));
         btnExitInventario.setText("X");
+        btnExitInventario.setBorderPainted(false);
+        btnExitInventario.setContentAreaFilled(false);
         btnExitInventario.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnExitInventarioActionPerformed(evt);
             }
         });
+        panelBarra.add(btnExitInventario, new org.netbeans.lib.awtextra.AbsoluteConstraints(990, 0, 50, -1));
 
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addGap(0, 378, Short.MAX_VALUE)
-                .addComponent(btnExitInventario))
-        );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(btnExitInventario)
-        );
+        jLabel1.setFont(new java.awt.Font("Rockwell", 1, 18)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel1.setText("Liv");
+        panelBarra.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(21, 0, 111, 31));
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 278, Short.MAX_VALUE))
-        );
+        getContentPane().add(panelBarra, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1050, -1));
+
+        jPanel2.setBackground(new java.awt.Color(236, 236, 236));
+        jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel2.setFont(new java.awt.Font("Baskerville Old Face", 0, 18)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel2.setText("Ingrese la información correspondiente");
+        jPanel2.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, -1, -1));
+        jPanel2.add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 30, 1030, 10));
+
+        jLabel3.setFont(new java.awt.Font("Baskerville Old Face", 0, 14)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel3.setText("Nombre");
+        jPanel2.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 50, -1, -1));
+
+        txtNombre.setBackground(new java.awt.Color(236, 236, 236));
+        txtNombre.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        txtNombre.setCaretColor(new java.awt.Color(0, 0, 0));
+        txtNombre.setDisabledTextColor(new java.awt.Color(0, 0, 0));
+        txtNombre.setSelectedTextColor(new java.awt.Color(204, 204, 204));
+        txtNombre.setSelectionColor(new java.awt.Color(0, 0, 0));
+        jPanel2.add(txtNombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 70, 240, 30));
+
+        jLabel4.setFont(new java.awt.Font("Baskerville Old Face", 0, 14)); // NOI18N
+        jLabel4.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel4.setText("ID del producto");
+        jPanel2.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 50, -1, -1));
+
+        txtNombre1.setBackground(new java.awt.Color(236, 236, 236));
+        txtNombre1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        txtNombre1.setCaretColor(new java.awt.Color(0, 0, 0));
+        txtNombre1.setDisabledTextColor(new java.awt.Color(0, 0, 0));
+        txtNombre1.setSelectedTextColor(new java.awt.Color(204, 204, 204));
+        txtNombre1.setSelectionColor(new java.awt.Color(0, 0, 0));
+        jPanel2.add(txtNombre1, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 70, 240, 30));
+
+        jLabel5.setFont(new java.awt.Font("Baskerville Old Face", 0, 14)); // NOI18N
+        jLabel5.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel5.setText("Marca");
+        jPanel2.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 50, -1, -1));
+
+        txtNombre2.setBackground(new java.awt.Color(236, 236, 236));
+        txtNombre2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        txtNombre2.setCaretColor(new java.awt.Color(0, 0, 0));
+        txtNombre2.setDisabledTextColor(new java.awt.Color(0, 0, 0));
+        txtNombre2.setSelectedTextColor(new java.awt.Color(204, 204, 204));
+        txtNombre2.setSelectionColor(new java.awt.Color(0, 0, 0));
+        jPanel2.add(txtNombre2, new org.netbeans.lib.awtextra.AbsoluteConstraints(790, 70, 240, 30));
+
+        jLabel6.setFont(new java.awt.Font("Baskerville Old Face", 0, 14)); // NOI18N
+        jLabel6.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel6.setText("Año");
+        jPanel2.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(790, 50, -1, -1));
+
+        txtNombre3.setBackground(new java.awt.Color(236, 236, 236));
+        txtNombre3.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        txtNombre3.setCaretColor(new java.awt.Color(0, 0, 0));
+        txtNombre3.setDisabledTextColor(new java.awt.Color(0, 0, 0));
+        txtNombre3.setSelectedTextColor(new java.awt.Color(204, 204, 204));
+        txtNombre3.setSelectionColor(new java.awt.Color(0, 0, 0));
+        jPanel2.add(txtNombre3, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 70, 240, 30));
+
+        jLabel7.setFont(new java.awt.Font("Baskerville Old Face", 0, 14)); // NOI18N
+        jLabel7.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel7.setText("Tipo");
+        jPanel2.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 120, -1, -1));
+
+        txtNombre4.setBackground(new java.awt.Color(236, 236, 236));
+        txtNombre4.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        txtNombre4.setCaretColor(new java.awt.Color(0, 0, 0));
+        txtNombre4.setDisabledTextColor(new java.awt.Color(0, 0, 0));
+        txtNombre4.setSelectedTextColor(new java.awt.Color(204, 204, 204));
+        txtNombre4.setSelectionColor(new java.awt.Color(0, 0, 0));
+        jPanel2.add(txtNombre4, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 140, 240, 30));
+
+        jLabel8.setFont(new java.awt.Font("Baskerville Old Face", 0, 14)); // NOI18N
+        jLabel8.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel8.setText("Categoría");
+        jPanel2.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 120, -1, -1));
+
+        txtNombre5.setBackground(new java.awt.Color(236, 236, 236));
+        txtNombre5.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        txtNombre5.setCaretColor(new java.awt.Color(0, 0, 0));
+        txtNombre5.setDisabledTextColor(new java.awt.Color(0, 0, 0));
+        txtNombre5.setSelectedTextColor(new java.awt.Color(204, 204, 204));
+        txtNombre5.setSelectionColor(new java.awt.Color(0, 0, 0));
+        jPanel2.add(txtNombre5, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 140, 240, 30));
+
+        jLabel10.setFont(new java.awt.Font("Baskerville Old Face", 0, 14)); // NOI18N
+        jLabel10.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel10.setText("Descripción");
+        jPanel2.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 120, -1, -1));
+
+        txtNombre7.setBackground(new java.awt.Color(236, 236, 236));
+        txtNombre7.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        txtNombre7.setCaretColor(new java.awt.Color(0, 0, 0));
+        txtNombre7.setDisabledTextColor(new java.awt.Color(0, 0, 0));
+        txtNombre7.setSelectedTextColor(new java.awt.Color(204, 204, 204));
+        txtNombre7.setSelectionColor(new java.awt.Color(0, 0, 0));
+        jPanel2.add(txtNombre7, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 140, 360, 30));
+
+        btnGuardar.setBackground(new java.awt.Color(0, 204, 51));
+        btnGuardar.setFont(new java.awt.Font("Roboto Black", 0, 14)); // NOI18N
+        btnGuardar.setForeground(new java.awt.Color(0, 0, 0));
+        btnGuardar.setText("Guardar");
+        btnGuardar.setBorder(null);
+        btnGuardar.setBorderPainted(false);
+        btnGuardar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jPanel2.add(btnGuardar, new org.netbeans.lib.awtextra.AbsoluteConstraints(920, 140, 100, 30));
+
+        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null}
+            },
+            new String [] {
+                "Title 1", "Title 2", "Title 3", "Title 4", "Title 5", "Title 6", "Title 7"
+            }
+        ));
+        jScrollPane1.setViewportView(jTable1);
+
+        jPanel2.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 200, 890, 260));
+
+        getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 32, 1050, 480));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -80,6 +218,27 @@ public class InventarioMenu extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnExitInventario;
-    private javax.swing.JPanel jPanel1;
+    private javax.swing.JButton btnGuardar;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
+    private javax.swing.JPanel jPanel2;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JSeparator jSeparator1;
+    private javax.swing.JTable jTable1;
+    private javax.swing.JPanel panelBarra;
+    private javax.swing.JTextField txtNombre;
+    private javax.swing.JTextField txtNombre1;
+    private javax.swing.JTextField txtNombre2;
+    private javax.swing.JTextField txtNombre3;
+    private javax.swing.JTextField txtNombre4;
+    private javax.swing.JTextField txtNombre5;
+    private javax.swing.JTextField txtNombre7;
     // End of variables declaration//GEN-END:variables
 }
