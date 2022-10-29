@@ -9,6 +9,7 @@ package UI;
  * @author Usuario
  */
 public class InventarioMenu extends javax.swing.JFrame {
+    int xMouse, yMouse;
 
     /**
      * Creates new form Inventario
@@ -62,6 +63,16 @@ public class InventarioMenu extends javax.swing.JFrame {
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         panelBarra.setBackground(new java.awt.Color(0, 0, 0));
+        panelBarra.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
+            public void mouseDragged(java.awt.event.MouseEvent evt) {
+                panelBarraMouseDragged(evt);
+            }
+        });
+        panelBarra.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                panelBarraMousePressed(evt);
+            }
+        });
         panelBarra.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         btnExitInventario.setBackground(new java.awt.Color(0, 0, 0));
@@ -269,6 +280,20 @@ public class InventarioMenu extends javax.swing.JFrame {
     menu.setVisible(true);
     this.setVisible(false);
     }//GEN-LAST:event_btnRegresarInvenActionPerformed
+
+    private void panelBarraMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_panelBarraMousePressed
+        // TODO add your handling code here:
+        xMouse = evt.getX();
+        yMouse = evt.getY();
+    }//GEN-LAST:event_panelBarraMousePressed
+
+    private void panelBarraMouseDragged(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_panelBarraMouseDragged
+        // TODO add your handling code here:
+        int x =  evt.getXOnScreen();
+        int y = evt.getYOnScreen();
+        
+        this.setLocation(x - xMouse, y - yMouse);
+    }//GEN-LAST:event_panelBarraMouseDragged
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
