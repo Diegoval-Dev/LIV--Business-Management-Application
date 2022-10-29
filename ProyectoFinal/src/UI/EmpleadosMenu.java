@@ -30,6 +30,22 @@ public class EmpleadosMenu extends javax.swing.JFrame {
         btnEmpleados = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
+        info = new javax.swing.JLabel();
+        jSeparator1 = new javax.swing.JSeparator();
+        txtID = new javax.swing.JTextField();
+        ID = new javax.swing.JLabel();
+        NIT = new javax.swing.JLabel();
+        txtNIT = new javax.swing.JTextField();
+        FechaDeFactura = new javax.swing.JLabel();
+        txtFechaFactura = new javax.swing.JTextField();
+        Total = new javax.swing.JLabel();
+        txtTotal = new javax.swing.JTextField();
+        btnGuardarEmple = new javax.swing.JButton();
+        btnActualizarEmple = new javax.swing.JButton();
+        btnConsultarEmple = new javax.swing.JButton();
+        btnEliminarEmple = new javax.swing.JButton();
+        imageLogoEmple = new javax.swing.JLabel();
+        btnRegresarEmple = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -73,9 +89,125 @@ public class EmpleadosMenu extends javax.swing.JFrame {
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 820, 30));
 
-        jPanel2.setBackground(new java.awt.Color(255, 255, 255));
-        jPanel2.setForeground(new java.awt.Color(255, 255, 255));
+        jPanel2.setBackground(new java.awt.Color(236, 236, 236));
         jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        info.setFont(new java.awt.Font("Baskerville Old Face", 0, 18)); // NOI18N
+        info.setForeground(new java.awt.Color(0, 0, 0));
+        info.setText("Ingresa la información correspondiente");
+        jPanel2.add(info, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 0, 290, 40));
+
+        jSeparator1.setForeground(new java.awt.Color(60, 63, 65));
+        jPanel2.add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 30, 810, 10));
+
+        txtID.setBackground(new java.awt.Color(236, 236, 236));
+        txtID.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        txtID.setCaretColor(new java.awt.Color(0, 0, 0));
+        txtID.setDisabledTextColor(new java.awt.Color(0, 0, 0));
+        txtID.setSelectedTextColor(new java.awt.Color(204, 204, 204));
+        txtID.setSelectionColor(new java.awt.Color(0, 0, 0));
+        jPanel2.add(txtID, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 70, 240, 30));
+
+        ID.setBackground(new java.awt.Color(255, 255, 255));
+        ID.setFont(new java.awt.Font("Baskerville Old Face", 0, 14)); // NOI18N
+        ID.setForeground(new java.awt.Color(0, 0, 0));
+        ID.setText("Nombre del empelado");
+        jPanel2.add(ID, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 40, 230, 30));
+
+        NIT.setBackground(new java.awt.Color(255, 255, 255));
+        NIT.setFont(new java.awt.Font("Baskerville Old Face", 0, 12)); // NOI18N
+        NIT.setForeground(new java.awt.Color(0, 0, 0));
+        NIT.setText("Edad");
+        jPanel2.add(NIT, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 40, 110, 30));
+
+        txtNIT.setBackground(new java.awt.Color(236, 236, 236));
+        txtNIT.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        txtNIT.setCaretColor(new java.awt.Color(0, 0, 0));
+        txtNIT.setDisabledTextColor(new java.awt.Color(0, 0, 0));
+        txtNIT.setSelectedTextColor(new java.awt.Color(204, 204, 204));
+        txtNIT.setSelectionColor(new java.awt.Color(0, 0, 0));
+        jPanel2.add(txtNIT, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 70, 240, 30));
+
+        FechaDeFactura.setBackground(new java.awt.Color(255, 255, 255));
+        FechaDeFactura.setFont(new java.awt.Font("Baskerville Old Face", 0, 14)); // NOI18N
+        FechaDeFactura.setForeground(new java.awt.Color(0, 0, 0));
+        FechaDeFactura.setText("Phone Number");
+        jPanel2.add(FechaDeFactura, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 110, 90, 30));
+
+        txtFechaFactura.setBackground(new java.awt.Color(236, 236, 236));
+        txtFechaFactura.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        txtFechaFactura.setCaretColor(new java.awt.Color(0, 0, 0));
+        txtFechaFactura.setDisabledTextColor(new java.awt.Color(0, 0, 0));
+        txtFechaFactura.setSelectedTextColor(new java.awt.Color(204, 204, 204));
+        txtFechaFactura.setSelectionColor(new java.awt.Color(0, 0, 0));
+        jPanel2.add(txtFechaFactura, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 140, 240, 30));
+
+        Total.setBackground(new java.awt.Color(255, 255, 255));
+        Total.setFont(new java.awt.Font("Baskerville Old Face", 0, 15)); // NOI18N
+        Total.setForeground(new java.awt.Color(0, 0, 0));
+        Total.setText("Puesto Encargado");
+        jPanel2.add(Total, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 110, 160, 30));
+
+        txtTotal.setBackground(new java.awt.Color(236, 236, 236));
+        txtTotal.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        txtTotal.setCaretColor(new java.awt.Color(0, 0, 0));
+        txtTotal.setDisabledTextColor(new java.awt.Color(0, 0, 0));
+        txtTotal.setSelectedTextColor(new java.awt.Color(204, 204, 204));
+        txtTotal.setSelectionColor(new java.awt.Color(0, 0, 0));
+        jPanel2.add(txtTotal, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 140, 240, 30));
+
+        btnGuardarEmple.setBackground(new java.awt.Color(0, 204, 51));
+        btnGuardarEmple.setFont(new java.awt.Font("Roboto Black", 0, 14)); // NOI18N
+        btnGuardarEmple.setForeground(new java.awt.Color(0, 0, 0));
+        btnGuardarEmple.setText("Guardar");
+        btnGuardarEmple.setBorder(null);
+        btnGuardarEmple.setBorderPainted(false);
+        btnGuardarEmple.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jPanel2.add(btnGuardarEmple, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 120, 100, 30));
+
+        btnActualizarEmple.setBackground(new java.awt.Color(0, 153, 204));
+        btnActualizarEmple.setFont(new java.awt.Font("Roboto Black", 0, 14)); // NOI18N
+        btnActualizarEmple.setForeground(new java.awt.Color(0, 0, 0));
+        btnActualizarEmple.setText("Actualizar");
+        btnActualizarEmple.setBorder(null);
+        btnActualizarEmple.setBorderPainted(false);
+        btnActualizarEmple.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jPanel2.add(btnActualizarEmple, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 220, 100, 30));
+
+        btnConsultarEmple.setBackground(new java.awt.Color(255, 153, 51));
+        btnConsultarEmple.setFont(new java.awt.Font("Roboto Black", 0, 14)); // NOI18N
+        btnConsultarEmple.setForeground(new java.awt.Color(0, 0, 0));
+        btnConsultarEmple.setText("Consultar");
+        btnConsultarEmple.setBorder(null);
+        btnConsultarEmple.setBorderPainted(false);
+        btnConsultarEmple.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jPanel2.add(btnConsultarEmple, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 170, 100, 30));
+
+        btnEliminarEmple.setBackground(new java.awt.Color(255, 51, 51));
+        btnEliminarEmple.setFont(new java.awt.Font("Roboto Black", 0, 14)); // NOI18N
+        btnEliminarEmple.setForeground(new java.awt.Color(0, 0, 0));
+        btnEliminarEmple.setText("Eliminar");
+        btnEliminarEmple.setBorder(null);
+        btnEliminarEmple.setBorderPainted(false);
+        btnEliminarEmple.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jPanel2.add(btnEliminarEmple, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 270, 100, 30));
+
+        imageLogoEmple.setIcon(new javax.swing.ImageIcon(getClass().getResource("/UI/Resources/logoFinal.png"))); // NOI18N
+        jPanel2.add(imageLogoEmple, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 330, 100, 100));
+
+        btnRegresarEmple.setBackground(new java.awt.Color(255, 255, 0));
+        btnRegresarEmple.setFont(new java.awt.Font("Roboto Black", 0, 14)); // NOI18N
+        btnRegresarEmple.setForeground(new java.awt.Color(0, 0, 0));
+        btnRegresarEmple.setText("Regresar");
+        btnRegresarEmple.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        btnRegresarEmple.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnRegresarEmple.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnRegresarEmpleActionPerformed(evt);
+            }
+        });
+        jPanel2.add(btnRegresarEmple, new org.netbeans.lib.awtextra.AbsoluteConstraints(677, 440, 130, 20));
+
         getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 30, 820, 480));
 
         pack();
@@ -88,12 +220,35 @@ public class EmpleadosMenu extends javax.swing.JFrame {
         this.setVisible(false);
     }//GEN-LAST:event_btnEmpleadosActionPerformed
 
+    private void btnRegresarEmpleActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegresarEmpleActionPerformed
+        // TODO add your handling code here:
+        MenuPrincipalLiv menu = new MenuPrincipalLiv();
+        menu.setVisible(true);
+        this.setVisible(false);
+    }//GEN-LAST:event_btnRegresarEmpleActionPerformed
+
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel FechaDeFactura;
+    private javax.swing.JLabel ID;
+    private javax.swing.JLabel NIT;
+    private javax.swing.JLabel Total;
+    private javax.swing.JButton btnActualizarEmple;
+    private javax.swing.JButton btnConsultarEmple;
+    private javax.swing.JButton btnEliminarEmple;
     private javax.swing.JButton btnEmpleados;
+    private javax.swing.JButton btnGuardarEmple;
+    private javax.swing.JButton btnRegresarEmple;
+    private javax.swing.JLabel imageLogoEmple;
+    private javax.swing.JLabel info;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
+    private javax.swing.JSeparator jSeparator1;
+    private javax.swing.JTextField txtFechaFactura;
+    private javax.swing.JTextField txtID;
+    private javax.swing.JTextField txtNIT;
+    private javax.swing.JTextField txtTotal;
     // End of variables declaration//GEN-END:variables
 }

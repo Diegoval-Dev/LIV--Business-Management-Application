@@ -50,6 +50,8 @@ public class FacturasMenu extends javax.swing.JFrame {
         jScrollPane1 = new javax.swing.JScrollPane();
         tableFactura = new javax.swing.JTable();
         imageLogo = new javax.swing.JLabel();
+        btnGuardarInven1 = new javax.swing.JButton();
+        btnRegresarFactu = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setLocationByPlatform(true);
@@ -179,7 +181,7 @@ public class FacturasMenu extends javax.swing.JFrame {
         btnGuardar.setBorder(null);
         btnGuardar.setBorderPainted(false);
         btnGuardar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jPanel2.add(btnGuardar, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 140, 100, 30));
+        jPanel2.add(btnGuardar, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 120, 100, 30));
 
         btnActualizar.setBackground(new java.awt.Color(0, 153, 204));
         btnActualizar.setFont(new java.awt.Font("Roboto Black", 0, 14)); // NOI18N
@@ -188,7 +190,7 @@ public class FacturasMenu extends javax.swing.JFrame {
         btnActualizar.setBorder(null);
         btnActualizar.setBorderPainted(false);
         btnActualizar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jPanel2.add(btnActualizar, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 240, 100, 30));
+        jPanel2.add(btnActualizar, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 220, 100, 30));
 
         btnConsultar.setBackground(new java.awt.Color(255, 153, 51));
         btnConsultar.setFont(new java.awt.Font("Roboto Black", 0, 14)); // NOI18N
@@ -197,7 +199,7 @@ public class FacturasMenu extends javax.swing.JFrame {
         btnConsultar.setBorder(null);
         btnConsultar.setBorderPainted(false);
         btnConsultar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jPanel2.add(btnConsultar, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 190, 100, 30));
+        jPanel2.add(btnConsultar, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 170, 100, 30));
 
         btnEliminar.setBackground(new java.awt.Color(255, 51, 51));
         btnEliminar.setFont(new java.awt.Font("Roboto Black", 0, 14)); // NOI18N
@@ -206,14 +208,14 @@ public class FacturasMenu extends javax.swing.JFrame {
         btnEliminar.setBorder(null);
         btnEliminar.setBorderPainted(false);
         btnEliminar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jPanel2.add(btnEliminar, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 290, 100, 30));
+        jPanel2.add(btnEliminar, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 270, 100, 30));
 
         tableFactura.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
             },
             new String [] {
-                "Title 1", "Title 2", "Title 3", "Title 4", "Title 5"
+
             }
         ));
         jScrollPane1.setViewportView(tableFactura);
@@ -221,7 +223,28 @@ public class FacturasMenu extends javax.swing.JFrame {
         jPanel2.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 190, 640, 280));
 
         imageLogo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/UI/Resources/logoFinal.png"))); // NOI18N
-        jPanel2.add(imageLogo, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 350, 100, 100));
+        jPanel2.add(imageLogo, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 330, 100, 100));
+
+        btnGuardarInven1.setBackground(new java.awt.Color(255, 255, 0));
+        btnGuardarInven1.setFont(new java.awt.Font("Roboto Black", 0, 14)); // NOI18N
+        btnGuardarInven1.setForeground(new java.awt.Color(0, 0, 0));
+        btnGuardarInven1.setText("Regresar");
+        btnGuardarInven1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        btnGuardarInven1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jPanel2.add(btnGuardarInven1, new org.netbeans.lib.awtextra.AbsoluteConstraints(910, 450, 130, 20));
+
+        btnRegresarFactu.setBackground(new java.awt.Color(255, 255, 0));
+        btnRegresarFactu.setFont(new java.awt.Font("Roboto Black", 0, 14)); // NOI18N
+        btnRegresarFactu.setForeground(new java.awt.Color(0, 0, 0));
+        btnRegresarFactu.setText("Regresar");
+        btnRegresarFactu.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        btnRegresarFactu.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnRegresarFactu.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnRegresarFactuActionPerformed(evt);
+            }
+        });
+        jPanel2.add(btnRegresarFactu, new org.netbeans.lib.awtextra.AbsoluteConstraints(677, 440, 130, 20));
 
         getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 30, 820, 480));
 
@@ -249,6 +272,13 @@ public class FacturasMenu extends javax.swing.JFrame {
         this.setLocation(x - xMouse, y - yMouse);
     }//GEN-LAST:event_panelBarraFacMouseDragged
 
+    private void btnRegresarFactuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegresarFactuActionPerformed
+    // TODO add your handling code here:
+    MenuPrincipalLiv menu = new MenuPrincipalLiv();
+    menu.setVisible(true);
+    this.setVisible(false);
+    }//GEN-LAST:event_btnRegresarFactuActionPerformed
+
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -263,6 +293,8 @@ public class FacturasMenu extends javax.swing.JFrame {
     private javax.swing.JButton btnEliminar;
     private javax.swing.JButton btnExitFacturas;
     private javax.swing.JButton btnGuardar;
+    private javax.swing.JButton btnGuardarInven1;
+    private javax.swing.JButton btnRegresarFactu;
     private javax.swing.JLabel imageLogo;
     private javax.swing.JLabel info;
     private javax.swing.JPanel jPanel2;
