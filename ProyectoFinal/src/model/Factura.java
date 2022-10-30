@@ -8,10 +8,25 @@ import java.util.ArrayList;
 
 public class Factura {
     private int ID;
-    private ArrayList<Producto> productos;
+    private String productos;
     private String NIT;
-    private float total;
+    private int total;
     private String fecha;
+    /**
+     * Constructor
+     * @param ID
+     * @param productos
+     * @param NIT
+     * @param total
+     * @param fecha 
+     */
+    public Factura(int ID, String productos, String NIT, int total, String fecha) {
+        this.ID = ID;
+        this.productos = productos;
+        this.NIT = NIT;
+        this.total = total;
+        this.fecha = fecha;
+    }
     
     
     /**
@@ -34,7 +49,7 @@ public class Factura {
      * Getter para la lista de productos en la lista.
      * @return ArrayList de la clase Producto
      */
-    public ArrayList<Producto> getProductos() {
+    public String getProductos() {
         return productos;
     }
     
@@ -42,7 +57,7 @@ public class Factura {
      * Setter para la lista de producto en la factura.
      * @param productos 
      */
-    public void setProductos(ArrayList<Producto> productos) {
+    public void setProductos(String productos) {
         this.productos = productos;
     }
     
@@ -67,7 +82,7 @@ public class Factura {
      * Getter para el toda
      * @return float toral
      */
-    public float getTotal() {
+    public int getTotal() {
         return total;
     }
     
@@ -75,7 +90,7 @@ public class Factura {
      * Setter para el tota de la factura.
      * @param total 
      */
-    public void setTotal(float total) {
+    public void setTotal(int total) {
         this.total = total;
     }
     
@@ -96,33 +111,8 @@ public class Factura {
         this.fecha = fecha;
     }
     
-    /**
-     * Constructor
-     * @param ID
-     * @param productos
-     * @param NIT
-     * @param total
-     * @param fecha 
-     */
-    public Factura(int ID, ArrayList<Producto> productos, String NIT, float total, String fecha) {
-        this.ID = ID;
-        this.productos = productos;
-        this.NIT = NIT;
-        this.total = total;
-        this.fecha = fecha;
-    }
-  
-    /**
-     *Contructor sin parametros
-     */
-    public Factura() {
-        ID = 0;
-        NIT = null;
-        total  = 0;
-        fecha = null;
-        productos = new ArrayList<Producto>();
-    }
     
+   
     /**
      * Metodo toString()
      * @return 

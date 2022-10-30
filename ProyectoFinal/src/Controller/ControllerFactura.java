@@ -6,9 +6,15 @@ package Controller;
 
 import UI.FacturasMenu;
 import java.sql.*;
+import java.util.ArrayList;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
 import model.Conexion;
+import model.Factura;
+import model.FacturasDAO;
+import javax.swing.JTable;
 
 /**
  *
@@ -18,30 +24,39 @@ import model.Conexion;
 public class ControllerFactura {
     
     public static FacturasMenu ui = new FacturasMenu();
-    public static void tabla(String valor){
-        try{
-            String titulos[] = {"NO.","NIT","Producto","Fecha","Total"};
-            String registros[] = new String[5];
-            FacturasMenu.model = new DefaultTableModel(null, titulos);
-            Conexion conectar = new Conexion();
-            Connection cn = conectar.conectar();
-            String instruccionSQL  = "SELECT * FROM facturas WHERE nit LIKE '%" +valor+ "%'";
-            PreparedStatement ms = cn.prepareStatement(instruccionSQL); 
-           ResultSet rs = ms.executeQuery(instruccionSQL);
-           while(rs.next()){
-                registros[0] = rs.getString("id");
-                registros[1] = rs.getString("nit");
-                registros[2] = rs.getString("producto");
-                registros[3] = rs.getString("fecha");
-                registros[4] = rs.getString("total");
-                FacturasMenu.model.addRow(registros); 
-           }
-           FacturasMenu.tableFactura.setModel(FacturasMenu.model);
-            System.out.println("SET");
-            conectar.cerrarConex();
-        }catch(Exception e){
+    public static FacturasDAO fc = new FacturasDAO();
+    
+    public static void llenarTabla(JTable tabla){
+        
+        DefaultTableModel myModel = new DefaultTableModel();
+        
+        ArrayList<Factura> arr = new ArrayList();
+        myModel.addColumn("NO.");
+        myModel.addColumn("NIT");
+        myModel.addColumn("Producto");
+        myModel.addColumn("Fecha");
+        myModel.addColumn("Total");
+        Object[] columna = new Object[5];
+        
+        try {
+            arr = fc.listaFactura();
+        } catch (Exception e) {
             System.out.println(e.getMessage());
         }
+        for(Factura fact : arr ){
+            columna[0] = fact.getID();
+            columna[1] = fact.getNIT();
+            columna[2] = fact.getProductos();
+            columna[3] = fact.getFecha();
+            columna[4] = fact.getTotal();
+            myModel.addRow(columna);
+        }
+        
+        tabla.setModel(myModel);
+    }
+     
+    public static void tabla(String valor){
+        
     }
     public static void limpiar(){
         ui.txtNIT.setText("");

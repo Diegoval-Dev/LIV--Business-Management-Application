@@ -6,6 +6,9 @@ package UI;
 
 import Controller.ControllerFactura;
 import static Controller.ControllerFactura.tabla;
+import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.table.DefaultTableModel;
 
 /**
@@ -21,7 +24,11 @@ public class FacturasMenu extends javax.swing.JFrame {
      */
     public FacturasMenu() {
         initComponents();
-        tabla("");
+        try{
+            ControllerFactura.llenarTabla(tableFactura);
+        }catch(Exception e){
+            System.out.println(e.getMessage());
+        }
     }
 
     /**

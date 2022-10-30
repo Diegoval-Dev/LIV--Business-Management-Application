@@ -191,9 +191,14 @@ public class MenuPrincipalLiv extends javax.swing.JFrame {
 
     private void btnFacturasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnFacturasActionPerformed
         // TODO add your handling code here:
-        FacturasMenu facturas = new FacturasMenu();
+        try{
+            FacturasMenu facturas = new FacturasMenu();
         facturas.setVisible(true);
         this.setVisible(false);
+        }catch(Exception e){
+            System.out.println(e.getMessage());
+        }
+        
     }//GEN-LAST:event_btnFacturasActionPerformed
 
     private void btnInventarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnInventarioActionPerformed
