@@ -35,9 +35,6 @@ public class RegistroLiv extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         nombre = new javax.swing.JLabel();
         Password = new javax.swing.JLabel();
-        edad = new javax.swing.JLabel();
-        phoneNumber = new javax.swing.JLabel();
-        puestoLaboral = new javax.swing.JLabel();
         PINSeguridad = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
@@ -45,14 +42,11 @@ public class RegistroLiv extends javax.swing.JFrame {
         jSeparator4 = new javax.swing.JSeparator();
         jSeparator5 = new javax.swing.JSeparator();
         txtPassWord = new javax.swing.JTextField();
-        txtEdad = new javax.swing.JTextField();
-        jSeparator6 = new javax.swing.JSeparator();
-        jSeparator7 = new javax.swing.JSeparator();
-        txtNumer = new javax.swing.JTextField();
-        jSeparator8 = new javax.swing.JSeparator();
-        txtPuesto = new javax.swing.JTextField();
         jSeparator9 = new javax.swing.JSeparator();
         txtPIN = new javax.swing.JTextField();
+        Password2 = new javax.swing.JLabel();
+        jSeparator6 = new javax.swing.JSeparator();
+        txtPassWord2 = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(255, 255, 255));
@@ -75,8 +69,8 @@ public class RegistroLiv extends javax.swing.JFrame {
 
         nameOfPage.setFont(new java.awt.Font("Rockwell", 1, 18)); // NOI18N
         nameOfPage.setForeground(new java.awt.Color(255, 255, 255));
-        nameOfPage.setText("Liv");
-        panelOfBarra.add(nameOfPage, new org.netbeans.lib.awtextra.AbsoluteConstraints(17, 0, 96, 31));
+        nameOfPage.setText("Liv - Registro");
+        panelOfBarra.add(nameOfPage, new org.netbeans.lib.awtextra.AbsoluteConstraints(17, 0, 150, 31));
 
         btnCloseRegis.setBackground(new java.awt.Color(0, 0, 0));
         btnCloseRegis.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
@@ -96,7 +90,7 @@ public class RegistroLiv extends javax.swing.JFrame {
         getContentPane().add(panelOfBarra, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
         jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/UI/Resources/imageLogin.jpg"))); // NOI18N
-        getContentPane().add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(-310, 30, 480, 410));
+        getContentPane().add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(-310, 30, 480, 350));
 
         jPanel1.setBackground(new java.awt.Color(236, 235, 235));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -112,25 +106,10 @@ public class RegistroLiv extends javax.swing.JFrame {
         Password.setText("Password");
         jPanel1.add(Password, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 90, -1, -1));
 
-        edad.setFont(new java.awt.Font("Roboto", 0, 12)); // NOI18N
-        edad.setForeground(new java.awt.Color(0, 0, 0));
-        edad.setText("Edad");
-        jPanel1.add(edad, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 150, -1, -1));
-
-        phoneNumber.setFont(new java.awt.Font("Roboto", 0, 12)); // NOI18N
-        phoneNumber.setForeground(new java.awt.Color(0, 0, 0));
-        phoneNumber.setText("Phone Number");
-        jPanel1.add(phoneNumber, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 210, -1, -1));
-
-        puestoLaboral.setFont(new java.awt.Font("Roboto", 0, 12)); // NOI18N
-        puestoLaboral.setForeground(new java.awt.Color(0, 0, 0));
-        puestoLaboral.setText("Puesto Laboral");
-        jPanel1.add(puestoLaboral, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 270, -1, -1));
-
         PINSeguridad.setFont(new java.awt.Font("Roboto", 0, 12)); // NOI18N
         PINSeguridad.setForeground(new java.awt.Color(0, 0, 0));
         PINSeguridad.setText("PIN de Seguridad");
-        jPanel1.add(PINSeguridad, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 320, -1, -1));
+        jPanel1.add(PINSeguridad, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 210, -1, -1));
 
         jButton1.setBackground(new java.awt.Color(0, 204, 0));
         jButton1.setForeground(new java.awt.Color(0, 0, 0));
@@ -141,7 +120,7 @@ public class RegistroLiv extends javax.swing.JFrame {
                 jButton1ActionPerformed(evt);
             }
         });
-        jPanel1.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(228, 372, 100, 30));
+        jPanel1.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 300, 100, 30));
 
         jButton2.setBackground(new java.awt.Color(255, 0, 0));
         jButton2.setForeground(new java.awt.Color(0, 0, 0));
@@ -152,7 +131,7 @@ public class RegistroLiv extends javax.swing.JFrame {
                 jButton2ActionPerformed(evt);
             }
         });
-        jPanel1.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(5, 372, 110, 30));
+        jPanel1.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 300, 110, 30));
 
         txtUsername.setBackground(new java.awt.Color(236, 235, 235));
         txtUsername.setForeground(new java.awt.Color(0, 0, 0));
@@ -169,36 +148,8 @@ public class RegistroLiv extends javax.swing.JFrame {
                 txtPassWordActionPerformed(evt);
             }
         });
-        jPanel1.add(txtPassWord, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 89, 220, -1));
-
-        txtEdad.setBackground(new java.awt.Color(236, 235, 235));
-        txtEdad.setForeground(new java.awt.Color(0, 0, 0));
-        txtEdad.setBorder(null);
-        jPanel1.add(txtEdad, new org.netbeans.lib.awtextra.AbsoluteConstraints(65, 145, 220, 20));
-        jPanel1.add(jSeparator6, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 220, 190, 20));
-        jPanel1.add(jSeparator7, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 165, 240, 20));
-
-        txtNumer.setBackground(new java.awt.Color(236, 235, 235));
-        txtNumer.setForeground(new java.awt.Color(0, 0, 0));
-        txtNumer.setBorder(null);
-        txtNumer.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtNumerActionPerformed(evt);
-            }
-        });
-        jPanel1.add(txtNumer, new org.netbeans.lib.awtextra.AbsoluteConstraints(115, 200, 190, 20));
-        jPanel1.add(jSeparator8, new org.netbeans.lib.awtextra.AbsoluteConstraints(115, 285, 190, 20));
-
-        txtPuesto.setBackground(new java.awt.Color(236, 235, 235));
-        txtPuesto.setForeground(new java.awt.Color(0, 0, 0));
-        txtPuesto.setBorder(null);
-        txtPuesto.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtPuestoActionPerformed(evt);
-            }
-        });
-        jPanel1.add(txtPuesto, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 264, 190, 20));
-        jPanel1.add(jSeparator9, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 335, 190, 20));
+        jPanel1.add(txtPassWord, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 85, 220, 20));
+        jPanel1.add(jSeparator9, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 230, 180, 20));
 
         txtPIN.setBackground(new java.awt.Color(236, 235, 235));
         txtPIN.setForeground(new java.awt.Color(0, 0, 0));
@@ -208,9 +159,26 @@ public class RegistroLiv extends javax.swing.JFrame {
                 txtPINActionPerformed(evt);
             }
         });
-        jPanel1.add(txtPIN, new org.netbeans.lib.awtextra.AbsoluteConstraints(125, 315, 190, 20));
+        jPanel1.add(txtPIN, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 210, 190, 20));
 
-        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 30, 340, 410));
+        Password2.setBackground(new java.awt.Color(0, 0, 0));
+        Password2.setFont(new java.awt.Font("Roboto", 0, 12)); // NOI18N
+        Password2.setForeground(new java.awt.Color(0, 0, 0));
+        Password2.setText("Password");
+        jPanel1.add(Password2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 150, -1, -1));
+        jPanel1.add(jSeparator6, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 160, 220, 20));
+
+        txtPassWord2.setBackground(new java.awt.Color(236, 235, 235));
+        txtPassWord2.setForeground(new java.awt.Color(0, 0, 0));
+        txtPassWord2.setBorder(null);
+        txtPassWord2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtPassWord2ActionPerformed(evt);
+            }
+        });
+        jPanel1.add(txtPassWord2, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 140, 220, 20));
+
+        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 30, 340, 350));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -239,14 +207,6 @@ public class RegistroLiv extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_txtPassWordActionPerformed
 
-    private void txtNumerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtNumerActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtNumerActionPerformed
-
-    private void txtPuestoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtPuestoActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtPuestoActionPerformed
-
     private void txtPINActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtPINActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txtPINActionPerformed
@@ -265,12 +225,16 @@ public class RegistroLiv extends javax.swing.JFrame {
     this.setVisible(false);
     }//GEN-LAST:event_jButton1ActionPerformed
 
+    private void txtPassWord2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtPassWord2ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtPassWord2ActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel PINSeguridad;
     private javax.swing.JLabel Password;
+    private javax.swing.JLabel Password2;
     private javax.swing.JButton btnCloseRegis;
-    private javax.swing.JLabel edad;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel7;
@@ -278,19 +242,13 @@ public class RegistroLiv extends javax.swing.JFrame {
     private javax.swing.JSeparator jSeparator4;
     private javax.swing.JSeparator jSeparator5;
     private javax.swing.JSeparator jSeparator6;
-    private javax.swing.JSeparator jSeparator7;
-    private javax.swing.JSeparator jSeparator8;
     private javax.swing.JSeparator jSeparator9;
     private javax.swing.JLabel nameOfPage;
     private javax.swing.JLabel nombre;
     private javax.swing.JPanel panelOfBarra;
-    private javax.swing.JLabel phoneNumber;
-    private javax.swing.JLabel puestoLaboral;
-    private javax.swing.JTextField txtEdad;
-    private javax.swing.JTextField txtNumer;
     private javax.swing.JTextField txtPIN;
     private javax.swing.JTextField txtPassWord;
-    private javax.swing.JTextField txtPuesto;
+    private javax.swing.JTextField txtPassWord2;
     private javax.swing.JTextField txtUsername;
     // End of variables declaration//GEN-END:variables
 }

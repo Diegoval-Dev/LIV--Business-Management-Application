@@ -49,6 +49,8 @@ public class EmpleadosMenu extends javax.swing.JFrame {
         btnRegresarEmple = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         TablaEmpleados = new javax.swing.JTable();
+        txtYearInven1 = new javax.swing.JTextField();
+        Year1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setLocationByPlatform(true);
@@ -83,7 +85,7 @@ public class EmpleadosMenu extends javax.swing.JFrame {
 
         jLabel1.setFont(new java.awt.Font("Rockwell", 1, 18)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel1.setText("Liv");
+        jLabel1.setText("Liv - Empleados");
 
         javax.swing.GroupLayout panelBarraLayout = new javax.swing.GroupLayout(panelBarra);
         panelBarra.setLayout(panelBarraLayout);
@@ -91,8 +93,8 @@ public class EmpleadosMenu extends javax.swing.JFrame {
             panelBarraLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelBarraLayout.createSequentialGroup()
                 .addGap(18, 18, 18)
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 584, Short.MAX_VALUE)
+                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 171, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 504, Short.MAX_VALUE)
                 .addComponent(btnEmpleados, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
         panelBarraLayout.setVerticalGroup(
@@ -237,9 +239,22 @@ public class EmpleadosMenu extends javax.swing.JFrame {
         ));
         jScrollPane1.setViewportView(TablaEmpleados);
 
-        jPanel2.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 187, 560, 280));
+        jPanel2.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 240, 560, 280));
 
-        getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 30, 740, 480));
+        txtYearInven1.setBackground(new java.awt.Color(236, 236, 236));
+        txtYearInven1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        txtYearInven1.setCaretColor(new java.awt.Color(0, 0, 0));
+        txtYearInven1.setDisabledTextColor(new java.awt.Color(0, 0, 0));
+        txtYearInven1.setSelectedTextColor(new java.awt.Color(204, 204, 204));
+        txtYearInven1.setSelectionColor(new java.awt.Color(0, 0, 0));
+        jPanel2.add(txtYearInven1, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 200, 300, 30));
+
+        Year1.setFont(new java.awt.Font("Baskerville Old Face", 0, 24)); // NOI18N
+        Year1.setForeground(new java.awt.Color(0, 0, 0));
+        Year1.setText("Filtro");
+        jPanel2.add(Year1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 200, 80, 30));
+
+        getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 30, 740, 530));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -280,6 +295,7 @@ public class EmpleadosMenu extends javax.swing.JFrame {
     private javax.swing.JLabel Phone;
     private javax.swing.JLabel Puesto;
     private javax.swing.JTable TablaEmpleados;
+    private javax.swing.JLabel Year1;
     private javax.swing.JButton btnActualizarEmple;
     private javax.swing.JButton btnConsultarEmple;
     private javax.swing.JButton btnEliminarEmple;
@@ -297,5 +313,6 @@ public class EmpleadosMenu extends javax.swing.JFrame {
     private javax.swing.JTextField txtNombredelEmpleado;
     private javax.swing.JTextField txtPhone;
     private javax.swing.JTextField txtPuesto;
+    private javax.swing.JTextField txtYearInven1;
     // End of variables declaration//GEN-END:variables
 }
