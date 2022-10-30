@@ -15,7 +15,7 @@ import javax.swing.JOptionPane;
  * @author Usuario
  */
 public class ControllerRegistro {
-    public void registar(){
+    public static void registar(){
         try{
             Cifrado cice = new Cifrado(7);
             Conexion conectar = new Conexion();
