@@ -247,8 +247,8 @@ public class RegistroLiv extends javax.swing.JFrame {
     private javax.swing.JLabel nombre;
     private javax.swing.JPanel panelOfBarra;
     private javax.swing.JTextField txtPIN;
-    private javax.swing.JTextField txtPassWord;
+    public static javax.swing.JTextField txtPassWord;
     private javax.swing.JTextField txtPassWord2;
-    private javax.swing.JTextField txtUsername;
+    public static javax.swing.JTextField txtUsername;
     // End of variables declaration//GEN-END:variables
 }
