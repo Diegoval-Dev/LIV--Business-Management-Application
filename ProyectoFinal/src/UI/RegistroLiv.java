@@ -4,6 +4,10 @@
  */
 package UI;
 
+import Controller.ControllerRegistro;
+import java.lang.ModuleLayer.Controller;
+
+
 /**
  *
  * @author Usuario
@@ -36,8 +40,8 @@ public class RegistroLiv extends javax.swing.JFrame {
         nombre = new javax.swing.JLabel();
         Password = new javax.swing.JLabel();
         PINSeguridad = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
+        btnRegistro = new javax.swing.JButton();
+        btnRegresar = new javax.swing.JButton();
         txtUsername = new javax.swing.JTextField();
         jSeparator4 = new javax.swing.JSeparator();
         jSeparator5 = new javax.swing.JSeparator();
@@ -111,27 +115,27 @@ public class RegistroLiv extends javax.swing.JFrame {
         PINSeguridad.setText("PIN de Seguridad");
         jPanel1.add(PINSeguridad, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 210, -1, -1));
 
-        jButton1.setBackground(new java.awt.Color(0, 204, 0));
-        jButton1.setForeground(new java.awt.Color(0, 0, 0));
-        jButton1.setText("Registro ⇥");
-        jButton1.setBorderPainted(false);
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        btnRegistro.setBackground(new java.awt.Color(0, 204, 0));
+        btnRegistro.setForeground(new java.awt.Color(0, 0, 0));
+        btnRegistro.setText("Registro ⇥");
+        btnRegistro.setBorderPainted(false);
+        btnRegistro.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                btnRegistroActionPerformed(evt);
             }
         });
-        jPanel1.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 300, 100, 30));
+        jPanel1.add(btnRegistro, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 300, 100, 30));
 
-        jButton2.setBackground(new java.awt.Color(255, 0, 0));
-        jButton2.setForeground(new java.awt.Color(0, 0, 0));
-        jButton2.setText("⇤ Regresar");
-        jButton2.setBorderPainted(false);
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
+        btnRegresar.setBackground(new java.awt.Color(255, 0, 0));
+        btnRegresar.setForeground(new java.awt.Color(0, 0, 0));
+        btnRegresar.setText("⇤ Regresar");
+        btnRegresar.setBorderPainted(false);
+        btnRegresar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
+                btnRegresarActionPerformed(evt);
             }
         });
-        jPanel1.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 300, 110, 30));
+        jPanel1.add(btnRegresar, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 300, 110, 30));
 
         txtUsername.setBackground(new java.awt.Color(236, 235, 235));
         txtUsername.setForeground(new java.awt.Color(0, 0, 0));
@@ -211,19 +215,22 @@ public class RegistroLiv extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_txtPINActionPerformed
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+    private void btnRegresarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegresarActionPerformed
     // TODO add your handling code here:
     LoginLiv loginLiv = new LoginLiv();
     loginLiv.setVisible(true);
     this.setVisible(false);
-    }//GEN-LAST:event_jButton2ActionPerformed
+    }//GEN-LAST:event_btnRegresarActionPerformed
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void btnRegistroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegistroActionPerformed
     // TODO add your handling code here:
+    ControllerRegistro.registar();
+    
     MenuPrincipalLiv menuPrincipalLiv = new MenuPrincipalLiv();
     menuPrincipalLiv.setVisible(true);
     this.setVisible(false);
-    }//GEN-LAST:event_jButton1ActionPerformed
+    
+    }//GEN-LAST:event_btnRegistroActionPerformed
 
     private void txtPassWord2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtPassWord2ActionPerformed
         // TODO add your handling code here:
@@ -235,8 +242,8 @@ public class RegistroLiv extends javax.swing.JFrame {
     private javax.swing.JLabel Password;
     private javax.swing.JLabel Password2;
     private javax.swing.JButton btnCloseRegis;
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
+    private javax.swing.JButton btnRegistro;
+    private javax.swing.JButton btnRegresar;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JSeparator jSeparator4;
