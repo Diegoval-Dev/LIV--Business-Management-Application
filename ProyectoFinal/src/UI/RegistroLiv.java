@@ -6,6 +6,7 @@ package UI;
 
 import Controller.ControllerRegistro;
 import java.lang.ModuleLayer.Controller;
+import javax.swing.JOptionPane;
 
 
 /**
@@ -224,11 +225,34 @@ public class RegistroLiv extends javax.swing.JFrame {
 
     private void btnRegistroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegistroActionPerformed
     // TODO add your handling code here:
-    ControllerRegistro.registar();
+    String contra = txtPassWord.getText();
+    String contra2 = txtPassWord2.getText();
+    String pin = txtPIN.getText();
     
-    MenuPrincipalLiv menuPrincipalLiv = new MenuPrincipalLiv();
-    menuPrincipalLiv.setVisible(true);
-    this.setVisible(false);
+    if(pin.equals("123")){
+        if(contra.equals(contra2)){
+            ControllerRegistro.registar();
+            LoginLiv loginLiv = new LoginLiv();
+            loginLiv.setVisible(true);
+            this.setVisible(false);
+        }
+        else{
+            JOptionPane.showMessageDialog(null,
+                        "Contrasenhas no coiciden",
+                        "ERROR",
+                        JOptionPane.ERROR_MESSAGE);
+        }
+    }
+    else{
+        JOptionPane.showMessageDialog(null,
+                        "PIN DE SEGURIDAD INCORRECTO",
+                        "ERROR",
+                        JOptionPane.ERROR_MESSAGE);
+    }
+    
+    
+    
+    
     
     }//GEN-LAST:event_btnRegistroActionPerformed
 

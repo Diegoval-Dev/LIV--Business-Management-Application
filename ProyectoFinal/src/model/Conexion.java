@@ -6,18 +6,28 @@ package model;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  *
  * @author diego
  */
 public class Conexion {
-    String url = "jdbc:mysql://localhost/prueba1";
+    String driver = "com.mysql.jdbc.Driver";
+    String url = "jdbc:mysql://localhost/liv";
     String user = "root";
     String cn = "";
     Connection conectar = null;
     public Connection conectar(){
+        
+        try {
+            Class.forName(driver);
+        } catch (ClassNotFoundException ex) {
+            Logger.getLogger(Conexion.class.getName()).log(Level.SEVERE, null, ex);
+        }
         try {     
+           
            conectar = (Connection)DriverManager.getConnection(url, user, cn);
             System.out.println("Conectado");
         } catch (Exception e) {
