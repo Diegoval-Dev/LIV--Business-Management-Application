@@ -20,7 +20,7 @@ public class ControllerRegistro {
             Cifrado cice = new Cifrado(7);
             Conexion conectar = new Conexion();
             Connection connection = conectar.conectar();
-            String instruccionSQL = "insert into usuarios (nombre, contra) values (?,?);";
+            String instruccionSQL = "insert into usuarios (user, contra) values (?,?);";
             PreparedStatement preSta = connection.prepareStatement(instruccionSQL);
             preSta.setString(1, RegistroLiv.txtUsername.getText());
             preSta.setString(2, cice.encriptar(RegistroLiv.txtPassWord.getText()));

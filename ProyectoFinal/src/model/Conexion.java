@@ -14,7 +14,7 @@ import java.util.logging.Logger;
  * @author diego
  */
 public class Conexion {
-    String driver = "com.mysql.jdbc.Driver";
+    String driver = "com.mysql.cj.jdbc.Driver";
     String url = "jdbc:mysql://localhost/liv";
     String user = "root";
     String cn = "";
@@ -34,5 +34,17 @@ public class Conexion {
             System.out.println(e.getMessage());
         }  
         return conectar;
+    }
+    public void cerrarConex(){
+      try {
+          if (conectar != null) {
+              if (conectar.isClosed() == false) {
+                  conectar.close();
+              }
+          }
+      } catch (Exception e) {
+          System.out.println(e);
+      }
+    
     }
 }
