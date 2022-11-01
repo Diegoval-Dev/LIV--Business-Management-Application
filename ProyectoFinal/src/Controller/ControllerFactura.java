@@ -7,8 +7,6 @@ package Controller;
 import UI.FacturasMenu;
 import java.sql.*;
 import java.util.ArrayList;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
 import model.Conexion;
@@ -23,26 +21,39 @@ import javax.swing.JTable;
  */
 public class ControllerFactura {
     
-    public static FacturasMenu ui = new FacturasMenu();
     public static FacturasDAO fc = new FacturasDAO();
-    
+    /**
+     * Metodo para llenar la tabla con los datos obtenidos del DAO
+     * @param tabla tabla a llenar
+     */
     public static void llenarTabla(JTable tabla){
         
         DefaultTableModel myModel = new DefaultTableModel();
-        
         ArrayList<Factura> arr = new ArrayList();
+        
+        try {
+            arr = fc.listaFactura();
+            myModel = tabla(arr);
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
+        
+        
+        tabla.setModel(myModel);
+    }
+     /**
+      * Funcion para llenar la tabla con un arraylist 
+      * @param arr arraylist de las facturas a llenar en la tabla
+      * @return modelo de la tabla
+      */
+    public static DefaultTableModel tabla(ArrayList<Factura> arr){
+        DefaultTableModel myModel = new DefaultTableModel();
         myModel.addColumn("NO.");
         myModel.addColumn("NIT");
         myModel.addColumn("Producto");
         myModel.addColumn("Fecha");
         myModel.addColumn("Total");
         Object[] columna = new Object[5];
-        
-        try {
-            arr = fc.listaFactura();
-        } catch (Exception e) {
-            System.out.println(e.getMessage());
-        }
         for(Factura fact : arr ){
             columna[0] = fact.getID();
             columna[1] = fact.getNIT();
@@ -52,106 +63,65 @@ public class ControllerFactura {
             myModel.addRow(columna);
         }
         
+        
+        return myModel;
+    }
+    /**
+     * Metodo para limpiar los campos de textos
+     */
+    public static void limpiar(){
+        FacturasMenu.txtNIT.setText("");
+        FacturasMenu.txtProducto.setText("");
+        FacturasMenu.txtTotal.setText("");
+        FacturasMenu.txtNIT.requestFocus();
+    }
+    /**
+     * Metodo para guardar datos
+     * @param nit nit de la factura
+     * @param producto producto de la factura
+     * @param total total de la factura
+     */
+    public static void guardar(String nit, String producto, int total){
+        Factura factura = new Factura(0,producto,nit,total,"");
+        fc.guardar(factura);
+        llenarTabla(FacturasMenu.tableFactura);
+    }
+    /**
+     * Metodo para consultar un dato
+     * @param tabla tabla de facturas
+     */
+    public static void consultar(JTable tabla){
+        DefaultTableModel myModel = new DefaultTableModel();
+        ArrayList<Factura> arr = new ArrayList();
+        
+        try {
+            String nit = FacturasMenu.txtNIT.getText();
+            arr = fc.consultar(nit);
+            myModel = tabla(arr);
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
+        
+        
         tabla.setModel(myModel);
     }
-     
-    public static void tabla(String valor){
-        
+    /**
+     * Metodo para actualizar datos
+     * @param nit nit de la factura
+     * @param producto prodcuto de la factura
+     * @param total todal de la factura
+     */
+    public static  void actualizar(String nit, String producto, int total){
+        Factura factura = new Factura(0,producto,nit,total,"");
+        fc.actualizar(factura);
+        llenarTabla(FacturasMenu.tableFactura);
     }
-    public static void limpiar(){
-        ui.txtNIT.setText("");
-        ui.txtProducto.setText("");
-        ui.txtTotal.setText("");
-        ui.txtNIT.requestFocus();
-    }
-    public static void guardar(String nit, String producto, String total){
-        try{
-            Conexion conectar = new Conexion();
-            Connection cn = conectar.conectar();
-            String instruccionSQL = "INSERT INTO facturas (nit,producto,fecha,total) VALUES(?,?,?,?)";
-            PreparedStatement ms = cn.prepareStatement(instruccionSQL);
-            ms.setString(1, nit);
-            ms.setString(2, producto);
-            long time = System.currentTimeMillis();
-            java.sql.Date d = new java.sql.Date(time);
-            ms.setDate(3, d);
-            ms.setString(4, total);
-            int n = ms.executeUpdate();
-            if (n>0) {
-                JOptionPane.showMessageDialog(null, "fatura registrada");
-                limpiar();
-                tabla("");
-            }
-            conectar.cerrarConex();
-        }catch(Exception e){
-            System.out.println(e.getMessage());
-        }
-    }
-    public static void consultar(String nit){
-        try{
-            Conexion conectar = new Conexion();
-            Connection cn = conectar.conectar();
-            String instruccionSQL ="select * from productos where nit=?";
-            PreparedStatement ms = cn.prepareStatement(instruccionSQL);
-            ms.setString(1, nit);
-            ResultSet rs = ms.executeQuery();
-            if (rs.next()) {
-                ui.txtNIT.setText(rs.getString("nit"));
-                ui.txtProducto.setText(rs.getString("producto"));
-                ui.txtTotal.setText(rs.getString("total"));
-                long time = System.currentTimeMillis();
-                java.sql.Date d = new java.sql.Date(time);
-                ms.setDate(4, d);
-                limpiar();
-            }else{
-                JOptionPane.showMessageDialog(null, "Registro no encontrado!!"); 
-                limpiar();
-               tabla("");
-            }
-            conectar.cerrarConex();
-        }catch(Exception e){
-            System.out.println(e.getMessage());
-        }
-    }
-    public static  void actualizar(String nit, String producto, String total){
-        try {
-            Conexion conectar = new Conexion();
-            Connection cn = conectar.conectar();
-            String instruccionSQL ="UPDATE facturas SET producto=?, fecha=?, total=? WHERE nit=?;";
-            PreparedStatement ms = cn.prepareStatement(instruccionSQL);
-            ms.setString(2, producto);
-            ms.setString(4, total);
-            //Date date = (Date) txtFecha.getDate();
-            long time = System.currentTimeMillis();
-            java.sql.Date d = new java.sql.Date(time);
-            ms.setDate(3, d);
-            int n = ms.executeUpdate();
-            if (n>0) {
-                JOptionPane.showMessageDialog(null, "FACTURA ACTUALIZADA");
-               limpiar();
-               tabla("");
-              }
-            conectar.cerrarConex();
-        } catch (Exception e) {
-                System.out.println(e.getMessage());
-        }
-    }
+    /**
+     * Metodo para eliminar un dato en la base de datos
+     * @param nit nit del dato a eliminar
+     */
     public static void eliminar(String nit){
-        try {
-            Conexion conectar = new Conexion();
-            Connection cn = conectar.conectar();
-            String instruccionSQL ="DELETE FROM facturas WHERE nit=?";
-            PreparedStatement ms = cn.prepareStatement(instruccionSQL);
-            ms.setString(1, nit);
-            int n = ms.executeUpdate();
-            if (n>0) {
-                JOptionPane.showMessageDialog(null, "FACTURA ELIMINADA"); 
-                limpiar();
-                tabla("");
-              }
-            conectar.cerrarConex();
-        } catch (Exception e) {
-            System.out.println(e.getMessage());
-        }
+        fc.eliminar(nit);
+        llenarTabla(FacturasMenu.tableFactura);
     }
 }

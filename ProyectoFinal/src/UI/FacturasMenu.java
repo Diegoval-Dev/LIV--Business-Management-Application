@@ -294,28 +294,27 @@ public class FacturasMenu extends javax.swing.JFrame {
     private void txtFiltroInvenKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtFiltroInvenKeyReleased
         // TODO add your handling code here:
         String s = txtFiltroInven.getText();
-        ControllerFactura.tabla(s);
+        //ControllerFactura.tabla(s);
     }//GEN-LAST:event_txtFiltroInvenKeyReleased
 
     private void btnGuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGuardarActionPerformed
         // TODO add your handling code here:
         String nit = txtNIT.getText();
         String producto = txtProducto.getText();
-        String total = txtTotal.getText();
+        int total = Integer.valueOf(txtTotal.getText());
         ControllerFactura.guardar(nit, producto, total);
     }//GEN-LAST:event_btnGuardarActionPerformed
 
     private void btnConsultarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnConsultarActionPerformed
         // TODO add your handling code here:
-        String nit = txtNIT.getText();
-        ControllerFactura.consultar(nit);
+        ControllerFactura.consultar(tableFactura);
     }//GEN-LAST:event_btnConsultarActionPerformed
 
     private void btnActualizarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnActualizarActionPerformed
         // TODO add your handling code here:
         String nit = txtNIT.getText();
         String producto = txtProducto.getText();
-        String total = txtTotal.getText();
+        int total = Integer.parseInt(txtTotal.getText());
         ControllerFactura.actualizar(nit, producto, total);
     }//GEN-LAST:event_btnActualizarActionPerformed
 
@@ -347,8 +346,8 @@ public class FacturasMenu extends javax.swing.JFrame {
     private javax.swing.JPanel panelBarraFac;
     public static javax.swing.JTable tableFactura;
     public javax.swing.JTextField txtFiltroInven;
-    public javax.swing.JTextField txtNIT;
-    public javax.swing.JTextField txtProducto;
-    public javax.swing.JTextField txtTotal;
+    public static javax.swing.JTextField txtNIT;
+    public static javax.swing.JTextField txtProducto;
+    public static javax.swing.JTextField txtTotal;
     // End of variables declaration//GEN-END:variables
 }
