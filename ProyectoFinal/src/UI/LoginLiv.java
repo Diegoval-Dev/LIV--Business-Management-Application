@@ -4,7 +4,9 @@
  */
 package UI;
 
+import Controller.ControllerLogin;
 import java.awt.Color;
+import javax.swing.JOptionPane;
 
 
 
@@ -253,9 +255,21 @@ public class LoginLiv extends javax.swing.JFrame {
 
     private void btnOfSiguienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnOfSiguienteActionPerformed
         // TODO add your handling code here:
-        MenuPrincipalLiv menu = new MenuPrincipalLiv();
-        menu.setVisible(true);
-        this.setVisible(false);
+        
+        String user = txtNombreLogin.getText();
+        char[] contra = txtPaswordLogin.getPassword();
+        String sContra = new String(contra);
+        ControllerLogin cn = new ControllerLogin();
+        
+        if(cn.datosSafe(user,sContra)){
+            MenuPrincipalLiv menu = new MenuPrincipalLiv();
+            menu.setVisible(true);
+            this.setVisible(false);
+        }else{
+            JOptionPane.showMessageDialog(null, "Contraseña Incorrecta");
+        }
+        
+        
     }//GEN-LAST:event_btnOfSiguienteActionPerformed
 
 

@@ -5,13 +5,9 @@
 package model;
 
 import Controller.ControllerFactura;
-import static Controller.ControllerFactura.limpiar;
-import static Controller.ControllerFactura.tabla;
-import java.sql.Connection;
 import java.util.ArrayList;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
-import java.sql.SQLException;
 import javax.swing.JOptionPane;
 
 /**

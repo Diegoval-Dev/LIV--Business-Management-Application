@@ -61,10 +61,13 @@ public class UsuarioDAO extends Conexion{
            Cifrado cifrarContra = new Cifrado(7);
            this.conectar();
            instruccionSQL = "SELECT * FROM `usuarios` WHERE user = ?;";
+           preSta = this.conectar.prepareStatement(instruccionSQL);
+           preSta.setString(1, user);
            respond = preSta.executeQuery();
            if (respond.next()){
                String contraBase = respond.getString("contra");
                desencripContra = cifrarContra.desencriptar(contraBase);
+               System.out.println(desencripContra);
             }
            
             else{

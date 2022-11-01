@@ -16,7 +16,6 @@ import javax.swing.JTable;
 
 /**
  *
- * @author Jose Gramajo
  * @author Diego Valenzuela
  */
 public class ControllerFactura {
