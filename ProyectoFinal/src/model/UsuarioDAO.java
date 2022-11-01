@@ -8,6 +8,7 @@ package model;
 import java.util.ArrayList;
 import javax.swing.JOptionPane;
 import java.sql.PreparedStatement;
+import model.Cifrado;
 
 
 
@@ -23,18 +24,21 @@ public class UsuarioDAO extends Conexion{
     
    public void datosSave (Usuario usuario){
        try{
+           String encriContra;
+           Cifrado cifrarContra = new Cifrado(7);
+           encriContra = cifrarContra.encriptar(usuario.contra);
            this.conectar();
            String instruccionSQL = "insert into `usuarios` (user, contra) Values (?,?)";
            preSta = this.conectar.prepareStatement(instruccionSQL);
            preSta.setString(1, usuario.user);
-           preSta.setString(2, usuario.contra);
+           preSta.setString(2, encriContra);
            long time = System.currentTimeMillis();
                    
             int update = preSta.executeUpdate();
             if (update>0) {
                 JOptionPane.showMessageDialog(null, "Datos guardados exitosamente");
                 
-            }
+        }
             
         }catch(Exception exc){
             System.out.println(exc.getMessage());
