@@ -1,41 +1,34 @@
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Main.java to edit this template
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 package Controller;
 
-import UI.LoginLiv;
 import model.Usuario;
 import model.UsuarioDAO;
-
 
 /**
  *
  * @author diego
+ * @author Ruth
  */
 public class ControllerLogin {
-
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String[] args) {
-        // TODO code application logic here
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new LoginLiv().setVisible(true);
-            }
-        });
-    }
-    
-    
+    public static UsuarioDAO fc = new UsuarioDAO();
     public boolean datosSafe(String usuario, String password){
-    
-    
-    Usuario safe = new Usuario("","");
-    safe.setUser(UsuarioDAO.obtenerDatos);
-    safe.setContra(UsuarioDAO.obtenerDatos);
-    
+        Usuario safe = new Usuario("","");
+        try{
+            String contra = fc.obtenerDatos(usuario);
+            safe.setUser(usuario);
+            safe.setContra(contra);
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
+        
+        if(safe.getContra().equals(password)){
+            return true;
+        }
+        else{
+            return false;
+        }
     }
-    
-    
 }

@@ -52,8 +52,8 @@ public class UsuarioDAO extends Conexion{
    } 
    
       
-   public Usuario obtenerDatos (String user){
-       Usuario data = new Usuario("","");
+   public String obtenerDatos (String user){
+       String desencripContra = "";
        ResultSet respond;
        
        try{
@@ -63,11 +63,8 @@ public class UsuarioDAO extends Conexion{
            instruccionSQL = "SELECT * FROM `usuarios` WHERE user = ?;";
            respond = preSta.executeQuery();
            if (respond.next()){
-               String userBase = respond.getString("user");
                String contraBase = respond.getString("contra");
-               String desencripContra = cifrarContra.desencriptar(contraBase);
-               data.setContra(contraBase);
-               data.setUser(user);
+               desencripContra = cifrarContra.desencriptar(contraBase);
             }
            
             else{
@@ -79,7 +76,7 @@ public class UsuarioDAO extends Conexion{
        }finally{
            this.cerrarConex();
        }
-       return data;   
+       return desencripContra;   
    }
    
     
