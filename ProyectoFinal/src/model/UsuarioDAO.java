@@ -4,10 +4,20 @@
  */
 package model;
 
+import java.util.ArrayList;
+
+
 /**
  *
  * @author Usuario
  */
 public class UsuarioDAO {
-    
+   public static void datosSave (){
+   } 
+   
+   
+   public static void obtenerDatos (){
+       ArrayList <Usuario> datos = new ArrayList<>();
+   } 
+   
 }
