@@ -33,7 +33,7 @@ public class ControllerEmpleado {
     /**
      * Metodo para limpiar los campos de texto
      */
-    public void limpiar(){
+    public static void limpiar(){
         
     }
     /**
@@ -43,14 +43,14 @@ public class ControllerEmpleado {
      * @param telefono telefono del empleado
      * @param puesto puesto del empleado
      */
-    public void guardar(String nombre, int edad, String telefono, String puesto){
+    public static void guardar(String nombre, int edad, String telefono, String puesto){
         
     }
     /**
      * Metodo para consultar un dato
      * @param tabla tabla de empleados
      */
-    public void consultar(JTable tabla){
+    public static void consultar(JTable tabla){
         
     }
     /**
@@ -60,14 +60,14 @@ public class ControllerEmpleado {
      * @param telefono telefono del empleado
      * @param puesto puesto del empleado
      */
-    public void actualizar(String nombre, int edad, String telefono, String puesto){
+    public static void actualizar(String nombre, int edad, String telefono, String puesto){
         
     }
     /**
      * Metodo para eliminar un dato
      * @param nombre nombre del empleado a eliminar
      */
-    public void eliminar(String nombre){
+    public static void eliminar(String nombre){
         
     }
 

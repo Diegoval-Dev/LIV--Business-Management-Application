@@ -33,7 +33,7 @@ public class ControllerInventario {
     /**
      * Metodo para limpiar los campos de texto
      */
-    public void limpiar(){
+    public static void limpiar(){
         
     }
     /**
@@ -44,14 +44,14 @@ public class ControllerInventario {
      * @param fabricacion fabricacion del producto
      * @param lote lote del producto
      */
-    public void guardar(int precio,String marca,int cantidad, String fabricacion,String lote){
+    public static void guardar(int precio,String marca,int cantidad, String fabricacion,String lote){
         
     }
     /**
      * Metodo para consultar un dato
      * @param tabla tabla de productos
      */
-    public void consultar(JTable tabla){
+    public static void consultar(JTable tabla){
         
     }
     /**
@@ -62,14 +62,14 @@ public class ControllerInventario {
      * @param fabricacion nueva fabriacion
      * @param lote nuevo lote
      */
-    public void actualizar(int precio,String marca,int cantidad, String fabricacion,String lote){
+    public static void actualizar(int precio,String marca,int cantidad, String fabricacion,String lote){
         
     }
     /**
      * Metodo para eliminar un dato
      * @param id id del dato a eliminar
      */
-    public void eliminar(int id){
+    public static void eliminar(int id){
         
     }
 

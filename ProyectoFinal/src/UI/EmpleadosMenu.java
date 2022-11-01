@@ -4,6 +4,8 @@
  */
 package UI;
 
+import Controller.ControllerEmpleado;
+
 /**
  *
  * @author Usuario
@@ -181,6 +183,11 @@ public class EmpleadosMenu extends javax.swing.JFrame {
         btnGuardarEmple.setBorder(null);
         btnGuardarEmple.setBorderPainted(false);
         btnGuardarEmple.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnGuardarEmple.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnGuardarEmpleActionPerformed(evt);
+            }
+        });
         jPanel2.add(btnGuardarEmple, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 90, 100, 30));
 
         btnActualizarEmple.setBackground(new java.awt.Color(0, 153, 204));
@@ -190,6 +197,11 @@ public class EmpleadosMenu extends javax.swing.JFrame {
         btnActualizarEmple.setBorder(null);
         btnActualizarEmple.setBorderPainted(false);
         btnActualizarEmple.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnActualizarEmple.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnActualizarEmpleActionPerformed(evt);
+            }
+        });
         jPanel2.add(btnActualizarEmple, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 140, 100, 30));
 
         btnConsultarEmple.setBackground(new java.awt.Color(255, 153, 51));
@@ -199,6 +211,11 @@ public class EmpleadosMenu extends javax.swing.JFrame {
         btnConsultarEmple.setBorder(null);
         btnConsultarEmple.setBorderPainted(false);
         btnConsultarEmple.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnConsultarEmple.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnConsultarEmpleActionPerformed(evt);
+            }
+        });
         jPanel2.add(btnConsultarEmple, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 190, 100, 30));
 
         btnEliminarEmple.setBackground(new java.awt.Color(255, 51, 51));
@@ -208,6 +225,11 @@ public class EmpleadosMenu extends javax.swing.JFrame {
         btnEliminarEmple.setBorder(null);
         btnEliminarEmple.setBorderPainted(false);
         btnEliminarEmple.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnEliminarEmple.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnEliminarEmpleActionPerformed(evt);
+            }
+        });
         jPanel2.add(btnEliminarEmple, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 240, 100, 30));
 
         imageLogoEmple.setIcon(new javax.swing.ImageIcon(getClass().getResource("/UI/Resources/logoFinal.png"))); // NOI18N
@@ -286,6 +308,35 @@ public class EmpleadosMenu extends javax.swing.JFrame {
         
         this.setLocation(x - xMouse, y - yMouse);
     }//GEN-LAST:event_panelBarraMouseDragged
+
+    private void btnGuardarEmpleActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGuardarEmpleActionPerformed
+        // TODO add your handling code here:
+        String nombre = txtNombredelEmpleado.getText();
+        int edad = Integer.parseInt(txtEdad.getText());
+        String telefono = txtPhone.getText();
+        String puesto = txtPuesto.getText();
+        ControllerEmpleado.guardar(nombre, edad, telefono, puesto);
+    }//GEN-LAST:event_btnGuardarEmpleActionPerformed
+
+    private void btnActualizarEmpleActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnActualizarEmpleActionPerformed
+        // TODO add your handling code here:
+        String nombre = txtNombredelEmpleado.getText();
+        int edad = Integer.parseInt(txtEdad.getText());
+        String telefono = txtPhone.getText();
+        String puesto = txtPuesto.getText();
+        ControllerEmpleado.actualizar(nombre, edad, telefono, puesto);
+    }//GEN-LAST:event_btnActualizarEmpleActionPerformed
+
+    private void btnConsultarEmpleActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnConsultarEmpleActionPerformed
+        // TODO add your handling code here:
+        ControllerEmpleado.consultar(TablaEmpleados);
+    }//GEN-LAST:event_btnConsultarEmpleActionPerformed
+
+    private void btnEliminarEmpleActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEliminarEmpleActionPerformed
+        // TODO add your handling code here:
+        String nombre = txtNombredelEmpleado.getText();
+        ControllerEmpleado.eliminar(nombre);
+    }//GEN-LAST:event_btnEliminarEmpleActionPerformed
 
 
 

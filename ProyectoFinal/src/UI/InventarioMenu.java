@@ -4,6 +4,8 @@
  */
 package UI;
 
+import Controller.ControllerInventario;
+
 /**
  *
  * @author Usuario
@@ -176,6 +178,11 @@ public class InventarioMenu extends javax.swing.JFrame {
         btnGuardarInven.setBorder(null);
         btnGuardarInven.setBorderPainted(false);
         btnGuardarInven.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnGuardarInven.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnGuardarInvenActionPerformed(evt);
+            }
+        });
         jPanel2.add(btnGuardarInven, new org.netbeans.lib.awtextra.AbsoluteConstraints(800, 90, 100, 30));
 
         TablaInven.setModel(new javax.swing.table.DefaultTableModel(
@@ -200,6 +207,11 @@ public class InventarioMenu extends javax.swing.JFrame {
         btnActualizarInven.setBorder(null);
         btnActualizarInven.setBorderPainted(false);
         btnActualizarInven.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnActualizarInven.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnActualizarInvenActionPerformed(evt);
+            }
+        });
         jPanel2.add(btnActualizarInven, new org.netbeans.lib.awtextra.AbsoluteConstraints(800, 190, 100, 30));
 
         btnConsultarInven.setBackground(new java.awt.Color(255, 153, 51));
@@ -209,6 +221,11 @@ public class InventarioMenu extends javax.swing.JFrame {
         btnConsultarInven.setBorder(null);
         btnConsultarInven.setBorderPainted(false);
         btnConsultarInven.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnConsultarInven.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnConsultarInvenActionPerformed(evt);
+            }
+        });
         jPanel2.add(btnConsultarInven, new org.netbeans.lib.awtextra.AbsoluteConstraints(800, 140, 100, 30));
 
         btnEliminarInven.setBackground(new java.awt.Color(255, 51, 51));
@@ -218,6 +235,11 @@ public class InventarioMenu extends javax.swing.JFrame {
         btnEliminarInven.setBorder(null);
         btnEliminarInven.setBorderPainted(false);
         btnEliminarInven.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnEliminarInven.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnEliminarInvenActionPerformed(evt);
+            }
+        });
         jPanel2.add(btnEliminarInven, new org.netbeans.lib.awtextra.AbsoluteConstraints(800, 240, 100, 30));
 
         imageLogoInven.setIcon(new javax.swing.ImageIcon(getClass().getResource("/UI/Resources/logoFinal.png"))); // NOI18N
@@ -295,6 +317,39 @@ public class InventarioMenu extends javax.swing.JFrame {
         this.setLocation(x - xMouse, y - yMouse);
     }//GEN-LAST:event_panelBarraMouseDragged
 
+    private void btnGuardarInvenActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGuardarInvenActionPerformed
+        // TODO add your handling code here:
+        int id = Integer.parseInt(txtIDInven.getText());
+        int precio = Integer.parseInt(txtNombreInven.getText());
+        String marca = txtMarcaInven.getText();
+        int cantidad = Integer.parseInt(txtYearInven.getText());
+        String fabricacion = txtTipoInven.getText();
+        String lote = txtCategoriaInven.getText();
+        ControllerInventario.guardar(precio,marca,cantidad,fabricacion,lote);
+    }//GEN-LAST:event_btnGuardarInvenActionPerformed
+
+    private void btnConsultarInvenActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnConsultarInvenActionPerformed
+        // TODO add your handling code here:
+        ControllerInventario.consultar(TablaInven);
+    }//GEN-LAST:event_btnConsultarInvenActionPerformed
+
+    private void btnActualizarInvenActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnActualizarInvenActionPerformed
+        // TODO add your handling code here:
+        int id = Integer.parseInt(txtIDInven.getText());
+        int precio = Integer.parseInt(txtNombreInven.getText());
+        String marca = txtMarcaInven.getText();
+        int cantidad = Integer.parseInt(txtYearInven.getText());
+        String fabricacion = txtTipoInven.getText();
+        String lote = txtCategoriaInven.getText();
+        ControllerInventario.actualizar(precio,marca,cantidad,fabricacion,lote);
+    }//GEN-LAST:event_btnActualizarInvenActionPerformed
+
+    private void btnEliminarInvenActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEliminarInvenActionPerformed
+        // TODO add your handling code here:
+        int id = Integer.parseInt(txtIDInven.getText());
+        ControllerInventario.eliminar(id);
+    }//GEN-LAST:event_btnEliminarInvenActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel Categoria;
@@ -318,12 +373,12 @@ public class InventarioMenu extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JPanel panelBarra;
-    private javax.swing.JTextField txtCategoriaInven;
-    private javax.swing.JTextField txtIDInven;
-    private javax.swing.JTextField txtMarcaInven;
-    private javax.swing.JTextField txtNombreInven;
-    private javax.swing.JTextField txtTipoInven;
-    private javax.swing.JTextField txtYearInven;
+    private static javax.swing.JTextField txtCategoriaInven;
+    private static javax.swing.JTextField txtIDInven;
+    private static javax.swing.JTextField txtMarcaInven;
+    private static javax.swing.JTextField txtNombreInven;
+    private static javax.swing.JTextField txtTipoInven;
+    private static javax.swing.JTextField txtYearInven;
     private javax.swing.JTextField txtYearInven1;
     // End of variables declaration//GEN-END:variables
 }
