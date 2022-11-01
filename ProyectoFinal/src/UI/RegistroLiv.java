@@ -225,13 +225,14 @@ public class RegistroLiv extends javax.swing.JFrame {
 
     private void btnRegistroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegistroActionPerformed
     // TODO add your handling code here:
+    String username = txtUsername.getText();
     String contra = txtPassWord.getText();
     String contra2 = txtPassWord2.getText();
     String pin = txtPIN.getText();
     
     if(pin.equals("123")){
         if(contra.equals(contra2)){
-            ControllerRegistro.registar();
+            ControllerRegistro.registar(username, contra);
             LoginLiv loginLiv = new LoginLiv();
             loginLiv.setVisible(true);
             this.setVisible(false);

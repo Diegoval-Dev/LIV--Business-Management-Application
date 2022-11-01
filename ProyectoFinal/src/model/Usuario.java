@@ -6,12 +6,12 @@ package model;
 
 /**
  *
- * @author Usuario
+ * @author Ruth
  */
 public class Usuario {
     
-    private String user;
-    private String contra;
+    public String user;
+    public String contra;
 
     public String getUser() {
         return user;
@@ -26,6 +26,11 @@ public class Usuario {
     }
 
     public void setContra(String contra) {
+        this.contra = contra;
+    }
+
+    public Usuario(String user, String contra) {
+        this.user = user;
         this.contra = contra;
     }
     
