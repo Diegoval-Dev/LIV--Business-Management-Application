@@ -12,8 +12,9 @@ import java.util.ArrayList;
  * @author Usuario
  */
 public class UsuarioDAO {
-   public static void datosSave (){
+   public static void datosSave (Usuario Usuario){
    } 
+   
    
    
    public static void obtenerDatos (){
