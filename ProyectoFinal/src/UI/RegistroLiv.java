@@ -232,7 +232,7 @@ public class RegistroLiv extends javax.swing.JFrame {
     
     if(pin.equals("123")){
         if(contra.equals(contra2)){
-            ControllerRegistro.registar(username, contra);
+            ControllerRegistro.registrar(username, contra);
             LoginLiv loginLiv = new LoginLiv();
             loginLiv.setVisible(true);
             this.setVisible(false);

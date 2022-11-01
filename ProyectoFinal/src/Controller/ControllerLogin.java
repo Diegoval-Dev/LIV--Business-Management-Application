@@ -6,6 +6,8 @@ package Controller;
 
 import UI.LoginLiv;
 import model.Usuario;
+import model.UsuarioDAO;
+
 
 /**
  *
@@ -26,12 +28,13 @@ public class ControllerLogin {
     }
     
     
-    public boolean datosSafe(){
+    public boolean datosSafe(String usuario, String password){
     
-    String usuario;
-    String password;
     
     Usuario safe = new Usuario("","");
+    safe.setUser(UsuarioDAO.obtenerDatos);
+    safe.setContra(UsuarioDAO.obtenerDatos);
+    
     }
     
     

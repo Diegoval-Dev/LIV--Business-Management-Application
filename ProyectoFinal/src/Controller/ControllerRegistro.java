@@ -16,7 +16,7 @@ public class ControllerRegistro {
     
     
     
-    public static void registar(String user, String contra){
+    public static void registrar(String user, String contra){
        Usuario usuario = new Usuario(user, contra);
        UDAO.datosSave(usuario);
        

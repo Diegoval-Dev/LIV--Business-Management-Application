@@ -5,10 +5,12 @@
 package model;
 
 
-import java.util.ArrayList;
+
 import javax.swing.JOptionPane;
 import java.sql.PreparedStatement;
 import model.Cifrado;
+import model.Usuario;
+import java.sql.ResultSet;
 
 
 
@@ -21,6 +23,7 @@ public class UsuarioDAO extends Conexion{
     
     private String instruccionSQL;
     private PreparedStatement preSta;
+    
     
    public void datosSave (Usuario usuario){
        try{
@@ -49,8 +52,36 @@ public class UsuarioDAO extends Conexion{
    } 
    
       
-   public void obtenerDatos (){
-       ArrayList <Usuario> datos = new ArrayList<>();
-   } 
+   public Usuario obtenerDatos (String user){
+       Usuario data = new Usuario("","");
+       ResultSet respond;
+       
+       try{
+           
+           Cifrado cifrarContra = new Cifrado(7);
+           this.conectar();
+           instruccionSQL = "SELECT * FROM `usuarios` WHERE user = ?;";
+           respond = preSta.executeQuery();
+           if (respond.next()){
+               String userBase = respond.getString("user");
+               String contraBase = respond.getString("contra");
+               String desencripContra = cifrarContra.desencriptar(contraBase);
+               data.setContra(contraBase);
+               data.setUser(user);
+            }
+           
+            else{
+                JOptionPane.showMessageDialog(null, "Usuario no encontrado");
+            }
+
+       }catch(Exception exc){
+           System.out.println(exc.getMessage());
+       }finally{
+           this.cerrarConex();
+       }
+       return data;   
+   }
+   
+    
    
 }
