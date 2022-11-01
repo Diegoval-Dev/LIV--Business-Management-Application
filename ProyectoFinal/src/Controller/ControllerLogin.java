@@ -5,6 +5,7 @@
 package Controller;
 
 import UI.LoginLiv;
+import model.Usuario;
 
 /**
  *
@@ -23,5 +24,15 @@ public class ControllerLogin {
             }
         });
     }
+    
+    
+    public boolean datosSafe(){
+    
+    String usuario;
+    String password;
+    
+    Usuario safe = new Usuario("","");
+    }
+    
     
 }
