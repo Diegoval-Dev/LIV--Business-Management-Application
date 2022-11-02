@@ -59,6 +59,7 @@ public class EmpleadoDAO extends Conexion{
         
         return listaEmpleados;
     }
+    
     /**
      * Metodo para realizar una consulta a la base de datos
      * @param nombre id del objeto a realizar una consulta
@@ -67,7 +68,33 @@ public class EmpleadoDAO extends Conexion{
      public ArrayList<Empleado> consultar(String nombre){
         ArrayList<Empleado> listaEmpleados = null; 
         ResultSet resultado;
-        return null;
+        try{
+            this.conectar();
+            listaEmpleados = new ArrayList();
+            instruccionSQL ="SELECT * FROM `empleados` WHERE nombre = ?;";
+            ms = this.conectar.prepareStatement(instruccionSQL);
+            ms.setString(1, nombre);
+            resultado = ms.executeQuery();
+            if (resultado.next()) {
+                int id = resultado.getInt("id");
+                int edad = resultado.getInt("edad");
+                String numero = resultado.getString("numero");
+                String puesto = resultado.getString("puesto");
+                Empleado ep = new Empleado(id,nombre,edad,numero,puesto);
+                listaEmpleados.add(ep);
+                return listaEmpleados;
+                
+            }
+            else{
+                JOptionPane.showMessageDialog(null, "Empleado no encontrado!!"); 
+                ControllerFactura.limpiar();
+            }
+        }catch(Exception e){
+            System.out.println(e.getMessage());
+        }finally{
+            this.cerrarConex();
+        }
+        return listaEmpleados;
      }
      
      /**
