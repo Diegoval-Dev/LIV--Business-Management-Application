@@ -134,7 +134,6 @@ public class EmpleadoDAO extends Conexion{
             this.conectar();
             long time = System.currentTimeMillis();
             java.sql.Date d = new java.sql.Date(time);
-            String instruccionSQL = "UPDATE `empleado` SET `producto`= '"+factura.getProductos()+"',`fecha` ='"+d+"',`total` ='"+factura.getTotal()+"' WHERE nit = ?";
             ms = this.conectar.prepareStatement(instruccionSQL);
             ms.setString(1, empleado.getNombre());
             int n = ms.executeUpdate();
