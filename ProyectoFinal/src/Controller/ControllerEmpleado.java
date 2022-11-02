@@ -4,11 +4,12 @@
  */
 package Controller;
 
+import UI.EmpleadosMenu;
 import java.util.ArrayList;
 import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
-import model.Factura;
-import model.ProductosDAO;
+import model.Empleado;
+import model.EmpleadoDAO;
 
 /**
  *
@@ -16,20 +17,33 @@ import model.ProductosDAO;
  */
 public class ControllerEmpleado {
     
-    ProductosDAO fc = new ProductosDAO();
+    public static EmpleadoDAO fc = new EmpleadoDAO();
     /**
      * Metodo para llenar tabla al inicio del programa;
      * @param tabla 
      */
     public static void llenarTabla(JTable tabla){
-    
-    }
-    public static DefaultTableModel tabla(ArrayList<Factura> arr){
         DefaultTableModel myModel = new DefaultTableModel();
+        ArrayList<Empleado> arr = new ArrayList();
         
+        try {
+            arr = fc.listaEmpleados();
+            myModel = tabla(arr);
+        }catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
         
-        return myModel;
+        tabla.setModel(myModel);
     }
+    /***
+     * Funcion para llenar la tabla con un arraylist
+     * @param arr arraylist de los empleados en la tabla
+     * @return modelo de la tabla
+     */
+    public static DefaultTableModel tabla(ArrayList<Empleado> arr){
+        return null;
+    }
+    
     /**
      * Metodo para limpiar los campos de texto
      */
