@@ -154,6 +154,21 @@ public class EmpleadoDAO extends Conexion{
       * @param id id del empleado a eliminar
       */
      public void eliminar(String nombre){
+         try {
+            this.conectar();
+            String instruccionSQL ="DELETE FROM empleados WHERE nombre=?";
+            ms = this.conectar.prepareStatement(instruccionSQL);
+            ms.setString(1, nombre);
+            int n = ms.executeUpdate();
+            if (n>0) {
+                JOptionPane.showMessageDialog(null, "EMPLEADO ELIMINADO"); 
+                ControllerFactura.limpiar();
+              }
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+        }finally{
+            this.cerrarConex();
+        }
      }
     
 }
