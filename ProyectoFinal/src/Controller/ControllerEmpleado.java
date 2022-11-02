@@ -48,10 +48,10 @@ public class ControllerEmpleado {
         myModel.addColumn("Numero");
         myModel.addColumn("Puesto");
         Object[] columna = new Object[5];
-        for(Factura fact : arr){
-            columna[0] = fact.getID();
+        for(Empleado fact : arr){
+            columna[0] = fact.getId();
             columna[1] = fact.getNombre();
-            columna[2] = fact.Edad();
+            columna[2] = fact.getEdad();
             columna[3] = fact.getNumero();
             columna[4] = fact.getPuesto();
             myModel.addRow(columna);
