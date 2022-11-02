@@ -5,6 +5,7 @@
 package Controller;
 
 import UI.EmpleadosMenu;
+import java.sql.*;
 import java.util.ArrayList;
 import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
@@ -63,7 +64,13 @@ public class ControllerEmpleado {
      * Metodo para limpiar los campos de texto
      */
     public static void limpiar(){
+        EmpleadosMenu.txtNombredelEmpleado.setText("");
+        EmpleadosMenu.txtEdad.setText("");
+        EmpleadosMenu.txtPhone.setText("");
+        EmpleadosMenu.txtPuesto.setText("");
+        EmpleadosMenu.txtNombredelEmpleado.requestFocus();
     }
+    
     /**
      * Metodo para guardar empleados
      * @param nombre nombre del empleado
@@ -72,7 +79,11 @@ public class ControllerEmpleado {
      * @param puesto puesto del empleado
      */
     public static void guardar(String nombre, int edad, String telefono, String puesto){
+        Empleado empleado = new Empleado (0,nombre,edad,numero,puesto);
+        fc.guardar(empleado);
+        llenarTabla(EmpleadosMenu.tableFactura);
     }
+    
     /**
      * Metodo para consultar un dato
      * @param tabla tabla de empleados
