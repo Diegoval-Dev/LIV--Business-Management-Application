@@ -112,14 +112,18 @@ public class ControllerEmpleado {
      * @param puesto puesto del empleado
      */
     public static void actualizar(String nombre, int edad, String telefono, String puesto){
-        
+        Empleado empleado = new Empleado (0,nombre,edad,numero,puesto);
+        fc.actualizar(empleado);
+        llenarTabla(EmpleadosMenu.TablaEmpleados);
     }
+    
     /**
      * Metodo para eliminar un dato
      * @param nombre nombre del empleado a eliminar
      */
     public static void eliminar(String nombre){
-        
+        fc.eliminar(nombre);
+        llenarTabla(EmpleadosMenu.TablaEmpleados);
     }
 
 }
