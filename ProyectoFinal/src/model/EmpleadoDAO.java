@@ -4,16 +4,19 @@
  */
 package model;
 
+import Controller.ControllerEmpleado;
+import Controller.ControllerFactura;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.util.ArrayList;
+import javax.swing.JOptionPane;
 
 /**
  *@author Jorge Gramajo
  *@author diego
  */
 public class EmpleadoDAO extends Conexion{
-    private String intruccionSQL;
+    private String instruccionSQL;
     private PreparedStatement ms;
     
     /**
@@ -21,11 +24,25 @@ public class EmpleadoDAO extends Conexion{
      * @return Arraylist con los objetos Producto
      */
     
-    public ArrayList listaProductos(){
-        ArrayList<Empleado> listaProductos = null;
+    public ArrayList listaEmpleados(){
+        ArrayList<Empleado> listaEmpleados = null;
         ResultSet resultado;
         
         try{
+            this.conectar();
+            instruccionSQL = "SELECT * FROM empleados";
+            ms = this.conectar.prepareStatement(instruccionSQL);
+            resultado = ms.executeQuery();
+            listaEmpleados = new ArrayList();
+            while(resultado.next()){
+                int id = resultado.getInt("id");
+                String nombre = resultado.getString("nombre");
+                int edad = resultado.getInt("edad");
+                String numero = resultado.getString("numero");
+                String puesto = resultado.getString("puesto");
+                Empleado empleado = new Empleado(id,nombre,edad,numero,puesto);
+                listaEmpleados.add(empleado);
+         }
             
             
             
@@ -40,39 +57,38 @@ public class EmpleadoDAO extends Conexion{
         }
 
         
-        return listaProductos;
+        return listaEmpleados;
     }
     /**
      * Metodo para realizar una consulta a la base de datos
-     * @param id id del objeto a realizar una consulta
+     * @param nombre id del objeto a realizar una consulta
      * @return Arraylist con el objeto que devolvio la consulta
      */
-     public ArrayList<Empleado> consultar(int id){
-         
-         
-         return null;
+     public ArrayList<Empleado> consultar(String nombre){
+        ArrayList<Empleado> listaEmpleados = null; 
+        ResultSet resultado;
+        return null;
      }
+     
      /**
       * Guarda objetos Producto en la base de datos
       * @param empleado empleado a guardar en la base de datos
       */
      public void guardar(Empleado empleado){
-     
-     
      }
+     
      /**
       * Metodo para actualizar un producto
       * @param empleado empleado actualizado
       */
      public void actualizar(Empleado empleado){
-     
      }
+     
      /**
       * Metodo para eliminar un empleado
       * @param id id del empleado a eliminar
       */
-     public void eliminar(int id){
-     
+     public void eliminar(String nombre){
      }
     
 }
