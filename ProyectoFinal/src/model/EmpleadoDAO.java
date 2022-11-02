@@ -98,10 +98,31 @@ public class EmpleadoDAO extends Conexion{
      }
      
      /**
-      * Guarda objetos Producto en la base de datos
+      * Guarda objetos Empleado en la base de datos
       * @param empleado empleado a guardar en la base de datos
       */
      public void guardar(Empleado empleado){
+         try{
+            this.conectar();
+            String instruccionSQL = "INSERT INTO `empleados` (nombre,edad,numero,puesto) VALUES(?,?,?,?)";
+            ms = this.conectar.prepareStatement(instruccionSQL);
+            ms.setString(1, empleado.getNombre());
+            ms.setInt(2, empleado.getEdad());
+            long time = System.currentTimeMillis();
+            java.sql.Date d = new java.sql.Date(time);
+            ms.setString(3, empleado.getNumero());
+            ms.setString(4, empleado.getPuesto());
+            int n = ms.executeUpdate();
+            if (n>0) {
+                JOptionPane.showMessageDialog(null, "Empleado registrado");
+                ControllerEmpleado.limpiar();
+            }
+            
+        }catch(Exception e){
+            System.out.println(e.getMessage());
+        }finally{
+         this.cerrarConex();
+        }
      }
      
      /**
