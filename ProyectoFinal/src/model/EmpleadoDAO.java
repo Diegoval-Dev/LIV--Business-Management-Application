@@ -108,8 +108,7 @@ public class EmpleadoDAO extends Conexion{
             ms = this.conectar.prepareStatement(instruccionSQL);
             ms.setString(1, empleado.getNombre());
             ms.setInt(2, empleado.getEdad());
-            long time = System.currentTimeMillis();
-            java.sql.Date d = new java.sql.Date(time);
+
             ms.setString(3, empleado.getNumero());
             ms.setString(4, empleado.getPuesto());
             int n = ms.executeUpdate();
@@ -132,8 +131,7 @@ public class EmpleadoDAO extends Conexion{
      public void actualizar(Empleado empleado){
          try {
             this.conectar();
-            long time = System.currentTimeMillis();
-            java.sql.Date d = new java.sql.Date(time);
+            instruccionSQL = "UPDATE 'empleados' SET  'edad' = '"+empleado.getEdad()+"', 'numero' = '"+empleado.getNumero()+"', 'puesto' = '"+empleado.getPuesto()+"' WHERE nombre = ?";
             ms = this.conectar.prepareStatement(instruccionSQL);
             ms.setString(1, empleado.getNombre());
             int n = ms.executeUpdate();
@@ -150,7 +148,7 @@ public class EmpleadoDAO extends Conexion{
      
      /**
       * Metodo para eliminar un empleado
-      * @param id id del empleado a eliminar
+      * @param nombre nombre del empleado a eliminar
       */
      public void eliminar(String nombre){
          try {
