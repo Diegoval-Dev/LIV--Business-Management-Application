@@ -93,10 +93,17 @@ public class ControllerEmpleado {
         ArrayList<Empleado> arr = new ArrayList();
         
         try {
+            String nombre = EmpleadosMenu.txtNombredelEmpleado.getName();
+            arr = fc.consultar(nombre);
+            myModel = tabla(arr);
         }catch (Exception e){
             System.out.println(e.getMessage());
         }
+        
+        tabla.setModel(myModel);
+        
     }
+    
     /**
      * Metodo para actualizar un producto
      * @param nombre nombre del empleado
