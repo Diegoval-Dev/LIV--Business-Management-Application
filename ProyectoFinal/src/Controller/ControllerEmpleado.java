@@ -63,7 +63,6 @@ public class ControllerEmpleado {
      * Metodo para limpiar los campos de texto
      */
     public static void limpiar(){
-        
     }
     /**
      * Metodo para guardar empleados
@@ -73,14 +72,19 @@ public class ControllerEmpleado {
      * @param puesto puesto del empleado
      */
     public static void guardar(String nombre, int edad, String telefono, String puesto){
-        
     }
     /**
      * Metodo para consultar un dato
      * @param tabla tabla de empleados
      */
     public static void consultar(JTable tabla){
+        DefaultTableModel myModel = new DefaultTableModel();
+        ArrayList<Empleado> arr = new ArrayList();
         
+        try {
+        }catch (Exception e){
+            System.out.println(e.getMessage());
+        }
     }
     /**
      * Metodo para actualizar un producto
