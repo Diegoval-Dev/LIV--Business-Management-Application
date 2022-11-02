@@ -81,7 +81,7 @@ public class ControllerEmpleado {
     public static void guardar(String nombre, int edad, String telefono, String puesto){
         Empleado empleado = new Empleado (0,nombre,edad,numero,puesto);
         fc.guardar(empleado);
-        llenarTabla(EmpleadosMenu.tableFactura);
+        llenarTabla(EmpleadosMenu.TablaEmpleados);
     }
     
     /**
