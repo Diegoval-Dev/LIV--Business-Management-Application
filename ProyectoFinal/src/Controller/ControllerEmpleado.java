@@ -41,7 +41,22 @@ public class ControllerEmpleado {
      * @return modelo de la tabla
      */
     public static DefaultTableModel tabla(ArrayList<Empleado> arr){
-        return null;
+        DefaultTableModel myModel = new DefaultTableModel();
+        myModel.addColumn("ID");
+        myModel.addColumn("Nombre");
+        myModel.addColumn("Edad");
+        myModel.addColumn("Numero");
+        myModel.addColumn("Puesto");
+        Object[] columna = new Object[5];
+        for(Factura fact : arr){
+            columna[0] = fact.getID();
+            columna[1] = fact.getNombre();
+            columna[2] = fact.Edad();
+            columna[3] = fact.getNumero();
+            columna[4] = fact.getPuesto();
+            myModel.addRow(columna);
+        }
+        return myModel;
     }
     
     /**
