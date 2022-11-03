@@ -170,6 +170,8 @@ public class ProductosDAO extends Conexion {
         }finally{
             this.cerrarConex();
         }
+         
+         
      
      }
 }
