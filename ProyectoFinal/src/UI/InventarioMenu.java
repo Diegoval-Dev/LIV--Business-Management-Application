@@ -335,8 +335,8 @@ public class InventarioMenu extends javax.swing.JFrame {
 
     private void btnGuardarInvenActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGuardarInvenActionPerformed
         // TODO add your handling code here:
-        int id = Integer.parseInt(txtIDInven.getText());
-        int precio = Integer.parseInt(txtNombreInven.getText());
+
+        float precio = Integer.parseInt(txtNombreInven.getText());
         String marca = txtMarcaInven.getText();
         int cantidad = Integer.parseInt(txtYearInven.getText());
         String fabricacion = txtTipoInven.getText();
@@ -361,7 +361,7 @@ public class InventarioMenu extends javax.swing.JFrame {
         String lote = txtCategoriaInven.getText();
         String nombre = txtNombre.getText();
         String desc = txtDescripcion.getText();
-        ControllerInventario.actualizar(nombre,precio,marca,cantidad,fabricacion,lote,desc);
+        ControllerInventario.actualizar(id,nombre,precio,marca,cantidad,fabricacion,lote,desc);
     }//GEN-LAST:event_btnActualizarInvenActionPerformed
 
     private void btnEliminarInvenActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEliminarInvenActionPerformed

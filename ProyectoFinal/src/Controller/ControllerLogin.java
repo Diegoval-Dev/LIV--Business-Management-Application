@@ -3,10 +3,8 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 package Controller;
-
 import model.Usuario;
 import model.UsuarioDAO;
-
 /**
  *
  * @author diego
@@ -23,7 +21,6 @@ public class ControllerLogin {
         } catch (Exception e) {
             System.out.println(e.getMessage());
         }
-        
         if(safe.getContra().equals(password)){
             return true;
         }

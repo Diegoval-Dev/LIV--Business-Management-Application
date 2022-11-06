@@ -3,20 +3,17 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 package Controller;
-
 import UI.InventarioMenu;
 import java.util.ArrayList;
 import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
 import model.Producto;
 import model.ProductosDAO;
-
 /**
  *
  * @author Jose Gramajo
  */
 public class ControllerInventario {
-    
     public static ProductosDAO fc = new ProductosDAO();
     /**
      * Metodo para llenar tabla al inicio del programa;
@@ -25,15 +22,12 @@ public class ControllerInventario {
     public static void llenarTabla(JTable tabla){
         DefaultTableModel myModel = new DefaultTableModel();
         ArrayList<Producto> arr = new ArrayList();
-        
         try {
             arr = fc.listaProductos();
             myModel = tabla(arr);
         } catch (Exception e) {
             System.out.println(e.getMessage());
         }
-        
-        
         tabla.setModel(myModel);
     }
     public static DefaultTableModel tabla(ArrayList<Producto> arr){
@@ -55,11 +49,9 @@ public class ControllerInventario {
             columna[4] = fact.getMarca();
             columna[5] = fact.getFrabricacion();
             columna[6] = fact.getLote();
-            columna[4] = fact.getDescricion();
+            columna[7] = fact.getDescricion();
             myModel.addRow(columna);
         }
-        
-        
         return myModel;
     }
     /**
@@ -84,8 +76,9 @@ public class ControllerInventario {
      * @param fabricacion fabricacion del producto
      * @param lote lote del producto
      */
-    public static void guardar(String nombre,int precio,String marca,int cantidad, String fabricacion,String lote, String descripcion){
-        Producto pro = new Producto(0,nombre ,precio,cantidad,marca, fabricacion,lote,descripcion);
+    public static void guardar(String nombre, float precio,String marca,int cantidad, String fabricacion,String lote, String descripcion){
+        Producto pro = new Producto(0,nombre , precio, cantidad ,marca, fabricacion, lote,descripcion);
+        System.out.println("PAUSA");
         fc.guardar(pro);
         llenarTabla(InventarioMenu.TablaInven);
     }
@@ -96,7 +89,6 @@ public class ControllerInventario {
     public static void consultar(JTable tabla){
         DefaultTableModel myModel = new DefaultTableModel();
         ArrayList<Producto> arr = new ArrayList();
-        
         try {
             int id = Integer.parseInt(InventarioMenu.txtIDInven.getText());
             arr = fc.consultar(id);
@@ -104,12 +96,11 @@ public class ControllerInventario {
         } catch (Exception e) {
             System.out.println(e.getMessage());
         }
-        
-        
         tabla.setModel(myModel);
     }
     /**
      * Metodo para actualizar un producto
+     * @param id id a actualizar
      * @param desc descripcion del prodcuto
      * @param nombre nombre del producto
      * @param precio nuevo precio
@@ -118,8 +109,8 @@ public class ControllerInventario {
      * @param fabricacion nueva fabriacion
      * @param lote nuevo lote
      */
-    public static void actualizar(String nombre,int precio,String marca,int cantidad, String fabricacion,String lote,String desc){
-        Producto pro = new Producto(0,nombre ,precio,cantidad,marca, fabricacion,lote,desc);
+    public static void actualizar(int id,String nombre,int precio,String marca,int cantidad, String fabricacion,String lote,String desc){
+        Producto pro = new Producto(id,nombre ,precio,cantidad,marca, fabricacion,lote,desc);
         fc.actualizar(pro);
         llenarTabla(InventarioMenu.TablaInven);
     }
@@ -131,6 +122,4 @@ public class ControllerInventario {
         fc.eliminar(id);
         llenarTabla(InventarioMenu.TablaInven);
     }
-
-    
 }

@@ -3,14 +3,12 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 package model;
-
 import Controller.ControllerEmpleado;
 import Controller.ControllerFactura;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.util.ArrayList;
 import javax.swing.JOptionPane;
-
 /**
  *@author Jorge Gramajo
  *@author diego
@@ -18,16 +16,13 @@ import javax.swing.JOptionPane;
 public class EmpleadoDAO extends Conexion{
     private String instruccionSQL;
     private PreparedStatement ms;
-    
     /**
      * Funcion para jala todos los datos de la tabla Empleados
      * @return Arraylist con los objetos Producto
      */
-    
     public ArrayList listaEmpleados(){
         ArrayList<Empleado> listaEmpleados = null;
         ResultSet resultado;
-        
         try{
             this.conectar();
             instruccionSQL = "SELECT * FROM empleados";
@@ -42,24 +37,16 @@ public class EmpleadoDAO extends Conexion{
                 String puesto = resultado.getString("puesto");
                 Empleado empleado = new Empleado(id,nombre,edad,numero,puesto);
                 listaEmpleados.add(empleado);
-         }
-            
-            
-            
-                  
+         }        
         }
         catch(Exception a){
             System.out.println(a.getMessage());
-    
         }
         finally{
          this.cerrarConex();
         }
-
-        
         return listaEmpleados;
     }
-    
     /**
      * Metodo para realizar una consulta a la base de datos
      * @param nombre id del objeto a realizar una consulta
@@ -82,8 +69,7 @@ public class EmpleadoDAO extends Conexion{
                 String puesto = resultado.getString("puesto");
                 Empleado ep = new Empleado(id,nombre,edad,numero,puesto);
                 listaEmpleados.add(ep);
-                return listaEmpleados;
-                
+                return listaEmpleados;  
             }
             else{
                 JOptionPane.showMessageDialog(null, "Empleado no encontrado!!"); 
@@ -96,8 +82,7 @@ public class EmpleadoDAO extends Conexion{
         }
         return listaEmpleados;
      }
-     
-     /**
+      /**
       * Guarda objetos Empleado en la base de datos
       * @param empleado empleado a guardar en la base de datos
       */
@@ -116,14 +101,12 @@ public class EmpleadoDAO extends Conexion{
                 JOptionPane.showMessageDialog(null, "Empleado registrado");
                 ControllerEmpleado.limpiar();
             }
-            
         }catch(Exception e){
             System.out.println(e.getMessage());
         }finally{
          this.cerrarConex();
         }
      }
-     
      /**
       * Metodo para actualizar un producto
       * @param empleado empleado actualizado
@@ -145,7 +128,6 @@ public class EmpleadoDAO extends Conexion{
             this.cerrarConex();
         }
      }
-     
      /**
       * Metodo para eliminar un empleado
       * @param nombre nombre del empleado a eliminar
@@ -167,5 +149,4 @@ public class EmpleadoDAO extends Conexion{
             this.cerrarConex();
         }
      }
-    
 }

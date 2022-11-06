@@ -3,21 +3,17 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 package Controller;
-
 import UI.EmpleadosMenu;
-import java.sql.*;
 import java.util.ArrayList;
 import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
 import model.Empleado;
 import model.EmpleadoDAO;
-
 /**
  *
  * @author Jose Gramajo
  */
 public class ControllerEmpleado {
-    
     public static EmpleadoDAO fc = new EmpleadoDAO();
     /**
      * Metodo para llenar tabla al inicio del programa;
@@ -26,14 +22,12 @@ public class ControllerEmpleado {
     public static void llenarTabla(JTable tabla){
         DefaultTableModel myModel = new DefaultTableModel();
         ArrayList<Empleado> arr = new ArrayList();
-        
         try {
             arr = fc.listaEmpleados();
             myModel = tabla(arr);
         }catch (Exception e) {
             System.out.println(e.getMessage());
         }
-        
         tabla.setModel(myModel);
     }
     /***
@@ -59,7 +53,6 @@ public class ControllerEmpleado {
         }
         return myModel;
     }
-    
     /**
      * Metodo para limpiar los campos de texto
      */
@@ -70,7 +63,6 @@ public class ControllerEmpleado {
         EmpleadosMenu.txtPuesto.setText("");
         EmpleadosMenu.txtNombredelEmpleado.requestFocus();
     }
-    
     /**
      * Metodo para guardar empleados
      * @param nombre nombre del empleado
@@ -83,7 +75,6 @@ public class ControllerEmpleado {
         fc.guardar(empleado);
         llenarTabla(EmpleadosMenu.TablaEmpleados);
     }
-    
     /**
      * Metodo para consultar un dato
      * @param tabla tabla de empleados
@@ -91,7 +82,6 @@ public class ControllerEmpleado {
     public static void consultar(JTable tabla){
         DefaultTableModel myModel = new DefaultTableModel();
         ArrayList<Empleado> arr = new ArrayList();
-        
         try {
             String nombre = EmpleadosMenu.txtNombredelEmpleado.getText();
             arr = fc.consultar(nombre);
@@ -99,11 +89,8 @@ public class ControllerEmpleado {
         }catch (Exception e){
             System.out.println(e.getMessage());
         }
-        
         tabla.setModel(myModel);
-        
     }
-    
     /**
      * Metodo para actualizar un producto
      * @param nombre nombre del empleado
@@ -116,7 +103,6 @@ public class ControllerEmpleado {
         fc.actualizar(empleado);
         llenarTabla(EmpleadosMenu.TablaEmpleados);
     }
-    
     /**
      * Metodo para eliminar un dato
      * @param nombre nombre del empleado a eliminar
@@ -125,5 +111,4 @@ public class ControllerEmpleado {
         fc.eliminar(nombre);
         llenarTabla(EmpleadosMenu.TablaEmpleados);
     }
-
 }

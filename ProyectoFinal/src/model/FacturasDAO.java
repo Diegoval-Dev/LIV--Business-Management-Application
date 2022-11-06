@@ -3,13 +3,11 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 package model;
-
 import Controller.ControllerFactura;
 import java.util.ArrayList;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import javax.swing.JOptionPane;
-
 /**
  *
  * @author diego
@@ -47,7 +45,6 @@ public class FacturasDAO extends Conexion{
          this.cerrarConex();
         }
      return lista;
-     
     }
     /**
      * Metodo para consultar un dato especifico en la tabla
@@ -83,7 +80,6 @@ public class FacturasDAO extends Conexion{
             this.cerrarConex();
         }
         return lista;
-        
     }
     /**
      * Metodo para guardar nuevos registrso de facturas en la base de datos
@@ -155,8 +151,4 @@ public class FacturasDAO extends Conexion{
             this.cerrarConex();
         }
     }
-
-    
-
-
 }

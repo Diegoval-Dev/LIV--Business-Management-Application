@@ -1,40 +1,31 @@
 package model;
-
 import Controller.ControllerInventario;
 import java.util.ArrayList;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
-import java.sql.SQLException;
 import javax.swing.JOptionPane;
 /**
  * 
  * @author Roberto
  */
 public class ProductosDAO extends Conexion {
-    
     private String intruccionSQL;
-    private PreparedStatement ms;
-    
+    private PreparedStatement ms;   
     /**
      * @autor josue :)
      * Funcion para jala todos los datos de la tabla Inventario
      * @return Arraylist con los objetos Producto
-     */
-    
-    public ArrayList<Producto> listaProductos(){
-     
+     */    
+    public ArrayList<Producto> listaProductos(){    
         ArrayList<Producto> listaProductos = null;
-        ResultSet resultado;
-        
+        ResultSet resultado;      
         try{
-            System.out.println("Dsds");
             this.conectar();
-            intruccionSQL = "SELECT * FROM productos";
+            intruccionSQL = "SELECT * FROM `inventario`";
             ms = this.conectar.prepareStatement(intruccionSQL);
             resultado = ms.executeQuery();
-    
+            listaProductos = new ArrayList();
             while(resultado.next()){
-                
                 int id = resultado.getInt("id");
                 String nombre = resultado.getString("nombre");
                 float precio = resultado.getFloat("precio");
@@ -43,14 +34,9 @@ public class ProductosDAO extends Conexion {
                 String fabricacion = resultado.getString("fabricacion");
                 String lote = resultado.getString("lote");
                 String descripcion = resultado.getString("descripcion");
-               
                 Producto producto = new Producto(id,nombre,precio,cantidad,marca,fabricacion,lote,descripcion);
                 listaProductos.add(producto);         
-            }
-                   
-            
-            
-              
+            }   
         }
         catch(Exception a){
             System.out.println(a.getMessage());
@@ -61,7 +47,6 @@ public class ProductosDAO extends Conexion {
         }
         return listaProductos;
     }
-    
     /**
      * @author josue :)
      * Metodo para realizar una consulta a la base de datos
@@ -71,15 +56,12 @@ public class ProductosDAO extends Conexion {
      public ArrayList<Producto> consultar(int id){
          ArrayList<Producto> lista = null;
          ResultSet resultado;
-         
          try{
             this.conectar();
             lista = new ArrayList();
-            intruccionSQL = "SELECT * FROM `productos` WHERE id = ?;";
-            
+            intruccionSQL = "SELECT * FROM `inventario` WHERE id = ?;";
             ms = this.conectar.prepareStatement(intruccionSQL);
             ms.setInt(1,id);
-            
             resultado = ms.executeQuery();
             if (resultado.next()) {
                 id = resultado.getInt("id");
@@ -90,10 +72,8 @@ public class ProductosDAO extends Conexion {
                 String fabricacion = resultado.getString("fabricacion");
                 String lote = resultado.getString("lote");
                 String descripcion = resultado.getString("descripcion");
-                
                 Producto producto = new Producto(id,nombre,precio,cantidad,marca,fabricacion,lote,descripcion);
                 lista.add(producto);  
-                
             }
             else{
                 JOptionPane.showMessageDialog(null, "Registro no encontrado!!"); 
@@ -106,7 +86,6 @@ public class ProductosDAO extends Conexion {
         }
          return lista;
      }
-    
      /**
       * @author :)
       * Guarda objetos Producto en la base de datos
@@ -115,9 +94,8 @@ public class ProductosDAO extends Conexion {
      public void guardar(Producto producto){
          try{
             this.conectar();
-            intruccionSQL = "INSERT INTO `productos` (id,nombre,precio,cantidad,marca,fabricacion,lote,descripcion) VALUES(?,?,?,?)";
+            intruccionSQL = "INSERT INTO `inventario` (id,nombre,precio,cantidad,marca,fabricacion,lote,descripcion) VALUES(?,?,?,?,?,?,?,?)";
             ms = this.conectar.prepareStatement(intruccionSQL);
-            
             ms.setInt(1,producto.getID());
             ms.setString(2, producto.getNombre());
             ms.setFloat(3, producto.getPrecio());
@@ -126,49 +104,40 @@ public class ProductosDAO extends Conexion {
             ms.setString(6,producto.getFrabricacion());
             ms.setString(7,producto.getLote());
             ms.setString(8, producto.getDescricion());
-            
             int n = ms.executeUpdate();
             if(n>0){
                 JOptionPane.showMessageDialog(null, "Producto registrado");
                 ControllerInventario.limpiar();
-            }
-          
-   
+            }  
         }catch(Exception e){
             System.out.println(e.getMessage());
         }finally{
          this.cerrarConex();
         }
      }
-     
      /**
       * @author josue :)
       * Metodo para actualizar un producto
       * @param producto Producto actualizado
       */
-     public void actualizar(Producto producto){
-                 
+     public void actualizar(Producto producto){          
         try{
             this.conectar();
-            intruccionSQL = "UPDATE `inventario` set `nombre` = '"+producto.getNombre()+"' `precio` = '"+producto.getPrecio()+
-                    "' `cantidad` = '"+producto.getCantidad()+"' `marca` = '"+producto.getMarca()+"' `fabricacion` = '"+producto.getFrabricacion()+
-                    "' `lote` = '"+producto.getLote()+"' `descripcion` = '"+producto.getDescricion()+"' WHERE id= ?";
+            intruccionSQL = "UPDATE `inventario` set `nombre` = '"+producto.getNombre()+"', `precio` = '"+producto.getPrecio()+
+                    "', `cantidad` = '"+producto.getCantidad()+"', `marca` = '"+producto.getMarca()+"', `fabricacion` = '"+producto.getFrabricacion()+
+                    "', `lote` = '"+producto.getLote()+"', `descripcion` = '"+producto.getDescricion()+"' WHERE id= ?";
             ms = this.conectar.prepareStatement(intruccionSQL);
             ms.setInt(1,producto.getID());
-            
             int n = ms.executeUpdate();
             if(n>0){
-                JOptionPane.showMessageDialog(null, "Producto registrado");
+                JOptionPane.showMessageDialog(null, "Producto Actualizado");
                 ControllerInventario.limpiar();
             }
-          
-   
         }catch(Exception e){
             System.out.println(e.getMessage());
         }finally{
          this.cerrarConex();
         }
-     
      }
      /**
       * @author josue :)
@@ -176,11 +145,9 @@ public class ProductosDAO extends Conexion {
       * @param id id del producto a eliminar
       */
      public void eliminar(int id){
-         
-         
          try {
             this.conectar();
-            intruccionSQL ="DELETE FROM productos WHERE id=?";
+            intruccionSQL ="DELETE FROM inventario WHERE id=?";
             ms = this.conectar.prepareStatement(intruccionSQL);
             ms.setInt(1, id);
             int n = ms.executeUpdate();
@@ -194,8 +161,5 @@ public class ProductosDAO extends Conexion {
         }finally{
             this.cerrarConex();
         }
-         
-         
-     
      }
 }

@@ -3,12 +3,10 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 package model;
-
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-
 /**
  *
  * @author diego
@@ -19,8 +17,7 @@ public class Conexion {
     String user = "root";
     String cn = "";
     Connection conectar = null;
-    public Connection conectar(){
-        
+    public Connection conectar(){ 
         try {
             Class.forName(driver);
         } catch (ClassNotFoundException ex) {
@@ -45,6 +42,5 @@ public class Conexion {
       } catch (Exception e) {
           System.out.println(e);
       }
-    
     }
 }

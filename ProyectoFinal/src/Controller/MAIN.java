@@ -3,17 +3,13 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Main.java to edit this template
  */
 package Controller;
-
 import UI.LoginLiv;
-
-
 /**
  *
  * @author diego
  * @author Ruth
  */
 public class MAIN {
-
     /**
      * @param args the command line arguments
      */
@@ -24,10 +20,5 @@ public class MAIN {
                 new LoginLiv().setVisible(true);
             }
         });
-    }
-    
-    
-    
-    
-    
+    } 
 }

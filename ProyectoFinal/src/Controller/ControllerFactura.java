@@ -3,41 +3,31 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 package Controller;
-
 import UI.FacturasMenu;
-import java.sql.*;
 import java.util.ArrayList;
-import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
-import model.Conexion;
 import model.Factura;
 import model.FacturasDAO;
 import javax.swing.JTable;
-
 /**
  *
  * @author Diego Valenzuela
  */
 public class ControllerFactura {
-    
     public static FacturasDAO fc = new FacturasDAO();
     /**
      * Metodo para llenar la tabla con los datos obtenidos del DAO
      * @param tabla tabla a llenar
      */
     public static void llenarTabla(JTable tabla){
-        
         DefaultTableModel myModel = new DefaultTableModel();
         ArrayList<Factura> arr = new ArrayList();
-        
         try {
             arr = fc.lista();
             myModel = tabla(arr);
         } catch (Exception e) {
             System.out.println(e.getMessage());
         }
-        
-        
         tabla.setModel(myModel);
     }
      /**
@@ -61,7 +51,6 @@ public class ControllerFactura {
             columna[4] = fact.getTotal();
             myModel.addRow(columna);
         }
-        
         
         return myModel;
     }
@@ -92,7 +81,6 @@ public class ControllerFactura {
     public static void consultar(JTable tabla){
         DefaultTableModel myModel = new DefaultTableModel();
         ArrayList<Factura> arr = new ArrayList();
-        
         try {
             String nit = FacturasMenu.txtNIT.getText();
             arr = fc.consultar(nit);
@@ -100,8 +88,6 @@ public class ControllerFactura {
         } catch (Exception e) {
             System.out.println(e.getMessage());
         }
-        
-        
         tabla.setModel(myModel);
     }
     /**

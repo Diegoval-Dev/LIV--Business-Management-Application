@@ -5,24 +5,14 @@
 package Controller;
 import model.Usuario;
 import model.UsuarioDAO;
-
 /**
  *
  * @author Ruth
  */
 public class ControllerRegistro {
-    
     public static UsuarioDAO UDAO = new UsuarioDAO();
-    
-    
-    
     public static void registrar(String user, String contra){
        Usuario usuario = new Usuario(user, contra);
-       UDAO.datosSave(usuario);
-       
-        
-        
-    } 
-
-    
+       UDAO.datosSave(usuario); 
+    }   
 }

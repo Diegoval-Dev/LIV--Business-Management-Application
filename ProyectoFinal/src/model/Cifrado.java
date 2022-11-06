@@ -3,7 +3,6 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 package model;
-
 /**
  *
  * @author diego
@@ -15,11 +14,9 @@ public class Cifrado {
     public Cifrado(int salto) {
         this.salto = salto;
     }
-
     public int getSalto() {
         return salto;
     }
-
     public void setSalto(int salto) {
         this.salto = salto;
     }
