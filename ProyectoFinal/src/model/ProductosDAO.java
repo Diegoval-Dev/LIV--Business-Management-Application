@@ -1,9 +1,11 @@
 package model;
 
+import Controller.ControllerInventario;
 import java.util.ArrayList;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import javax.swing.JOptionPane;
 /**
  * 
  * @author Roberto
@@ -34,14 +36,15 @@ public class ProductosDAO extends Conexion {
             while(resultado.next()){
                 
                 int id = resultado.getInt("id");
+                String nombre = resultado.getString("nombre");
                 float precio = resultado.getFloat("precio");
                 int cantidad = resultado.getInt("cantidad");
                 String marca = resultado.getString("marca");
                 String fabricacion = resultado.getString("fabricacion");
-                int lote = resultado.getInt("lote");
+                String lote = resultado.getString("lote");
                 String descripcion = resultado.getString("descripcion");
                
-                Producto producto = new Producto(id,precio,cantidad,marca,fabricacion,lote,descripcion);
+                Producto producto = new Producto(id,nombre,precio,cantidad,marca,fabricacion,lote,descripcion);
                 listaProductos.add(producto);         
             }
                    
@@ -72,29 +75,29 @@ public class ProductosDAO extends Conexion {
          try{
             this.conectar();
             lista = new ArrayList();
-             String instruccionSQL = "SELECT * FROM `productos` WHERE id = ?;";
+            intruccionSQL = "SELECT * FROM `productos` WHERE id = ?;";
             
-            ms = this.conectar.prepareStatement(instruccionSQL);
+            ms = this.conectar.prepareStatement(intruccionSQL);
             ms.setInt(1,id);
             
             resultado = ms.executeQuery();
             if (resultado.next()) {
                 id = resultado.getInt("id");
                 float precio = resultado.getFloat("precio");
+                String nombre = resultado.getString("nombre");
                 int cantidad = resultado.getInt("cantidad");
                 String marca = resultado.getString("marca");
                 String fabricacion = resultado.getString("fabricacion");
-                int lote = resultado.getInt("lote");
+                String lote = resultado.getString("lote");
                 String descripcion = resultado.getString("descripcion");
                 
-                Producto producto = new Producto(id,precio,cantidad,marca,fabricacion,lote,descripcion);
+                Producto producto = new Producto(id,nombre,precio,cantidad,marca,fabricacion,lote,descripcion);
                 lista.add(producto);  
                 
             }
             else{
-                System.out.println("Not found");
-                //JOptionPane.showMessageDialog(null, "Registro no encontrado!!"); 
-                //ControllerFactura.limpiar();
+                JOptionPane.showMessageDialog(null, "Registro no encontrado!!"); 
+                ControllerInventario.limpiar();
             }
         }catch(Exception e){
             System.out.println(e.getMessage());
@@ -112,20 +115,22 @@ public class ProductosDAO extends Conexion {
      public void guardar(Producto producto){
          try{
             this.conectar();
-            String instruccionSQL = "INSERT INTO `productos` (id,precio,cantidad,marca,fabricacion,lote,descripcion) VALUES(?,?,?,?)";
-            ms = this.conectar.prepareStatement(instruccionSQL);
+            intruccionSQL = "INSERT INTO `productos` (id,nombre,precio,cantidad,marca,fabricacion,lote,descripcion) VALUES(?,?,?,?)";
+            ms = this.conectar.prepareStatement(intruccionSQL);
             
             ms.setInt(1,producto.getID());
-            ms.setFloat(2, producto.getPrecio());
-            ms.setInt(3, producto.getCantidad());
-            ms.setString(4, producto.getMarca());
-            ms.setString(5,producto.getFrabricacion());
-            ms.setInt(6,producto.getLote());
-            ms.setString(7, producto.getDescricion());
+            ms.setString(2, producto.getNombre());
+            ms.setFloat(3, producto.getPrecio());
+            ms.setInt(4, producto.getCantidad());
+            ms.setString(5, producto.getMarca());
+            ms.setString(6,producto.getFrabricacion());
+            ms.setString(7,producto.getLote());
+            ms.setString(8, producto.getDescricion());
             
             int n = ms.executeUpdate();
             if(n>0){
-                System.out.println("GUI lets know user");
+                JOptionPane.showMessageDialog(null, "Producto registrado");
+                ControllerInventario.limpiar();
             }
           
    
@@ -143,7 +148,26 @@ public class ProductosDAO extends Conexion {
       */
      public void actualizar(Producto producto){
                  
-        System.out.println("Update pending"); 
+        try{
+            this.conectar();
+            intruccionSQL = "UPDATE `inventario` set `nombre` = '"+producto.getNombre()+"' `precio` = '"+producto.getPrecio()+
+                    "' `cantidad` = '"+producto.getCantidad()+"' `marca` = '"+producto.getMarca()+"' `fabricacion` = '"+producto.getFrabricacion()+
+                    "' `lote` = '"+producto.getLote()+"' `descripcion` = '"+producto.getDescricion()+"' WHERE id= ?";
+            ms = this.conectar.prepareStatement(intruccionSQL);
+            ms.setInt(1,producto.getID());
+            
+            int n = ms.executeUpdate();
+            if(n>0){
+                JOptionPane.showMessageDialog(null, "Producto registrado");
+                ControllerInventario.limpiar();
+            }
+          
+   
+        }catch(Exception e){
+            System.out.println(e.getMessage());
+        }finally{
+         this.cerrarConex();
+        }
      
      }
      /**
@@ -156,8 +180,8 @@ public class ProductosDAO extends Conexion {
          
          try {
             this.conectar();
-            String instruccionSQL ="DELETE FROM productos WHERE id=?";
-            ms = this.conectar.prepareStatement(instruccionSQL);
+            intruccionSQL ="DELETE FROM productos WHERE id=?";
+            ms = this.conectar.prepareStatement(intruccionSQL);
             ms.setInt(1, id);
             int n = ms.executeUpdate();
             if (n>0) {

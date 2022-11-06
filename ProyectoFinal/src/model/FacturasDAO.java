@@ -21,7 +21,7 @@ public class FacturasDAO extends Conexion{
      * Este metodo Jala los datos de la tabla y los convierte en objetos de tipo factura
      * @return Arraylist con todos los objetos de tipo factura
      */
-    public ArrayList<Factura> listaFactura(){
+    public ArrayList<Factura> lista() {
      ArrayList<Factura> lista = null; 
      ResultSet resultado;
      try{
@@ -47,10 +47,11 @@ public class FacturasDAO extends Conexion{
          this.cerrarConex();
         }
      return lista;
+     
     }
     /**
      * Metodo para consultar un dato especifico en la tabla
-     * @param nit nit del dato a buscar
+     * @param nit no. del dato a buscar
      * @return Arraylist con los datos encontrados
      */
     public ArrayList<Factura> consultar(String nit){
@@ -91,7 +92,7 @@ public class FacturasDAO extends Conexion{
     public void guardar(Factura factura){
          try{
             this.conectar();
-            String instruccionSQL = "INSERT INTO `facturas` (nit,producto,fecha,total) VALUES(?,?,?,?)";
+            instruccionSQL = "INSERT INTO `facturas` (nit,producto,fecha,total) VALUES(?,?,?,?)";
             ms = this.conectar.prepareStatement(instruccionSQL);
             ms.setString(1, factura.getNIT());
             ms.setString(2, factura.getProductos());
@@ -119,7 +120,7 @@ public class FacturasDAO extends Conexion{
             this.conectar();
             long time = System.currentTimeMillis();
             java.sql.Date d = new java.sql.Date(time);
-            String instruccionSQL = "UPDATE `facturas` SET `producto`= '"+factura.getProductos()+"',`fecha` ='"+d+"',`total` ='"+factura.getTotal()+"' WHERE nit = ?";
+            instruccionSQL = "UPDATE `facturas` SET `producto`= '"+factura.getProductos()+"',`fecha` ='"+d+"',`total` ='"+factura.getTotal()+"' WHERE nit = ?";
             ms = this.conectar.prepareStatement(instruccionSQL);
             ms.setString(1, factura.getNIT());
             int n = ms.executeUpdate();
@@ -140,7 +141,7 @@ public class FacturasDAO extends Conexion{
     public void eliminar(String nit){
         try {
             this.conectar();
-            String instruccionSQL ="DELETE FROM facturas WHERE nit=?";
+            instruccionSQL ="DELETE FROM facturas WHERE nit=?";
             ms = this.conectar.prepareStatement(instruccionSQL);
             ms.setString(1, nit);
             int n = ms.executeUpdate();
@@ -154,5 +155,8 @@ public class FacturasDAO extends Conexion{
             this.cerrarConex();
         }
     }
+
     
+
+
 }

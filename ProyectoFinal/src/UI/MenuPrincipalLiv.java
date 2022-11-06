@@ -32,7 +32,6 @@ public class MenuPrincipalLiv extends javax.swing.JFrame {
         btnClose = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         btnFacturas = new javax.swing.JButton();
-        btnAccount = new javax.swing.JButton();
         btnInventario = new javax.swing.JButton();
         btnEmpleados = new javax.swing.JButton();
 
@@ -81,7 +80,7 @@ public class MenuPrincipalLiv extends javax.swing.JFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelBarraLayout.createSequentialGroup()
                 .addGap(19, 19, 19)
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 576, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 406, Short.MAX_VALUE)
                 .addComponent(btnClose, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
         panelBarraLayout.setVerticalGroup(
@@ -90,7 +89,7 @@ public class MenuPrincipalLiv extends javax.swing.JFrame {
             .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
-        getContentPane().add(panelBarra, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
+        getContentPane().add(panelBarra, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 510, -1));
 
         btnFacturas.setBackground(new java.awt.Color(117, 198, 17));
         btnFacturas.setFont(new java.awt.Font("Roboto", 1, 18)); // NOI18N
@@ -106,21 +105,6 @@ public class MenuPrincipalLiv extends javax.swing.JFrame {
             }
         });
         getContentPane().add(btnFacturas, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 30, 170, 490));
-
-        btnAccount.setBackground(new java.awt.Color(255, 51, 51));
-        btnAccount.setFont(new java.awt.Font("Roboto", 1, 18)); // NOI18N
-        btnAccount.setForeground(new java.awt.Color(0, 0, 0));
-        btnAccount.setText("Account");
-        btnAccount.setBorder(null);
-        btnAccount.setBorderPainted(false);
-        btnAccount.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        btnAccount.setPreferredSize(new java.awt.Dimension(67, 22));
-        btnAccount.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnAccountActionPerformed(evt);
-            }
-        });
-        getContentPane().add(btnAccount, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 30, 170, 490));
 
         btnInventario.setBackground(new java.awt.Color(239, 156, 2));
         btnInventario.setFont(new java.awt.Font("Roboto", 1, 18)); // NOI18N
@@ -182,13 +166,6 @@ public class MenuPrincipalLiv extends javax.swing.JFrame {
         
     }//GEN-LAST:event_btnEmpleadosActionPerformed
 
-    private void btnAccountActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAccountActionPerformed
-    // TODO add your handling code here:
-    AccountMenu account = new AccountMenu();
-    account.setVisible(true);
-    this.setVisible(false);
-    }//GEN-LAST:event_btnAccountActionPerformed
-
     private void btnFacturasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnFacturasActionPerformed
         // TODO add your handling code here:
         try{
@@ -212,7 +189,6 @@ public class MenuPrincipalLiv extends javax.swing.JFrame {
     
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btnAccount;
     private javax.swing.JButton btnClose;
     private javax.swing.JButton btnEmpleados;
     private javax.swing.JButton btnFacturas;

@@ -18,6 +18,7 @@ public class EmpleadosMenu extends javax.swing.JFrame {
      */
     public EmpleadosMenu() {
         initComponents();
+        Controller.ControllerEmpleado.llenarTabla(TablaEmpleados);
     }
 
     /**

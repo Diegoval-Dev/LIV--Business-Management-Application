@@ -3,14 +3,15 @@ package model;
 
 public class Producto {
     private int ID;
+    private String nombre;
     private float precio;
     private int cantidad;
     private String marca;
     private String frabricacion;
-    private int lote;
+    private String lote;
     private String descricion;
 
-    public Producto(int ID, float precio, int cantidad, String marca, String frabricacion, int lote, String descricion) {
+    public Producto(int ID,String nombre ,float precio, int cantidad, String marca, String frabricacion, String lote, String descricion) {
         this.ID = ID;
         this.precio = precio;
         this.cantidad = cantidad;
@@ -18,6 +19,20 @@ public class Producto {
         this.frabricacion = frabricacion;
         this.lote = lote;
         this.descricion = descricion;
+    }
+    /**
+     * get Nombre
+     * @return nombre
+     */
+    public String getNombre() {
+        return nombre;
+    }
+    /**
+     * Sert nombre
+     * @param nombre nombre
+     */
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
     }
     
     
@@ -120,7 +135,7 @@ public class Producto {
      * Getter para el lote
      * @return int lote
      */
-    public int getLote() {
+    public String getLote() {
         return lote;
     }
     
@@ -128,7 +143,7 @@ public class Producto {
      * Setter para el lote
      * @param lote 
      */
-    public void setLote(int lote) {
+    public void setLote(String lote) {
         this.lote = lote;
     }
     
@@ -144,7 +159,7 @@ public class Producto {
         cantidad = 0;
         marca = null;
         frabricacion = null;
-        lote = 0;
+        lote = "";
     }
     
 }

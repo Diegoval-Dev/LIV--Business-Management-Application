@@ -131,7 +131,7 @@ public class EmpleadoDAO extends Conexion{
      public void actualizar(Empleado empleado){
          try {
             this.conectar();
-            instruccionSQL = "UPDATE 'empleados' SET  'edad' = '"+empleado.getEdad()+"', 'numero' = '"+empleado.getNumero()+"', 'puesto' = '"+empleado.getPuesto()+"' WHERE nombre = ?";
+            instruccionSQL = "UPDATE `empleados` SET  `edad` = '"+empleado.getEdad()+"', `numero` = '"+empleado.getNumero()+"', `puesto` = '"+empleado.getPuesto()+"' WHERE nombre = ?";
             ms = this.conectar.prepareStatement(instruccionSQL);
             ms.setString(1, empleado.getNombre());
             int n = ms.executeUpdate();
@@ -153,7 +153,7 @@ public class EmpleadoDAO extends Conexion{
      public void eliminar(String nombre){
          try {
             this.conectar();
-            String instruccionSQL ="DELETE FROM empleados WHERE nombre=?";
+            instruccionSQL ="DELETE FROM `empleados` WHERE nombre=?";
             ms = this.conectar.prepareStatement(instruccionSQL);
             ms.setString(1, nombre);
             int n = ms.executeUpdate();

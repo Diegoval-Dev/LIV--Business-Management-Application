@@ -5,8 +5,6 @@
 package Controller;
 
 import UI.LoginLiv;
-import model.Usuario;
-import model.UsuarioDAO;
 
 
 /**

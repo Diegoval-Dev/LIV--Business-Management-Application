@@ -31,7 +31,7 @@ public class ControllerFactura {
         ArrayList<Factura> arr = new ArrayList();
         
         try {
-            arr = fc.listaFactura();
+            arr = fc.lista();
             myModel = tabla(arr);
         } catch (Exception e) {
             System.out.println(e.getMessage());

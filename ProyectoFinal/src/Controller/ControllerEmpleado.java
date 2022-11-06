@@ -93,7 +93,7 @@ public class ControllerEmpleado {
         ArrayList<Empleado> arr = new ArrayList();
         
         try {
-            String nombre = EmpleadosMenu.txtNombredelEmpleado.getName();
+            String nombre = EmpleadosMenu.txtNombredelEmpleado.getText();
             arr = fc.consultar(nombre);
             myModel = tabla(arr);
         }catch (Exception e){
