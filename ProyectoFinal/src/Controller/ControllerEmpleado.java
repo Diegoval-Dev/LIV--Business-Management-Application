@@ -64,11 +64,11 @@ public class ControllerEmpleado {
      * Metodo para limpiar los campos de texto
      */
     public static void limpiar(){
-        EmpleadosMenu.txtID.setText("");
+        EmpleadosMenu.txtNombredelEmpleado.setText("");
         EmpleadosMenu.txtEdad.setText("");
         EmpleadosMenu.txtPhone.setText("");
         EmpleadosMenu.txtPuesto.setText("");
-        EmpleadosMenu.txtID.requestFocus();
+        EmpleadosMenu.txtNombredelEmpleado.requestFocus();
     }
     
     /**
@@ -93,8 +93,8 @@ public class ControllerEmpleado {
         ArrayList<Empleado> arr = new ArrayList();
         
         try {
-            int id = Integer.parseInt(EmpleadosMenu.txtID.getText()) ;
-            arr = fc.consultar(id);
+            String nombre = EmpleadosMenu.txtNombredelEmpleado.getName();
+            arr = fc.consultar(nombre);
             myModel = tabla(arr);
         }catch (Exception e){
             System.out.println(e.getMessage());

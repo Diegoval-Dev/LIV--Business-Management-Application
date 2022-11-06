@@ -4,7 +4,6 @@ import java.util.ArrayList;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import javax.swing.JOptionPane;
 /**
  * 
  * @author Roberto
@@ -150,19 +149,20 @@ public class ProductosDAO extends Conexion {
      /**
       * @author josue :)
       * Metodo para eliminar un producto
-      * @param nombre nombre del producto a eliminar
+      * @param id id del producto a eliminar
       */
-     public void eliminar(String nombre){
-
+     public void eliminar(int id){
+         
+         
          try {
             this.conectar();
-            String instruccionSQL ="DELETE FROM productos WHERE nombre=?";
+            String instruccionSQL ="DELETE FROM productos WHERE id=?";
             ms = this.conectar.prepareStatement(instruccionSQL);
-            ms.setString(1, nombre);
+            ms.setInt(1, id);
             int n = ms.executeUpdate();
             if (n>0) {
                 System.out.println("GUI pops up");
-                JOptionPane.showMessageDialog(null, "PRODUCTO ELIMINADO"); 
+                //JOptionPane.showMessageDialog(null, "FACTURA ELIMINADA"); 
                //ControllerProducto.limpiar();
               }
         } catch (Exception e) {

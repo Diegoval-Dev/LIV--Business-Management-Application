@@ -55,8 +55,8 @@ public class InventarioMenu extends javax.swing.JFrame {
         btnRegresarInven = new javax.swing.JButton();
         Nombre = new javax.swing.JLabel();
         txtNombreInven = new javax.swing.JTextField();
-        txtNombre = new javax.swing.JTextField();
-        IDProducto1 = new javax.swing.JLabel();
+        txtYearInven1 = new javax.swing.JTextField();
+        Year1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setLocationByPlatform(true);
@@ -108,8 +108,8 @@ public class InventarioMenu extends javax.swing.JFrame {
 
         IDProducto.setFont(new java.awt.Font("Baskerville Old Face", 0, 14)); // NOI18N
         IDProducto.setForeground(new java.awt.Color(0, 0, 0));
-        IDProducto.setText("Nombre");
-        jPanel2.add(IDProducto, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 50, -1, -1));
+        IDProducto.setText("ID del producto");
+        jPanel2.add(IDProducto, new org.netbeans.lib.awtextra.AbsoluteConstraints(15, 50, -1, -1));
 
         txtIDInven.setBackground(new java.awt.Color(236, 236, 236));
         txtIDInven.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
@@ -117,7 +117,7 @@ public class InventarioMenu extends javax.swing.JFrame {
         txtIDInven.setDisabledTextColor(new java.awt.Color(0, 0, 0));
         txtIDInven.setSelectedTextColor(new java.awt.Color(204, 204, 204));
         txtIDInven.setSelectionColor(new java.awt.Color(0, 0, 0));
-        jPanel2.add(txtIDInven, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 140, 240, 30));
+        jPanel2.add(txtIDInven, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 70, 240, 30));
 
         Marca.setFont(new java.awt.Font("Baskerville Old Face", 0, 16)); // NOI18N
         Marca.setForeground(new java.awt.Color(0, 0, 0));
@@ -148,7 +148,7 @@ public class InventarioMenu extends javax.swing.JFrame {
         Tipo.setFont(new java.awt.Font("Baskerville Old Face", 0, 16)); // NOI18N
         Tipo.setForeground(new java.awt.Color(0, 0, 0));
         Tipo.setText("Fabricación");
-        jPanel2.add(Tipo, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 120, -1, -1));
+        jPanel2.add(Tipo, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 120, -1, -1));
 
         txtTipoInven.setBackground(new java.awt.Color(236, 236, 236));
         txtTipoInven.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
@@ -156,12 +156,12 @@ public class InventarioMenu extends javax.swing.JFrame {
         txtTipoInven.setDisabledTextColor(new java.awt.Color(0, 0, 0));
         txtTipoInven.setSelectedTextColor(new java.awt.Color(204, 204, 204));
         txtTipoInven.setSelectionColor(new java.awt.Color(0, 0, 0));
-        jPanel2.add(txtTipoInven, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 140, 240, 30));
+        jPanel2.add(txtTipoInven, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 140, 240, 30));
 
         Categoria.setFont(new java.awt.Font("Baskerville Old Face", 0, 16)); // NOI18N
         Categoria.setForeground(new java.awt.Color(0, 0, 0));
         Categoria.setText("Lote");
-        jPanel2.add(Categoria, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 180, -1, -1));
+        jPanel2.add(Categoria, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 120, -1, -1));
 
         txtCategoriaInven.setBackground(new java.awt.Color(236, 236, 236));
         txtCategoriaInven.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
@@ -169,7 +169,7 @@ public class InventarioMenu extends javax.swing.JFrame {
         txtCategoriaInven.setDisabledTextColor(new java.awt.Color(0, 0, 0));
         txtCategoriaInven.setSelectedTextColor(new java.awt.Color(204, 204, 204));
         txtCategoriaInven.setSelectionColor(new java.awt.Color(0, 0, 0));
-        jPanel2.add(txtCategoriaInven, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 200, 240, 30));
+        jPanel2.add(txtCategoriaInven, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 140, 240, 30));
 
         btnGuardarInven.setBackground(new java.awt.Color(0, 204, 51));
         btnGuardarInven.setFont(new java.awt.Font("Roboto Black", 0, 14)); // NOI18N
@@ -271,18 +271,18 @@ public class InventarioMenu extends javax.swing.JFrame {
         txtNombreInven.setSelectionColor(new java.awt.Color(0, 0, 0));
         jPanel2.add(txtNombreInven, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 70, 240, 30));
 
-        txtNombre.setBackground(new java.awt.Color(236, 236, 236));
-        txtNombre.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        txtNombre.setCaretColor(new java.awt.Color(0, 0, 0));
-        txtNombre.setDisabledTextColor(new java.awt.Color(0, 0, 0));
-        txtNombre.setSelectedTextColor(new java.awt.Color(204, 204, 204));
-        txtNombre.setSelectionColor(new java.awt.Color(0, 0, 0));
-        jPanel2.add(txtNombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 70, 240, 30));
+        txtYearInven1.setBackground(new java.awt.Color(236, 236, 236));
+        txtYearInven1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        txtYearInven1.setCaretColor(new java.awt.Color(0, 0, 0));
+        txtYearInven1.setDisabledTextColor(new java.awt.Color(0, 0, 0));
+        txtYearInven1.setSelectedTextColor(new java.awt.Color(204, 204, 204));
+        txtYearInven1.setSelectionColor(new java.awt.Color(0, 0, 0));
+        jPanel2.add(txtYearInven1, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 200, 300, 30));
 
-        IDProducto1.setFont(new java.awt.Font("Baskerville Old Face", 0, 14)); // NOI18N
-        IDProducto1.setForeground(new java.awt.Color(0, 0, 0));
-        IDProducto1.setText("ID del producto");
-        jPanel2.add(IDProducto1, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 120, -1, -1));
+        Year1.setFont(new java.awt.Font("Baskerville Old Face", 0, 24)); // NOI18N
+        Year1.setForeground(new java.awt.Color(0, 0, 0));
+        Year1.setText("Filtro");
+        jPanel2.add(Year1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 200, 80, 30));
 
         getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 32, 930, 520));
 
@@ -354,12 +354,12 @@ public class InventarioMenu extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel Categoria;
     private javax.swing.JLabel IDProducto;
-    private javax.swing.JLabel IDProducto1;
     private javax.swing.JLabel Marca;
     private javax.swing.JLabel Nombre;
     private javax.swing.JTable TablaInven;
     private javax.swing.JLabel Tipo;
     private javax.swing.JLabel Year;
+    private javax.swing.JLabel Year1;
     private javax.swing.JButton btnActualizarInven;
     private javax.swing.JButton btnConsultarInven;
     private javax.swing.JButton btnEliminarInven;
@@ -376,9 +376,9 @@ public class InventarioMenu extends javax.swing.JFrame {
     private static javax.swing.JTextField txtCategoriaInven;
     private static javax.swing.JTextField txtIDInven;
     private static javax.swing.JTextField txtMarcaInven;
-    private javax.swing.JTextField txtNombre;
     private static javax.swing.JTextField txtNombreInven;
     private static javax.swing.JTextField txtTipoInven;
     private static javax.swing.JTextField txtYearInven;
+    private javax.swing.JTextField txtYearInven1;
     // End of variables declaration//GEN-END:variables
 }
