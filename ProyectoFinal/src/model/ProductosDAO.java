@@ -121,7 +121,7 @@ public class ProductosDAO extends Conexion {
             ms.setString(4, producto.getMarca());
             ms.setString(5,producto.getFrabricacion());
             ms.setInt(6,producto.getLote());
-            ms.setString(7, producto.getDescripcion());
+            ms.setString(7, producto.getDescricion());
             
             int n = ms.executeUpdate();
             if(n>0){

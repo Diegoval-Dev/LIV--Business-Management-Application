@@ -345,7 +345,7 @@ public class EmpleadosMenu extends javax.swing.JFrame {
     private javax.swing.JLabel Nombre;
     private javax.swing.JLabel Phone;
     private javax.swing.JLabel Puesto;
-    private javax.swing.JTable TablaEmpleados;
+    public static javax.swing.JTable TablaEmpleados;
     private javax.swing.JLabel Year1;
     private javax.swing.JButton btnActualizarEmple;
     private javax.swing.JButton btnConsultarEmple;
@@ -360,10 +360,10 @@ public class EmpleadosMenu extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JPanel panelBarra;
-    private javax.swing.JTextField txtEdad;
-    private javax.swing.JTextField txtNombredelEmpleado;
-    private javax.swing.JTextField txtPhone;
-    private javax.swing.JTextField txtPuesto;
+    public static javax.swing.JTextField txtEdad;
+    public static javax.swing.JTextField txtNombredelEmpleado;
+    public static javax.swing.JTextField txtPhone;
+    public static javax.swing.JTextField txtPuesto;
     private javax.swing.JTextField txtYearInven1;
     // End of variables declaration//GEN-END:variables
 }

@@ -8,6 +8,34 @@ public class Producto {
     private String marca;
     private String frabricacion;
     private int lote;
+    private String descricion;
+
+    public Producto(int ID, float precio, int cantidad, String marca, String frabricacion, int lote, String descricion) {
+        this.ID = ID;
+        this.precio = precio;
+        this.cantidad = cantidad;
+        this.marca = marca;
+        this.frabricacion = frabricacion;
+        this.lote = lote;
+        this.descricion = descricion;
+    }
+    
+    
+    /**
+     * Obtiene la descripcion del producto
+     * @return descipcion producto
+     */
+    public String getDescricion() {
+        return descricion;
+    }
+    /**
+    * Modifica la descripcion del producto la descripcion.
+    * @param descricion descripcion del producto
+    */
+    public void setDescricion(String descricion) {
+        this.descricion = descricion;
+    }
+    
     
     /**
      * Getter para ID
@@ -105,23 +133,6 @@ public class Producto {
     }
     
     
-    /**
-     * Contructor con parametros
-     * @param ID
-     * @param precio
-     * @param cantidad
-     * @param marca
-     * @param frabricacion
-     * @param lote 
-     */
-    public Producto(int ID, float precio, int cantidad, String marca, String frabricacion, int lote) {
-        this.ID = ID;
-        this.precio = precio;
-        this.cantidad = cantidad;
-        this.marca = marca;
-        this.frabricacion = frabricacion;
-        this.lote = lote;
-    }  
     
     /**
      * Contructor sin parametros

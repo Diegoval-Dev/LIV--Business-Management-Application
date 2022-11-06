@@ -79,7 +79,7 @@ public class ControllerEmpleado {
      * @param puesto puesto del empleado
      */
     public static void guardar(String nombre, int edad, String telefono, String puesto){
-        Empleado empleado = new Empleado (0,nombre,edad,numero,puesto);
+        Empleado empleado = new Empleado (0,nombre,edad,telefono,puesto);
         fc.guardar(empleado);
         llenarTabla(EmpleadosMenu.TablaEmpleados);
     }
@@ -112,7 +112,7 @@ public class ControllerEmpleado {
      * @param puesto puesto del empleado
      */
     public static void actualizar(String nombre, int edad, String telefono, String puesto){
-        Empleado empleado = new Empleado (0,nombre,edad,numero,puesto);
+        Empleado empleado = new Empleado (0,nombre,edad,telefono,puesto);
         fc.actualizar(empleado);
         llenarTabla(EmpleadosMenu.TablaEmpleados);
     }
