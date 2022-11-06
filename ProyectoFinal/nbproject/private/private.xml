@@ -5,8 +5,9 @@
         <group>
             <file>file:/D:/JAVAUVG/PROYECTOFINALTRABAJOARREGLAR/Proyecto-Final/ProyectoFinal/src/Controller/ControllerEmpleado.java</file>
             <file>file:/D:/JAVAUVG/PROYECTOFINALTRABAJOARREGLAR/Proyecto-Final/ProyectoFinal/src/model/FacturasDAO.java</file>
-            <file>file:/D:/JAVAUVG/PROYECTOFINALTRABAJOARREGLAR/Proyecto-Final/ProyectoFinal/src/Controller/ControllerFactura.java</file>
             <file>file:/D:/JAVAUVG/PROYECTOFINALTRABAJOARREGLAR/Proyecto-Final/ProyectoFinal/src/model/EmpleadoDAO.java</file>
+            <file>file:/D:/JAVAUVG/PROYECTOFINALTRABAJOARREGLAR/Proyecto-Final/ProyectoFinal/src/UI/EmpleadosMenu.java</file>
+            <file>file:/D:/JAVAUVG/PROYECTOFINALTRABAJOARREGLAR/Proyecto-Final/ProyectoFinal/src/model/ProductosDAO.java</file>
         </group>
     </open-files>
 </project-private>

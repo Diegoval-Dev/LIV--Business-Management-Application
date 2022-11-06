@@ -35,7 +35,7 @@ public class EmpleadosMenu extends javax.swing.JFrame {
         jPanel2 = new javax.swing.JPanel();
         info = new javax.swing.JLabel();
         jSeparator1 = new javax.swing.JSeparator();
-        txtNombredelEmpleado = new javax.swing.JTextField();
+        txtID = new javax.swing.JTextField();
         Nombre = new javax.swing.JLabel();
         Edad = new javax.swing.JLabel();
         txtEdad = new javax.swing.JTextField();
@@ -51,8 +51,8 @@ public class EmpleadosMenu extends javax.swing.JFrame {
         btnRegresarEmple = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         TablaEmpleados = new javax.swing.JTable();
-        txtYearInven1 = new javax.swing.JTextField();
-        Year1 = new javax.swing.JLabel();
+        Puesto1 = new javax.swing.JLabel();
+        txtNombredelEmpleado = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setLocationByPlatform(true);
@@ -120,13 +120,13 @@ public class EmpleadosMenu extends javax.swing.JFrame {
         jSeparator1.setForeground(new java.awt.Color(60, 63, 65));
         jPanel2.add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 30, 810, 10));
 
-        txtNombredelEmpleado.setBackground(new java.awt.Color(236, 236, 236));
-        txtNombredelEmpleado.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        txtNombredelEmpleado.setCaretColor(new java.awt.Color(0, 0, 0));
-        txtNombredelEmpleado.setDisabledTextColor(new java.awt.Color(0, 0, 0));
-        txtNombredelEmpleado.setSelectedTextColor(new java.awt.Color(204, 204, 204));
-        txtNombredelEmpleado.setSelectionColor(new java.awt.Color(0, 0, 0));
-        jPanel2.add(txtNombredelEmpleado, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 70, 240, 30));
+        txtID.setBackground(new java.awt.Color(236, 236, 236));
+        txtID.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        txtID.setCaretColor(new java.awt.Color(0, 0, 0));
+        txtID.setDisabledTextColor(new java.awt.Color(0, 0, 0));
+        txtID.setSelectedTextColor(new java.awt.Color(204, 204, 204));
+        txtID.setSelectionColor(new java.awt.Color(0, 0, 0));
+        jPanel2.add(txtID, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 200, 90, 30));
 
         Nombre.setBackground(new java.awt.Color(255, 255, 255));
         Nombre.setFont(new java.awt.Font("Baskerville Old Face", 0, 14)); // NOI18N
@@ -165,8 +165,8 @@ public class EmpleadosMenu extends javax.swing.JFrame {
         Puesto.setBackground(new java.awt.Color(255, 255, 255));
         Puesto.setFont(new java.awt.Font("Baskerville Old Face", 0, 15)); // NOI18N
         Puesto.setForeground(new java.awt.Color(0, 0, 0));
-        Puesto.setText("Puesto Encargado");
-        jPanel2.add(Puesto, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 110, 160, 30));
+        Puesto.setText("ID:");
+        jPanel2.add(Puesto, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 200, 40, 30));
 
         txtPuesto.setBackground(new java.awt.Color(236, 236, 236));
         txtPuesto.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
@@ -263,18 +263,19 @@ public class EmpleadosMenu extends javax.swing.JFrame {
 
         jPanel2.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 240, 560, 280));
 
-        txtYearInven1.setBackground(new java.awt.Color(236, 236, 236));
-        txtYearInven1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        txtYearInven1.setCaretColor(new java.awt.Color(0, 0, 0));
-        txtYearInven1.setDisabledTextColor(new java.awt.Color(0, 0, 0));
-        txtYearInven1.setSelectedTextColor(new java.awt.Color(204, 204, 204));
-        txtYearInven1.setSelectionColor(new java.awt.Color(0, 0, 0));
-        jPanel2.add(txtYearInven1, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 200, 300, 30));
+        Puesto1.setBackground(new java.awt.Color(255, 255, 255));
+        Puesto1.setFont(new java.awt.Font("Baskerville Old Face", 0, 15)); // NOI18N
+        Puesto1.setForeground(new java.awt.Color(0, 0, 0));
+        Puesto1.setText("Puesto Encargado");
+        jPanel2.add(Puesto1, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 110, 160, 30));
 
-        Year1.setFont(new java.awt.Font("Baskerville Old Face", 0, 24)); // NOI18N
-        Year1.setForeground(new java.awt.Color(0, 0, 0));
-        Year1.setText("Filtro");
-        jPanel2.add(Year1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 200, 80, 30));
+        txtNombredelEmpleado.setBackground(new java.awt.Color(236, 236, 236));
+        txtNombredelEmpleado.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        txtNombredelEmpleado.setCaretColor(new java.awt.Color(0, 0, 0));
+        txtNombredelEmpleado.setDisabledTextColor(new java.awt.Color(0, 0, 0));
+        txtNombredelEmpleado.setSelectedTextColor(new java.awt.Color(204, 204, 204));
+        txtNombredelEmpleado.setSelectionColor(new java.awt.Color(0, 0, 0));
+        jPanel2.add(txtNombredelEmpleado, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 70, 240, 30));
 
         getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 30, 740, 530));
 
@@ -311,7 +312,7 @@ public class EmpleadosMenu extends javax.swing.JFrame {
 
     private void btnGuardarEmpleActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGuardarEmpleActionPerformed
         // TODO add your handling code here:
-        String nombre = txtNombredelEmpleado.getText();
+        String nombre = txtID.getText();
         int edad = Integer.parseInt(txtEdad.getText());
         String telefono = txtPhone.getText();
         String puesto = txtPuesto.getText();
@@ -320,7 +321,7 @@ public class EmpleadosMenu extends javax.swing.JFrame {
 
     private void btnActualizarEmpleActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnActualizarEmpleActionPerformed
         // TODO add your handling code here:
-        String nombre = txtNombredelEmpleado.getText();
+        String nombre = txtID.getText();
         int edad = Integer.parseInt(txtEdad.getText());
         String telefono = txtPhone.getText();
         String puesto = txtPuesto.getText();
@@ -334,7 +335,7 @@ public class EmpleadosMenu extends javax.swing.JFrame {
 
     private void btnEliminarEmpleActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEliminarEmpleActionPerformed
         // TODO add your handling code here:
-        String nombre = txtNombredelEmpleado.getText();
+        String nombre = txtID.getText();
         ControllerEmpleado.eliminar(nombre);
     }//GEN-LAST:event_btnEliminarEmpleActionPerformed
 
@@ -345,8 +346,8 @@ public class EmpleadosMenu extends javax.swing.JFrame {
     private javax.swing.JLabel Nombre;
     private javax.swing.JLabel Phone;
     private javax.swing.JLabel Puesto;
+    private javax.swing.JLabel Puesto1;
     public static javax.swing.JTable TablaEmpleados;
-    private javax.swing.JLabel Year1;
     private javax.swing.JButton btnActualizarEmple;
     private javax.swing.JButton btnConsultarEmple;
     private javax.swing.JButton btnEliminarEmple;
@@ -361,9 +362,9 @@ public class EmpleadosMenu extends javax.swing.JFrame {
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JPanel panelBarra;
     public static javax.swing.JTextField txtEdad;
+    public static javax.swing.JTextField txtID;
     public static javax.swing.JTextField txtNombredelEmpleado;
     public static javax.swing.JTextField txtPhone;
     public static javax.swing.JTextField txtPuesto;
-    private javax.swing.JTextField txtYearInven1;
     // End of variables declaration//GEN-END:variables
 }

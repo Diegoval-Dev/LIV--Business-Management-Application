@@ -62,21 +62,21 @@ public class EmpleadoDAO extends Conexion{
     
     /**
      * Metodo para realizar una consulta a la base de datos
-     * @param nombre id del objeto a realizar una consulta
+     * @param id id del objeto a realizar una consulta
      * @return Arraylist con el objeto que devolvio la consulta
      */
-     public ArrayList<Empleado> consultar(String nombre){
+     public ArrayList<Empleado> consultar(int id){
         ArrayList<Empleado> listaEmpleados = null; 
         ResultSet resultado;
         try{
             this.conectar();
             listaEmpleados = new ArrayList();
-            instruccionSQL ="SELECT * FROM `empleados` WHERE nombre = ?;";
+            instruccionSQL ="SELECT * FROM `empleados` WHERE id = ?;";
             ms = this.conectar.prepareStatement(instruccionSQL);
-            ms.setString(1, nombre);
+            ms.setInt(1, id);
             resultado = ms.executeQuery();
             if (resultado.next()) {
-                int id = resultado.getInt("id");
+                String nombre = resultado.getString("nombre");
                 int edad = resultado.getInt("edad");
                 String numero = resultado.getString("numero");
                 String puesto = resultado.getString("puesto");
