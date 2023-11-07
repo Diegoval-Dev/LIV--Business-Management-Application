@@ -23,10 +23,6 @@ LIV is a robust Java Swing application built using the Model-View-Controller (MV
 - Swing (UI Framework)
 - MVC Architecture
 
-## Contributing
-
-Contributions and enhancements to the LIV application are welcome. Feel free to fork this repository, make your changes, and submit a pull request.
-
 ## License
 
 This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for more details.
